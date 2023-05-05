@@ -8,6 +8,23 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+/** Navbar **/
+.navbar-brand {
+    font-size: 2rem;
+    margin-right: 0;
+    letter-spacing: 0.3rem;
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+}
+
+.navbar-dark
+.navbar-nav
+.nav-link {
+    color: var(--white);
+}
 
 /** Footer **/
 
