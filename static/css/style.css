@@ -7,23 +7,3 @@ body {
     scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
 }
-
-
-/** Footer **/
-
-footer,
-footer a,
-footer .btn {
-    color: var(--white);
-    text-align: center;
-}
-
-footer .btn {
-    font-size: 1.5rem;
-}
-
-footer a:hover,
-footer .btn:hover {
-    color: var(--secondary);
-    text-decoration: none;
-}
