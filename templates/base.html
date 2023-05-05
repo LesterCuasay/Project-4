@@ -18,20 +18,16 @@
 <body>
 
 
-    <main>
+        {% include 'home/navbar.html' %}
         {% block content %}
 
         {% endblock content %}
-    </main>
+
+        {% include 'home/footer.html' %}
 
 
-    <footer class="footer mt-auto py-3 bg-dark">
-        <p class="m-0 text-center text-white">Copyright</p>
-        <p class="m-0 text-center text-white">Follow me on:
-            <i class="fa-brands fa-github"></i>
-            <i class="fa-brands fa-linkedin"></i>
-    </footer>
 
+    
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
