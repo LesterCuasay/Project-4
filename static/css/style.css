@@ -84,6 +84,11 @@ footer .btn:hover {
     padding: 0;
 }
 
+.card-img-top {
+    object-fit: cover;
+    height: 300px;
+}
+
 .card-title {
     display: flex;
     justify-content: center;
