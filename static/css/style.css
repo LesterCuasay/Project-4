@@ -9,6 +9,10 @@ body {
     background-color: var(--secondary);
 }
 
+p {
+    font-family: 'Neuton', sans-serif;
+}
+
 
 /** Hero Image **/
 
@@ -78,6 +82,17 @@ footer .btn:hover {
 .card {
     box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.2);
     padding: 0;
+}
+
+.card-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+}
+
+.card-body p {
+    font-size: 1.5rem;
 }
 
 .card-btn {
