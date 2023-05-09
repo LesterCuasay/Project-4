@@ -14,4 +14,4 @@ class Menu(View):
 
 class About(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'home/about.html')
+        return render(request, 'home/about-us.html')
