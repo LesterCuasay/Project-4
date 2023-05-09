@@ -11,6 +11,7 @@ body {
 
 p {
     font-family: 'Neuton', sans-serif;
+    font-size: 1.5rem;
 }
 
 
@@ -94,10 +95,6 @@ footer .btn:hover {
     justify-content: center;
     align-items: center;
     letter-spacing: 1px;
-}
-
-.card-body p {
-    font-size: 1.5rem;
 }
 
 .card-btn {
