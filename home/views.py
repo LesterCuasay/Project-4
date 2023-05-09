@@ -10,3 +10,8 @@ class Index(View):
 class Menu(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'home/menu.html')
+
+
+class About(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'home/about.html')
