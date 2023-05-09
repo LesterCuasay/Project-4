@@ -75,6 +75,11 @@ footer .btn:hover {
 
 /** Index Page **/
 
+.card {
+    box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.2);
+    padding: 0;
+}
+
 .card-btn {
     display: flex;
     justify-content: center;
