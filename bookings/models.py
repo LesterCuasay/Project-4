@@ -12,13 +12,9 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 class BookingForm(models.Model):
     name = models.CharField(
         max_length=100, blank=True, verbose_name='Name', null=True)
-    email = models.EmailField(
-        default='example@example.com', verbose_name='Email')
-    phone_number = models.CharField(
-        default='07', verbose_name='Phone Number', max_length=11
-    )
+    email = models.EmailField(verbose_name='Email')
+    phone_number = models.CharField(verbose_name='Phone Number', max_length=11)
     number_of_people = models.PositiveIntegerField(
-        default=1,
         validators=[MaxValueValidator(10), MinValueValidator(1)],
         verbose_name='Number of People'
     )
