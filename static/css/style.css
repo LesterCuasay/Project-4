@@ -109,3 +109,8 @@ footer .btn:hover {
 }
 
 /** Bookings Page **/
+
+.form-group {
+    display: flex;
+    justify-content: center;
+}
