@@ -31,7 +31,7 @@ class BookingTableForm(forms.ModelForm):
             'date': DateInput(attrs={
                 'class': "form-control",
                 'style': "max-width: 300px",
-                'placeholder': 'Date'
+                'type': 'date'
             }),
             'special_requirements': Textarea(attrs={
                 'class': "form-control",

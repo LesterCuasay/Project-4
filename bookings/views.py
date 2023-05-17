@@ -4,7 +4,7 @@ from .models import BookingForm
 from .forms import BookingTableForm
 
 
-def book_table(request):
+def BookTable(request):
     booking_form = BookingTableForm()
 
     if request.method == 'POST':
@@ -12,6 +12,7 @@ def book_table(request):
 
         if booking_form.is_valid():
             booking_form.save()
+            booking_form = BookingTableForm()
 
     context = {'form': booking_form}
 

@@ -3,12 +3,6 @@ from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 
-# class BookingId(models.Model):
-#     booking_id = models.UUIDField(
-#         primary_key=True, default=uuid.uuid4, editable=False, null=False)
-#     booking_id = models.ForeignKey(
-#         'BookingId', on_delete=models.CASCADE, default=uuid.uuid4)
-
 class BookingForm(models.Model):
     name = models.CharField(
         max_length=100, blank=True, verbose_name='Name', null=True)
