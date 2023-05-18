@@ -6,7 +6,7 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="container card mt-5 p-5">
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
 
@@ -21,18 +21,26 @@
 
       <form class="login" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
-
-        {{ form.login }}
-
-        {{ form.password }}
-
-        {{ form.remember }}
-        
+        <div class="form-group">
+          {{ form.login }}
+        </div>
+        <div class="form-group">
+          {{ form.password }}
+        </div>
+        <div class="form-group">
+          {% trans "Remember Me" %}
+          {{ form.remember }}
+        </div>
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-        <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+        <div class="form-group">
+          <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+        </div>
+        <div class="form-group">
+          <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+
+        </div>
       </form>
 
     </div>

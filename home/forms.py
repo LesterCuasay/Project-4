@@ -1,20 +1,17 @@
-from django.contrib.auth.forms import UserCreationForm
-from django.forms import fields
-from django.forms.widgets import *
+from allauth.account.forms import LoginForm
+from django import forms
 
 
-class LogInForm(UserCreationForm):
-    class Meta:
-        fields = '__all__'
-        widgets = {
-            'login': TextInput(attrs={
-                'class': "form-control",
-                'style': "max-width: 300px",
-                'placeholder': 'Username'
-            }),
-            'password': PasswordInput(attrs={
-                'class': "form-control",
-                'style': "max-width: 300px",
-                'placeholder': 'Password'
-            }),
-        }
+class CustomLogInForm(LoginForm):
+    def __init__(self, *args, **kwargs):
+        super(CustomLogInForm, self).__init__(*args, **kwargs)
+        self.fields['login'].widget = forms.TextInput(attrs={
+            'class': 'form-control',
+            'style': "max-width:300px",
+            'placeholder': 'Username'
+            })
+        self.fields['password'].widget = forms.PasswordInput(attrs={
+            'class': 'form-control',
+            'style': "max-width:300px",
+            'placeholder': 'Password'
+            })
