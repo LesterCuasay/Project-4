@@ -58,6 +58,7 @@ LOGOUT_REDIRECT_URL = '/'
 
 ACCOUNT_FORMS = {
     'login': 'home.forms.CustomLogInForm',
+    'signup': 'home.forms.CustomSignupForm',
     }
 
 MIDDLEWARE = [

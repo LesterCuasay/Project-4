@@ -114,3 +114,14 @@ footer .btn:hover {
     display: flex;
     justify-content: center;
 }
+
+/** Login Page/Signup Page/Logout Page **/
+
+.secondaryAction {
+    color: var(--dark);
+}
+
+.secondaryAction:hover {
+    color: var(--secondary);
+    text-decoration: none;
+}
