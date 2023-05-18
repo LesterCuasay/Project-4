@@ -28,8 +28,10 @@
           {{ form.password }}
         </div>
         <div class="form-group">
-          {% trans "Remember Me" %}
-          {{ form.remember }}
+          <div class="d-flex justify-content-start align-items-center" style="width: 300px;">
+            <p class="text-white mr-5 my-0 ">Remember Me</p>
+            {{ form.remember }}
+          </div>
         </div>
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />

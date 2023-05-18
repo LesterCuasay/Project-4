@@ -15,6 +15,9 @@ class CustomLogInForm(LoginForm):
             'style': "max-width:300px",
             'placeholder': 'Password'
             })
+        self.fields['remember'].widget = forms.CheckboxInput(attrs={
+            'label': 'Remember Me'
+            })
 
 
 class CustomSignupForm(SignupForm):

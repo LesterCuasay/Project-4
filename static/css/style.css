@@ -83,6 +83,7 @@ footer .btn:hover {
 .card {
     box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.2);
     padding: 0;
+    background-color: var(--dark);
 }
 
 .card-img-top {
@@ -95,6 +96,11 @@ footer .btn:hover {
     justify-content: center;
     align-items: center;
     letter-spacing: 1px;
+    color: var(--white);
+}
+
+.card-text {
+    color: var(--white);
 }
 
 .card-btn {
@@ -118,7 +124,7 @@ footer .btn:hover {
 /** Login Page/Signup Page/Logout Page **/
 
 .secondaryAction {
-    color: var(--dark);
+    color: var(--white);
 }
 
 .secondaryAction:hover {
