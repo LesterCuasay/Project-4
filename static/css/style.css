@@ -54,6 +54,17 @@ p {
     color: var(--white);
 }
 
+.dropdown-menu {
+    left: -20%;
+}
+
+@media (max-width: 992px) {
+    .dropdown-menu {
+        max-width: 300px;
+        margin: auto;
+    }
+}
+
 /** Message Alerts **/
 .alert {
     position: absolute;
