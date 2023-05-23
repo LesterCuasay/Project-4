@@ -4,6 +4,8 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 class BookingForm(models.Model):
+    user = models.ForeignKey(
+        User, null=True, default='', on_delete=models.CASCADE)
     name = models.CharField(
         max_length=100, blank=True, verbose_name='Name', null=True)
     email = models.EmailField(verbose_name='Email')

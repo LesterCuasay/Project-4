@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load i18n %}
+
 {% block content %}
 <div class="hero-image">
     <div class="hero-text">
@@ -9,6 +11,7 @@
 
 
 <div class="container card mb-4 mt-4 p-5">
+    {% if user.authenticated %}
     <form action="" method="post">
         {% csrf_token %}
     <div class="form-group">
@@ -33,5 +36,15 @@
         <button class="btn btn-secondary text-uppercase" type="submit">Submit</button>
     </div>
     </form>
+    {% else %}
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2 text-center">
+            <h2 class="text-uppercase card-title d-block">Please
+                <a class="secondaryAction" href="{% url 'account_login' %}">sign in</a> to book a table</h2>
+            <p class="card-text">{% blocktrans %}If you have not created an account yet, then please
+                <a class="secondaryAction" href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+        </div>
+    </div>
+    {% endif %}
 </div>
 {% endblock content %}
