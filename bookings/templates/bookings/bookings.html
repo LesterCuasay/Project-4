@@ -14,6 +14,11 @@
 
 <div class="container card mb-4 mt-4 p-5">
     {% if user.is_authenticated %}
+    <div class="col-md-8 mt-3 offset-md-2 text-center">
+        <h2 class="card-title text-uppercase"> Hi, {{ user.get_username }}!</h2>
+
+        <p class="card-text mb-4">Please fill out the form below to book a table!</p>
+    </div>
     <form action="" method="post">
         {% csrf_token %}
     <div class="form-group">
@@ -41,7 +46,7 @@
     {% else %}
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2 text-center">
-            <h2 class="text-uppercase card-title">Please
+            <h2 class="text-uppercase card-title d-block">Please
                 <a class="secondaryAction" href="{% url 'account_login' %}">sign in</a> to book a table</h2>
             <p class="card-text">{% blocktrans %}If you have not created an account yet, then please
                 <a class="secondaryAction" href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
