@@ -54,6 +54,14 @@ p {
     color: var(--white);
 }
 
+/** Message Alerts **/
+.alert {
+    position: absolute;
+    z-index: 1;
+    margin-top: 4px;
+    left: 30%;
+}
+
 /** Footer **/
 
 body > footer {
