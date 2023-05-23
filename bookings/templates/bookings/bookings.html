@@ -2,6 +2,8 @@
 
 {% load i18n %}
 
+
+{% block head_title %}{% trans "Book A Table" %}{% endblock %}
 {% block content %}
 <div class="hero-image">
     <div class="hero-text">
@@ -39,7 +41,7 @@
     {% else %}
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2 text-center">
-            <h2 class="text-uppercase card-title d-block">Please
+            <h2 class="text-uppercase card-title">Please
                 <a class="secondaryAction" href="{% url 'account_login' %}">sign in</a> to book a table</h2>
             <p class="card-text">{% blocktrans %}If you have not created an account yet, then please
                 <a class="secondaryAction" href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
