@@ -11,4 +11,9 @@
     </div>
 </div>
 
+<ul>
+    {% for bookings in books %}
+    <li>{{ books.name }} {{ books.date }}</li>
+    {% endfor %}
+</ul>
 {% endblock %}
