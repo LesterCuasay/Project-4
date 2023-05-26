@@ -29,8 +29,7 @@ class BookingTableForm(forms.ModelForm):
                 'class': "form-control",
                 'style': "max-width: 300px",
                 'placeholder': 'Number of People',
-                'min': 1,
-                'max': 10,
+                'max': '10',
             }),
             'date': DateInput(attrs={
                 'class': "form-control",
