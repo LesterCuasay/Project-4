@@ -8,6 +8,7 @@ class BookingTableForm(forms.ModelForm):
     class Meta:
         model = BookingForm
         fields = '__all__'
+        exclude = ['user']
         widgets = {
             'name': TextInput(attrs={
                 'class': "form-control",
@@ -27,12 +28,8 @@ class BookingTableForm(forms.ModelForm):
             'number_of_people': NumberInput(attrs={
                 'class': "form-control",
                 'style': "max-width: 300px",
-<<<<<<< HEAD
                 'placeholder': 'Number of People',
                 'max': '10',
-=======
-                'placeholder': 'Number of People'
->>>>>>> parent of 59dc7ab (fix - form was not saving due to the issue that the user foreign key was being needed for the form)
             }),
             'date': DateInput(attrs={
                 'class': "form-control",

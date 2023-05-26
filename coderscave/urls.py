@@ -22,6 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Index.as_view(), name='index'),
     path('menu/', Menu.as_view(), name='menu'),
-    path('bookings/', BookTable, name='book'),
+    path('book/', include('bookings.urls')),
     path('accounts/', include('allauth.urls')),
 ]
