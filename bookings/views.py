@@ -25,4 +25,5 @@ def book_table(request):
 
 def book_list(request):
     books = BookingForm.objects.all()
+    
     return render(request, 'bookings/my-bookings.html', {'books': books})
