@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from home.views import Index, Menu
-from bookings.views import BookTable
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),

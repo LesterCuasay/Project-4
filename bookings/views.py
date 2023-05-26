@@ -4,7 +4,7 @@ from .models import BookingForm
 from .forms import BookingTableForm
 
 
-def BookTable(request):
+def book_table(request):
     booking_form = BookingTableForm()
 
     if request.method == 'POST':
@@ -21,3 +21,8 @@ def BookTable(request):
     context = {'form': booking_form}
 
     return render(request, 'bookings/bookings.html', context)
+
+
+def book_list(request):
+    booking_list = BookingForm.objects.all()
+    return render(request, 'bookings/my-bookings.html', {'booking_list': booking_list})
