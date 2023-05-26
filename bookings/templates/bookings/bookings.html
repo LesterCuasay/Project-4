@@ -19,7 +19,7 @@
 
         <p class="card-text mb-4">Please fill out the form below to book a table!</p>
     </div>
-    <form action="{% url 'book' %}" method="post">
+    <form method="POST" action="{% url 'form' %}">
         {% csrf_token %}
     <div class="form-group">
         {{ form.name }}

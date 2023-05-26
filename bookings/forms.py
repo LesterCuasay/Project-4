@@ -8,6 +8,7 @@ class BookingTableForm(forms.ModelForm):
     class Meta:
         model = BookingForm
         fields = '__all__'
+        exclude = ['user']
         widgets = {
             'name': TextInput(attrs={
                 'class': "form-control",
@@ -27,7 +28,9 @@ class BookingTableForm(forms.ModelForm):
             'number_of_people': NumberInput(attrs={
                 'class': "form-control",
                 'style': "max-width: 300px",
-                'placeholder': 'Number of People'
+                'placeholder': 'Number of People',
+                'min': 1,
+                'max': 10,
             }),
             'date': DateInput(attrs={
                 'class': "form-control",
