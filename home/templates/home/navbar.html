@@ -18,7 +18,7 @@
                     <a class="nav-link" href="{% url 'menu' %}">Menu</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'form' %}">Book a Table</a>
+                    <a class="nav-link" href="{% url 'book_table' %}">Book a Table</a>
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item dropdown">
@@ -27,7 +27,6 @@
                         Account
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{% url 'booking_list' %}">My Bookings</a>
                         <a class="dropdown-item" href="{% url 'account_logout' %}">Log out</a>
                     </div>
                 </li>
