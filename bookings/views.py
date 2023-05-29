@@ -14,7 +14,7 @@ def book_table(request):
             booking = booking_form.save(commit=False)
             booking.user = request.user
             booking.save()
-            return redirect('index')
+            return redirect('view_booking')
 
     else:
         booking_form = BookingTableForm()
