@@ -2,7 +2,6 @@
 
 {% load i18n %}
 
-
 {% block head_title %}{% trans "My Bookings" %}{% endblock %}
 {% block content %}
 <div class="hero-image">
@@ -23,18 +22,31 @@
                             <p class="card-text">{{ booking.date }}</p>
                         </div>
                         <div class="card-btn">
-                            <a href="{% url 'update_booking' booking.id %}" class="btn btn-secondary text-uppercase">Edit</a>
-                            <a href="{% url 'delete_booking' booking.id %}" class="btn btn-secondary text-uppercase">Delete</a>
+                            <a href="{% url 'update_booking' booking.id %}"
+                                class="btn btn-secondary text-uppercase">Edit</a>
+                            <a href="{% url 'delete_booking' booking.id %}"
+                                class="btn btn-secondary text-uppercase">Delete</a>
                         </div>
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:3 %}
             </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
+            {% endif %}
+            {% empty %}
+            <div class="container card mb-4 mt-4 p-5">
+                <div class="row">
+                    <div class="col-md-8 mt-3 offset-md-2 text-center">
+                        <h1 class="text-uppercase card-title">You have no bookings!</h1>
+                        <p class="card-text">Book a table with the button below!</p>
+                    </div>
+                </div>
+                <div class="card-btn">
+                    <a href="{% url 'book_table' %}" class="btn btn-secondary text-uppercase">Book Now!</a>  
+                </div>
             </div>
+            {% endfor %}
         </div>
     </div>
+</div>
 </div>
 {% endblock %}
