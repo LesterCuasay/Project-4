@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+
+{% block head_title %}{% trans "Update Booking" %}{% endblock %}
+{% block content %}
+<div class="hero-image">
+    <div class="hero-text">
+        <h1>Update Booking</h1>
+    </div>
+</div>
+
+
+<div class="container card mb-4 mt-4 p-5">
+    <div class="col-md-8 mt-3 offset-md-2 text-center">
+        <h2 class="card-title text-uppercase"> Hi, {{ user.get_username }}!</h2>
+
+        <p class="card-text mb-4">Update your booking below!</p>
+    </div>
+    <form action="{% url 'book_table' %}" method="post">
+        {% csrf_token %}
+    <div class="form-group">
+        {{ form.name }}
+    </div>
+    <div class="form-group">
+        {{ form.email }}
+    </div>
+    <div class="form-group">
+        {{ form.phone_number }}
+    </div>
+    <div class="form-group">
+        {{ form.number_of_people }}
+    </div>
+    <div class="form-group">
+        {{ form.date }}
+    </div>
+    <div class="form-group">
+        {{ form.special_requirements }}
+    </div>
+    <div class="form-group">
+        <button class="btn btn-secondary text-uppercase" type="submit">Submit</button>
+    </div>
+    </form>
+</div>
+{% endblock content %}
