@@ -23,7 +23,8 @@
                             <p class="card-text">{{ booking.date }}</p>
                         </div>
                         <div class="card-btn">
-                            <a href="{% url 'update_booking' booking.id %}" class="btn btn-secondary text-uppercase">Edit</a>  
+                            <a href="{% url 'update_booking' booking.id %}" class="btn btn-secondary text-uppercase">Edit</a>
+                            <a href="{% url 'delete_booking' booking.id %}" class="btn btn-secondary text-uppercase">Delete</a>
                         </div>
                     </div>
                 </div>

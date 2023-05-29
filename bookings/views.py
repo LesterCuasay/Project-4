@@ -55,3 +55,18 @@ def update_booking(request, booking_id):
     }
 
     return render(request, 'bookings/update-booking.html', context)
+
+
+def delete_booking(request, booking_id):
+    booking = get_object_or_404(BookingForm, id=booking_id)
+
+    if request.method == 'POST':
+        booking.delete()
+        return redirect('view_booking')
+
+    context = {
+        'booking': booking,
+    }
+
+    return render(request, 'bookings/delete-booking.html', context)
+
