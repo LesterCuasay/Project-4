@@ -22,6 +22,9 @@
                             <h2 class="card-title">{{ booking.pk }} {{ booking.name }}</h2>
                             <p class="card-text">{{ booking.date }}</p>
                         </div>
+                        <div class="card-btn">
+                            <a href="{% url 'update_booking' booking.id %}" class="btn btn-secondary text-uppercase">Edit</a>  
+                        </div>
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:3 %}

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.views import View
 from .models import BookingForm
@@ -35,3 +35,23 @@ def view_booking(request):
     }
 
     return render(request, 'bookings/my-bookings.html', context)
+
+
+def update_booking(request, booking_id):
+    booking = get_object_or_404(BookingForm, id=booking_id)
+
+    if request.method == 'POST':
+        booking_form = BookingTableForm(request.POST, instance=booking)
+
+        if booking_form.is_valid():
+            booking_form.save()
+            return redirect('view_booking')
+
+    else:
+        booking_form = BookingTableForm(instance=booking)
+
+    context = {
+        'form': booking_form,
+    }
+
+    return render(request, 'bookings/update-booking.html', context)
