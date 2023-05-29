@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from django.views import View
 from .models import BookingForm
 from .forms import BookingTableForm
@@ -25,15 +26,11 @@ def book_table(request):
     return render(request, 'bookings/bookings.html', context)
 
 
-def view_booking(request, pk):
-    booking = get_object_or_404(BookingForm, pk=pk)
+@login_required
+def view_booking(request):
     bookings = BookingForm.objects.filter(user=request.user)
 
-    if request.user != booking.user:
-        return render(request, 'home/index.html')
-
     context = {
-        'booking': booking,
         'bookings': bookings,
     }
 
