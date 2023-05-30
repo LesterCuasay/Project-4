@@ -75,13 +75,17 @@ p {
     left: 30%;
 }
 
+.form-group-errors {
+    max-width: 450px;
+    margin: 0 auto;
+    font-size: 0.8rem;
+}
+
 .form-errors {
     margin-top: 4px;
-    display: inline-block;
-    font-size: 0.8rem;
     border: 1px solid transparent;
     border-radius: 0.25rem;
-    padding: 0.75rem 1.25rem;
+    padding: 0.50rem 1.25rem;
 }
 
 /** Footer **/
@@ -147,9 +151,8 @@ footer .btn:hover {
 /** Bookings Page **/
 
 .form-group {
-    display: block;
-    position: relative;
-    left: 30%;
+    display: flex;
+    justify-content: center;
 }
 
 /** Login Page/Signup Page/Logout Page **/

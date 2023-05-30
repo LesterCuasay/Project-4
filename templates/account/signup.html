@@ -22,48 +22,44 @@
         {% csrf_token %}
         <div class="form-group">
           {{ form.username }}
-          {% if form.username.errors %}
-          {% for error in form.username.errors %}
-          <div class="form-errors alert-danger">
-            {{ error }}
-          </div>
-          {% endfor %}
-          {% endif %}
         </div>
         <div class="form-group">
           {{ form.email }}
-          {% if form.email.errors %}
-          {% for error in form.email.errors %}
-          <div class="form-errors alert-danger">
-            {{ error }}
-          </div>
-          {% endfor %}
-          {% endif %}
         </div>
         <div class="form-group">
           {{ form.password1 }}
-          {% if form.password1.errors %}
-          {% for error in form.password1.errors %}
-          <div class="form-errors alert-danger">
-            {{ error }}
-          </div>
-          {% endfor %}
-          {% endif %}
         </div>
         <div class="form-group">
           {{ form.password2 }}
-          {% if form.password2.errors %}
-          {% for error in form.password2.errors %}
-          <div class="form-errors alert-danger">
-            {{ error }}
-          </div>
-          {% endfor %}
-          {% endif %}
+
         </div>
+        <div class="form-group-errors">
+        {% if form.username.errors %}
+        {% for error in form.username.errors %}
+        <div class="form-errors alert-danger">
+          {{ error }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% if form.email.errors %}
+        {% for error in form.email.errors %}
+        <div class="form-errors alert-danger">
+          {{ error }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% if form.password1.errors %}
+        {% for error in form.password1.errors %}
+        <div class="form-errors alert-danger">
+          {{ error }}
+        </div>
+        {% endfor %}
+        {% endif %}
+      </div>
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <div>
+        <div class="form-group">
           <div class="card-btn">
             <button class="btn btn-secondary text-uppercase" type="submit">{% trans "Sign Up" %} &raquo;</button>
           </div>
