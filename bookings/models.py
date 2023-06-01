@@ -25,7 +25,7 @@ class BookingForm(models.Model):
         help_text='Please select a day from today onwards')
     time = models.TimeField(
         null=False,
-        default='12:00'
+        verbose_name='Time'
         )
     special_requirements = models.TextField(
         blank=True, verbose_name='Special Requirements')

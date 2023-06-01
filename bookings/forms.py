@@ -3,7 +3,7 @@ from django.forms import fields
 from django.forms.widgets import *
 from .models import BookingForm
 from django.core.exceptions import ValidationError
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
 
 
 class BookingTableForm(forms.ModelForm):
@@ -27,7 +27,9 @@ class BookingTableForm(forms.ModelForm):
         widget=forms.Select(attrs={
             'class': "form-control",
             'style': "max-width: 300px",
-            }))
+        }),
+        initial=datetime.now().time()
+    )
 
     class Meta:
         model = BookingForm
@@ -76,7 +78,7 @@ class BookingTableForm(forms.ModelForm):
             error_message = "You can only book up to one month in advance, Please choose another date."
             raise ValidationError(error_message)
 
-        if selected_date and selected_date < max_date:
+        if selected_date and selected_date < date.today():
             error_message = "You cannot book in the past, Please choose a date in the present."
             raise ValidationError(error_message)
 

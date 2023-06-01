@@ -16,9 +16,17 @@ def book_table(request):
             booking.save()
             return redirect('view_booking')
 
+        else:
+            for field in booking_form:
+
+                if field.errors:
+                    print(f"Field: {field.name}")
+                    for error in field.errors:
+                        print(f"Error: {error}")
+
     else:
         booking_form = BookingTableForm()
-
+        
     context = {
         'form': booking_form,
         }
