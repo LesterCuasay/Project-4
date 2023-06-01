@@ -61,8 +61,9 @@ ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'coderscave.project4@gmail.com'
-EMAIL_HOST_PASSWORD = 'Coderscave123!'
+DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_USER')
+EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 EMAIL_PORT = 587
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 

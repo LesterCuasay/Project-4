@@ -22,7 +22,7 @@ def book_table(request):
             booking.save()
 
             send_booking_confirmation_email(booking)
-     
+
             return redirect('view_booking')
 
     else:
