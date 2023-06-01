@@ -23,6 +23,10 @@ class BookingForm(models.Model):
             MinValueValidator(date.today() + timedelta(days=0)),
             MaxValueValidator(date.today() + timedelta(days=30))],
         help_text='Please select a day from today onwards')
+    time = models.TimeField(
+        null=False,
+        default='12:00'
+        )
     special_requirements = models.TextField(
         blank=True, verbose_name='Special Requirements')
 

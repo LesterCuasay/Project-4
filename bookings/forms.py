@@ -7,6 +7,28 @@ from datetime import date, timedelta
 
 
 class BookingTableForm(forms.ModelForm):
+
+    TIME_CHOICES = [
+        ('12:00', '12:00 PM'),
+        ('12:30', '12:30 PM'),
+        ('13:00', '13:00 PM'),
+        ('13:30', '13:30 PM'),
+        ('14:00', '14:00 PM'),
+        ('14:30', '14:30 PM'),
+        ('15:00', '15:00 PM'),
+        ('15:30', '15:30 PM'),
+        ('16:00', '16:00 PM'),
+        ('16:30', '16:30 PM'),
+        ('17:00', '17:00 PM'),
+    ]
+
+    time = forms.ChoiceField(
+        choices=TIME_CHOICES,
+        widget=forms.Select(attrs={
+            'class': "form-control",
+            'style': "max-width: 300px",
+            }))
+
     class Meta:
         model = BookingForm
         fields = '__all__'
