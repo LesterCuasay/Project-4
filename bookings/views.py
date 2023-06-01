@@ -6,7 +6,11 @@ from .forms import BookingTableForm
 
 
 def book_table(request):
-
+    """
+    Allows the user to book a table, If the request method is POST
+    then the form will save to the database. If not they will be redirected
+    back to the form.
+    """
     if request.method == 'POST':
         booking_form = BookingTableForm(request.POST)
 
@@ -28,6 +32,10 @@ def book_table(request):
 
 @login_required
 def view_booking(request):
+    """
+    Only if the user is logged in they will be able
+    to see the bookings they have made, In the order of the booking ID.
+    """
     bookings = BookingForm.objects.filter(
         user=request.user).order_by('-id')
 
@@ -39,6 +47,9 @@ def view_booking(request):
 
 
 def update_booking(request, booking_id):
+    """
+    This enables the user to update their booking if needed.
+    """
     booking = get_object_or_404(BookingForm, id=booking_id)
 
     if request.method == 'POST':
@@ -59,6 +70,9 @@ def update_booking(request, booking_id):
 
 
 def delete_booking(request, booking_id):
+    """
+    This enables the user to delete their booking if it is no longer required.
+    """
     booking = get_object_or_404(BookingForm, id=booking_id)
 
     if request.method == 'POST':
@@ -70,4 +84,3 @@ def delete_booking(request, booking_id):
     }
 
     return render(request, 'bookings/delete-booking.html', context)
-
