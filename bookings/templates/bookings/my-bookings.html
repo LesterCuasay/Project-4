@@ -13,6 +13,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col mb-5">
+            {% if bookings %}
             <div class="row">
                 {% for booking in bookings %}
                 <div class="col m-5">
@@ -29,24 +30,29 @@
                         </div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:3 %}
+                {% if forloop.counter|divisibleby:3 and not forloop.last %}
             </div>
-            {% endif %}
-            {% empty %}
-            <div class="container card mb-4 mt-4 p-5">
-                <div class="row">
-                    <div class="col-md-8 mt-3 offset-md-2 text-center">
-                        <h1 class="text-uppercase card-title">You have no bookings!</h1>
-                        <p class="card-text">Book a table with the button below!</p>
-                    </div>
-                </div>
-                <div class="card-btn">
-                    <a href="{% url 'book_table' %}" class="btn btn-secondary text-uppercase">Book Now!</a>  
-                </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
+        {% else %}
+
+        <div class="container card mb-4 mt-4 p-5">
+            <div class="row">
+                <div class="col-md-8 mt-3 offset-md-2 text-center">
+                    <h1 class="text-uppercase card-title">You have no bookings!</h1>
+                    <p class="card-text">Book a table with the button below!</p>
+                </div>
+            </div>
+            <div class="card-btn">
+                <a href="{% url 'book_table' %}" class="btn btn-secondary text-uppercase">Book Now!</a>
+            </div>
+        </div>
+        {% endif %}
     </div>
+</div>
 </div>
 </div>
 {% endblock %}
