@@ -83,3 +83,15 @@ class BookingTableForm(forms.ModelForm):
             raise ValidationError(error_message)
 
         return selected_date
+
+    def clean_time(self):
+        cleaned_data = super().clean()
+        selected_date = cleaned_data.get('date')
+        selected_time = cleaned_data.get('time')
+
+        if selected_date and selected_time:
+            existing_booking = BookingForm.objects.filter(date=selected_date, time=selected_time)
+            if existing_booking.exists():
+                error_message = "The timeslot on this day is alreay booked. Please choose another time"
+                self.add_error('date', error_message)
+                self.add_error('time', error_message)
