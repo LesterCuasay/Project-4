@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+from django.core.mail import send_mail
+from django.conf import settings
 from django.contrib.messages import constants as messages
 if os.path.isfile('env.py'):
     import env
@@ -55,6 +57,7 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
+DEFAULT_FROM_EMAIL = 'coderscave@gmail.com'
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'none'

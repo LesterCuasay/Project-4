@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
+from django.conf import settings
 from django.views import View
 from .models import BookingForm
 from .forms import BookingTableForm
@@ -18,6 +20,9 @@ def book_table(request):
             booking = booking_form.save(commit=False)
             booking.user = request.user
             booking.save()
+
+            send_booking_confirmation_email(booking)
+     
             return redirect('view_booking')
 
     else:
@@ -84,3 +89,11 @@ def delete_booking(request, booking_id):
     }
 
     return render(request, 'bookings/delete-booking.html', context)
+
+
+def send_booking_confirmation_email(booking):
+    user = booking.user
+    subject = 'Booking Confirmation'
+    message = f'Dear {user.username}, your booking has been confirmed!'
+
+    send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [user.email])
