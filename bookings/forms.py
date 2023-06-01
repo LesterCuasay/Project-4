@@ -2,6 +2,8 @@ from django import forms
 from django.forms import fields
 from django.forms.widgets import *
 from .models import BookingForm
+from django.core.exceptions import ValidationError
+from datetime import date, timedelta
 
 
 class BookingTableForm(forms.ModelForm):
@@ -43,3 +45,17 @@ class BookingTableForm(forms.ModelForm):
                 'placeholder': 'Special Requirements'
             }),
         }
+
+    def clean_date(self):
+        selected_date = self.cleaned_data.get('date')
+        max_date = date.today() + timedelta(days=30)
+
+        if selected_date and selected_date > max_date:
+            error_message = "You can only book up to one month in advance, Please choose another date."
+            raise ValidationError(error_message)
+
+        if selected_date and selected_date < max_date:
+            error_message = "You cannot book in the past, Please choose a date in the present."
+            raise ValidationError(error_message)
+
+        return selected_date

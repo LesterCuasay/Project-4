@@ -1,8 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
-from datetime import datetime, date
-from django.utils import timezone
+from datetime import datetime, date, timedelta
 
 
 class BookingForm(models.Model):
@@ -20,7 +19,9 @@ class BookingForm(models.Model):
         auto_now_add=False,
         auto_now=False,
         blank=True,
-        validators=[MinValueValidator(timezone.now().date())],
+        validators=[
+            MinValueValidator(date.today() + timedelta(days=0)),
+            MaxValueValidator(date.today() + timedelta(days=30))],
         help_text='Please select a day from today onwards')
     special_requirements = models.TextField(
         blank=True, verbose_name='Special Requirements')

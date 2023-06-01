@@ -42,10 +42,9 @@
         <div class="form-group-errors">
             {% if form.errors.date %}
             <div class="form-errors alert-danger">
-                {{ form.date.help_text }}
+                {{ form.errors.date }}
             </div>
-        </div>
-        {% endif %}
+            {% endif %}
         <div class="form-group">
             <div class="card-btn">
                 <button class="btn btn-secondary text-uppercase" type="submit">Submit</button>
