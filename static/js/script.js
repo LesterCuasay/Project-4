@@ -1,3 +1,6 @@
+
+/** Function for copyright date  */
+
 function currentYear() {
 
     let fullYear = new Date ();
