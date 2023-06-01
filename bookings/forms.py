@@ -8,6 +8,10 @@ from datetime import date, timedelta, datetime
 
 class BookingTableForm(forms.ModelForm):
 
+    """
+    This is the time choices for the field 'time'
+    """
+
     TIME_CHOICES = [
         ('12:00', '12:00 PM'),
         ('12:30', '12:30 PM'),
@@ -28,7 +32,6 @@ class BookingTableForm(forms.ModelForm):
             'class': "form-control",
             'style': "max-width: 300px",
         }),
-        initial=datetime.now().time()
     )
 
     class Meta:
@@ -61,6 +64,11 @@ class BookingTableForm(forms.ModelForm):
                 'class': "form-control",
                 'style': "max-width: 300px",
                 'type': 'date'
+            }),
+            'time': Select(attrs={
+                'class': "form-control",
+                'style': "max-width: 300px",
+                'choices': "TIME-CHOICES",
             }),
             'special_requirements': Textarea(attrs={
                 'class': "form-control",
