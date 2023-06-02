@@ -96,4 +96,4 @@ def send_booking_confirmation_email(booking):
     subject = 'Booking Confirmation'
     message = f'Dear {user.username}, your booking has been confirmed!'
 
-    send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [user.email])
+    send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [user.email], fail_silently=False,)
