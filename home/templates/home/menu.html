@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 
+{% load i18n %}
+
+{% block head_title %}{% trans "Menu" %}{% endblock %}
+{% block hero_title %}<h1>{% trans "Menu" %}</h1>{% endblock %}
+{% block hero_description %}{% endblock %}
+
 {% block content %}
-<div class="hero-image">
-    <div class="hero-text">
-        <h1>Menu</h1>
-    </div>
-</div>
 
 <div class="container-fluid mt-4">
     <div class="card col-md-8 p-4 mx-auto" style="max-width: 600px;">
