@@ -20,7 +20,7 @@ p {
 
 .hero-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://res.cloudinary.com/dloyfqzja/image/upload/v1683293899/images/hero-image_g0x3lg.jpg);
-    height: 50%;
+    height: 400px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -37,6 +37,14 @@ p {
 }
 
 /** Navbar **/
+
+.navbar {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
 
 .navbar-brand {
     font-size: 2rem;
@@ -62,8 +70,20 @@ p {
 
 @media (max-width: 992px) {
     .dropdown-menu {
-        max-width: 300px;
+        max-width: 200px;
         margin: auto;
+        text-align: center;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+        margin-right: 5px;
+        justify-content: center;
+    }
+
+    .navbar-nav li {
+        margin-right: 5px;
+        padding: 5px;
     }
 }
 
