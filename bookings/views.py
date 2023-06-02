@@ -5,6 +5,7 @@ from django.conf import settings
 from django.views import View
 from .models import BookingForm
 from .forms import BookingTableForm
+from datetime import datetime
 
 
 def book_table(request):
@@ -94,6 +95,18 @@ def delete_booking(request, booking_id):
 def send_booking_confirmation_email(booking):
     user = booking.user
     subject = 'Booking Confirmation'
-    message = f'Dear {user.username}, your booking has been confirmed!'
+    # message = f'Dear {user.username}, your booking has been confirmed! {booking.date.strftime("%d-%m-%Y")} {booking.time}'
+    message = f"""
+        <html>
+        <body>
+            <p>Dear {user.username},</p>
+            <p>Your booking has been confirmed!</p>
+            <p>Here are your booking details:</p>
+            <p>Date: {booking.date.strftime('%d-%m-%Y')}</p>
+            <p>Time: {booking.time}</p>
+        </body>
+        </html>
+    """
 
-    send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [user.email], fail_silently=False,)
+    # send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [user.email], fail_silently=False,)
+    print(message)
