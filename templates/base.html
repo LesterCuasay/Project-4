@@ -21,6 +21,8 @@
 
 
     {% include 'home/navbar.html' %}
+    {% include 'home/hero-image.html' %}
+    
 
     <div class="container">
         <div class="row">
@@ -34,7 +36,7 @@
             </div>
         </div>
     </div>
-    
+
     {% block content %}
 
     {% endblock content %}
@@ -57,7 +59,7 @@
     <script src="https://kit.fontawesome.com/bb79f02fb0.js" crossorigin="anonymous"></script>
 
     <script>
-        setTimeout(function(){
+        setTimeout(function () {
             let messages = document.getElementById("msg");
             let alert = new bootstrap.Alert(messages);
             alert.close();
