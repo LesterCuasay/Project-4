@@ -21,7 +21,6 @@
 
 
     {% include 'home/navbar.html' %}
-    {% include 'home/hero-image.html' %}
     
 
     <div class="container">
@@ -36,6 +35,19 @@
             </div>
         </div>
     </div>
+
+    <div class="hero-image">
+        <div class="hero-text">
+            {% block hero_title %}
+            <h1>Welcome to Coders Cave!</h1>
+            {% endblock %}
+            {% block hero_description %}
+            <p>Come and join us and relax!</p>
+            {% endblock %}
+        </div>
+    </div>
+
+
 
     {% block content %}
 
