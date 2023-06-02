@@ -19,7 +19,8 @@
     </div>
     <div class="col-md-8 mt-3 offset-md-2 text-center">
         <h2 class="card-title text-uppercase">{{ booking.name }}</h2>
-        <p class="card-text">{{ booking.date }}</p>
+        <p class="card-text text-center">Date: {{ booking.date }}</p>
+        <p class="card-text text-center">Time: {{ booking.time | time:"H:i" }}</p>
     </div>
     <br>
     <form action="" method="post">
