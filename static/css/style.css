@@ -19,7 +19,7 @@ p {
 /** Hero Image **/
 
 .hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://res.cloudinary.com/dloyfqzja/image/upload/v1683293899/hero-image_g0x3lg.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://res.cloudinary.com/dloyfqzja/image/upload/v1683293899/images/hero-image_g0x3lg.jpg);
     height: 50%;
     background-position: center;
     background-repeat: no-repeat;
