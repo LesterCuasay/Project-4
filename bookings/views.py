@@ -69,7 +69,12 @@ def update_booking(request, booking_id):
 
         if booking_form.is_valid():
             booking_form.save()
+
+            messages.success(request, "Table updated successfully!")
             return redirect("view_booking")
+
+        else:
+            messages.error(request, "Error in the form, Please try again.")
 
     else:
         booking_form = BookingTableForm(instance=booking)
