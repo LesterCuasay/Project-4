@@ -8,6 +8,7 @@ from .forms import BookingTableForm
 from datetime import datetime
 
 
+@login_required
 def book_table(request):
     """
     Allows the user to book a table, If the request method is POST
@@ -51,6 +52,7 @@ def view_booking(request):
     return render(request, "bookings/my-bookings.html", context)
 
 
+@login_required
 def update_booking(request, booking_id):
     """
     This enables the user to update their booking if needed.
@@ -74,6 +76,7 @@ def update_booking(request, booking_id):
     return render(request, "bookings/update-booking.html", context)
 
 
+@login_required
 def delete_booking(request, booking_id):
     """
     This enables the user to delete their booking if it is no longer required.
