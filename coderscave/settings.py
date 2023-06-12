@@ -93,6 +93,7 @@ ACCOUNT_FORMS = {
     'login': 'home.forms.CustomLogInForm',
     'signup': 'home.forms.CustomSignupForm',
     'reset_password': 'home.forms.CustomResetForm',
+    'reset_password_from_key': 'home.forms.CustomResetKeyForm'
     }
 
 MIDDLEWARE = [

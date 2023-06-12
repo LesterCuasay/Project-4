@@ -1,4 +1,4 @@
-from allauth.account.forms import LoginForm, SignupForm, ResetPasswordForm
+from allauth.account.forms import LoginForm, SignupForm, ResetPasswordForm, ResetPasswordKeyForm
 from django import forms
 
 
@@ -49,4 +49,19 @@ class CustomResetForm(ResetPasswordForm):
             'class': 'form-control',
             'style': "max-width:300px",
             'placeholder': 'Email Address'
+            })
+
+
+class CustomResetKeyForm(ResetPasswordKeyForm):
+    def __init__(self, *args, **kwargs):
+        super(CustomResetKeyForm, self).__init__(*args, **kwargs)
+        self.fields['password1'].widget = forms.PasswordInput(attrs={
+            'class': 'form-control',
+            'style': "max-width:300px",
+            'placeholder': 'Password'
+            })
+        self.fields['password2'].widget = forms.PasswordInput(attrs={
+            'class': 'form-control',
+            'style': "max-width:300px",
+            'placeholder': 'Confirm Password'
             })
