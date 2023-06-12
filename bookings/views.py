@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.conf import settings
@@ -25,7 +26,11 @@ def book_table(request):
 
             send_booking_confirmation_email(booking)
 
+            messages.success(request, "Table booked successfully!")
             return redirect("view_booking")
+
+        else:
+            messages.error(request, "Error in the form, Please try again.")
 
     else:
         booking_form = BookingTableForm()
