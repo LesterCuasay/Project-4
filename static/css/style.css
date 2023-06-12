@@ -219,9 +219,12 @@ footer .btn:hover {
 
 .secondaryAction {
     color: var(--white);
+    font-weight: bold;
+    font-style: italic;
 }
 
 .secondaryAction:hover {
     color: var(--secondary);
     text-decoration: none;
 }
+
