@@ -46,6 +46,7 @@ class BookingTableForm(forms.ModelForm):
                     "class": "form-control",
                     "style": "max-width: 300px",
                     "placeholder": "Name",
+                    "required": True
                 }
             ),
             "email": EmailInput(
