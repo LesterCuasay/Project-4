@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
 from django.core.mail import send_mail
 from django.conf import settings
 from django.views import View
@@ -58,6 +59,7 @@ def view_booking(request):
 
 
 @login_required
+@staff_member_required
 def update_booking(request, booking_id):
     """
     This enables the user to update their booking if needed.
