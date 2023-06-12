@@ -8,7 +8,7 @@ class BookingForm(models.Model):
     user = models.ForeignKey(
         User, null=True, default='', on_delete=models.CASCADE)
     name = models.CharField(
-        max_length=100, blank=True, verbose_name='Name', null=True)
+        max_length=100, blank=True, verbose_name='Name', default='')
     email = models.EmailField(verbose_name='Email')
     phone_number = models.CharField(verbose_name='Phone Number', max_length=11)
     number_of_people = models.PositiveIntegerField(
@@ -31,4 +31,4 @@ class BookingForm(models.Model):
         blank=True, verbose_name='Special Requirements')
 
     def __str__(self):
-        return self.name
+        return f"{self.name} - Date: {self.date} - Time: {self.time}"
