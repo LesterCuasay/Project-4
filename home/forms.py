@@ -1,4 +1,4 @@
-from allauth.account.forms import LoginForm, SignupForm
+from allauth.account.forms import LoginForm, SignupForm, ResetPasswordForm
 from django import forms
 
 
@@ -39,4 +39,14 @@ class CustomSignupForm(SignupForm):
             'class': 'form-control',
             'style': "max-width:300px",
             'placeholder': 'Confirm Password'
+            })
+
+
+class CustomResetForm(ResetPasswordForm):
+    def __init__(self, *args, **kwargs):
+        super(CustomResetForm, self).__init__(*args, **kwargs)
+        self.fields['email'].widget = forms.EmailInput(attrs={
+            'class': 'form-control',
+            'style': "max-width:300px",
+            'placeholder': 'Email Address'
             })

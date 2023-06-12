@@ -92,6 +92,7 @@ MESSAGE_TAGS = {
 ACCOUNT_FORMS = {
     'login': 'home.forms.CustomLogInForm',
     'signup': 'home.forms.CustomSignupForm',
+    'reset_password': 'home.forms.CustomResetForm',
     }
 
 MIDDLEWARE = [
