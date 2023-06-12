@@ -14,7 +14,7 @@ def book_table(request):
     then the form will save to the database. If not they will be redirected
     back to the form.
     """
-    if request.method == 'POST':
+    if request.method == "POST":
         booking_form = BookingTableForm(request.POST)
 
         if booking_form.is_valid():
@@ -24,16 +24,16 @@ def book_table(request):
 
             send_booking_confirmation_email(booking)
 
-            return redirect('view_booking')
+            return redirect("view_booking")
 
     else:
         booking_form = BookingTableForm()
 
     context = {
-        'form': booking_form,
-        }
+        "form": booking_form,
+    }
 
-    return render(request, 'bookings/bookings.html', context)
+    return render(request, "bookings/bookings.html", context)
 
 
 @login_required
@@ -42,14 +42,13 @@ def view_booking(request):
     Only if the user is logged in they will be able
     to see the bookings they have made, In the order of the booking ID.
     """
-    bookings = BookingForm.objects.filter(
-        user=request.user).order_by('-id')
+    bookings = BookingForm.objects.filter(user=request.user).order_by("-id")
 
     context = {
-        'bookings': bookings,
+        "bookings": bookings,
     }
 
-    return render(request, 'bookings/my-bookings.html', context)
+    return render(request, "bookings/my-bookings.html", context)
 
 
 def update_booking(request, booking_id):
@@ -58,21 +57,21 @@ def update_booking(request, booking_id):
     """
     booking = get_object_or_404(BookingForm, id=booking_id)
 
-    if request.method == 'POST':
+    if request.method == "POST":
         booking_form = BookingTableForm(request.POST, instance=booking)
 
         if booking_form.is_valid():
             booking_form.save()
-            return redirect('view_booking')
+            return redirect("view_booking")
 
     else:
         booking_form = BookingTableForm(instance=booking)
 
     context = {
-        'form': booking_form,
+        "form": booking_form,
     }
 
-    return render(request, 'bookings/update-booking.html', context)
+    return render(request, "bookings/update-booking.html", context)
 
 
 def delete_booking(request, booking_id):
@@ -81,20 +80,20 @@ def delete_booking(request, booking_id):
     """
     booking = get_object_or_404(BookingForm, id=booking_id)
 
-    if request.method == 'POST':
+    if request.method == "POST":
         booking.delete()
-        return redirect('view_booking')
+        return redirect("view_booking")
 
     context = {
-        'booking': booking,
+        "booking": booking,
     }
 
-    return render(request, 'bookings/delete-booking.html', context)
+    return render(request, "bookings/delete-booking.html", context)
 
 
 def send_booking_confirmation_email(booking):
     user = booking.user
-    subject = 'Booking Confirmation'
+    subject = "Booking Confirmation"
     message = (
         f"Dear {user.username}, your booking has been confirmed!\n"
         f"Here are your booking details as follows:\n"
@@ -102,4 +101,10 @@ def send_booking_confirmation_email(booking):
         f"{booking.time}"
     )
 
-    send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [user.email], fail_silently=False,)
+    send_mail(
+        subject,
+        message,
+        settings.DEFAULT_FROM_EMAIL,
+        [user.email],
+        fail_silently=False,
+    )
