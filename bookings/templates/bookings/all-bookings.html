@@ -7,6 +7,36 @@
 {% block hero_description %}{% endblock %}
 
 {% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col mb-5">
+            {% if bookings %}
+            <div class="row">
+                {% for booking in bookings %}
+                <div class="col m-5">
+                    <div class="card mb-4" style="max-width: 800px;">
+                        <div class="card-body">
+                            <h2 class="card-title text-uppercase">{{ booking.name }}</h2>
+                            <p class="card-text text-center">Date: {{ booking.date }}</p>
+                            <p class="card-text text-center">Date: {{ booking.date }}</p>
+                            <p class="card-text text-center">Phone Number: {{ booking.phone_number }}</p>
+                            <p class="card-text text-center">Number of People: {{ booking.number_of_people }}</p>
 
+                        </div>
+                        <div class="card-btn">
+                            <a href="{% url 'update_booking' booking.id %}"
+                                class="btn btn-secondary text-uppercase mr-4">Edit</a>
+                            <a href="{% url 'delete_booking' booking.id %}"
+                                class="btn btn-secondary text-uppercase">Delete</a>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 and not forloop.last %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
 {% endblock %}
 
