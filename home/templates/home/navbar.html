@@ -27,7 +27,12 @@
                         Hi, {{ user.get_username }}!
                     </a>
                     <div class="dropdown-menu">
+                        {% if user.is_superuser %}
+                        <a class="dropdown-item" href="{% url 'view_all_bookings' %}">All Bookings</a>
+                        {% endif %}
+                        {% if not user.is_superuser %}
                         <a class="dropdown-item" href="{% url 'view_booking' %}">My Bookings</a>
+                        {% endif %}
                         <a class="dropdown-item" href="{% url 'account_logout' %}">Log out</a>
                     </div>
                 </li>
