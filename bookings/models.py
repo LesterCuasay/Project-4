@@ -27,7 +27,6 @@ class BookingForm(models.Model):
     special_requirements = models.TextField(
         blank=True, verbose_name="Special Requirements"
     )
-    is_confirmed = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.name} - Date: {self.date} - Time: {self.time}"
