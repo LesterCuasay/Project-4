@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
-from django.contrib.admin.views.decorators import staff_member_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.core.mail import send_mail
 from django.conf import settings
 from django.views import View
@@ -43,6 +42,25 @@ def book_table(request):
     return render(request, "bookings/bookings.html", context)
 
 
+def is_admin(user):
+    return user.is_superuser
+
+
+@user_passes_test
+def view_all_bookings(request):
+    """
+    Allows the admin to view all the bookings made.
+    """
+
+    bookings = BookingForm.objects.all().order_by("-id")
+
+    context = {
+        "bookings": bookings,
+    }
+
+    return request(request, "bookings/all-bookings.html", context)
+
+
 @login_required
 def view_booking(request):
     """
@@ -59,7 +77,6 @@ def view_booking(request):
 
 
 @login_required
-@staff_member_required
 def update_booking(request, booking_id):
     """
     This enables the user to update their booking if needed.
