@@ -22,7 +22,10 @@
                             <p class="card-text text-center">Time: {{ booking.time | time:"H:i" }}</p>
                             <p class="card-text text-center">Phone Number: {{ booking.phone_number }}</p>
                             <p class="card-text text-center">Number of People: {{ booking.number_of_people }}</p>
-
+                        </div>
+                        <div class="card-btn">
+                            <a href="{% url 'delete_booking' booking.id %}"
+                                class="btn btn-secondary text-uppercase">Delete</a>
                         </div>
                     </div>
                 </div>

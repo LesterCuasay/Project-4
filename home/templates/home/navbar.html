@@ -20,11 +20,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'book_table' %}">Book</a>
                 </li>
+                {% if not user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                </li>
+                {% endif %}
                 {% if user.is_authenticated %}
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-uppercase" href="#" role="button" data-toggle="dropdown"
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                         aria-expanded="false">
-                        Hi, {{ user.get_username }}!
+                        Hi, {{ user.get_username|upper }}!
                     </a>
                     <div class="dropdown-menu">
                         {% if user.is_superuser %}
