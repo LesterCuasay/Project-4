@@ -46,7 +46,7 @@ def is_admin(user):
     return user.is_superuser
 
 
-@user_passes_test
+@user_passes_test(is_admin)
 def view_all_bookings(request):
     """
     Allows the admin to view all the bookings made.
@@ -58,7 +58,7 @@ def view_all_bookings(request):
         "bookings": bookings,
     }
 
-    return request(request, "bookings/all-bookings.html", context)
+    return render(request, "bookings/all-bookings.html", context)
 
 
 @login_required
