@@ -42,4 +42,20 @@ class BookingTableFormTest(TestCase):
             "You can only book up to one month in advance, Please choose another date."
         )
 
-    
+    def test_clean_date_past_date(self):
+        """
+        Test if the clean_date function raises an error when date inputted
+        is in the past, the form data is set to be in the past which
+        throws the errror.
+        """
+        form_data = {
+            "date": date.today() - timedelta(days=1),
+            "time": "12:00",
+        }
+
+        form = BookingTableForm(data=form_data)
+        self.assertFalse(form.is_valid())
+        self.assertEqual(
+            form.errors["date"][0],
+            "You cannot book in the past, Please choose a date in the present."
+        )

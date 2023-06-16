@@ -105,9 +105,7 @@ class BookingTableForm(forms.ModelForm):
             raise ValidationError(error_message)
 
         if selected_date and selected_date < date.today():
-            error_message = (
-                "You cannot book in the past, Please choose a date in the present."
-            )
+            error_message = "You cannot book in the past, Please choose a date in the present."
             raise ValidationError(error_message)
 
         return selected_date
