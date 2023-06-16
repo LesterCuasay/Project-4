@@ -75,17 +75,22 @@ class BookingTableFormTest(TestCase):
         existing_booking = BookingForm.objects.create(
             date=date.today(),
             time="12:00",
+            number_of_people=4
         )
 
         # Same data as existing_booking
         form_data = {
-            "date:": date.today(),
+            "name": "John",
+            "email": "john@example.com",
+            "phone_number": "12345678901",
+            "number_of_people": 5,
+            "date": date.today(),
             "time": "12:00",
+            "special_requirements": "None",
         }
 
         form = BookingTableForm(data=form_data)
         form.is_valid()
-        print(form.errors)
 
         self.assertFalse(form.is_valid())
         self.assertEqual(
