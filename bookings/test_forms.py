@@ -39,7 +39,8 @@ class BookingTableFormTest(TestCase):
         self.assertFalse(form.is_valid())
         self.assertEqual(
             form.errors["date"][0],
-            "You can only book up to one month in advance, Please choose another date."
+            "You can only book up to one month in advance, "
+            "Please choose another date."
         )
 
     def test_clean_date_past_date(self):

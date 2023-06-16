@@ -101,11 +101,13 @@ class BookingTableForm(forms.ModelForm):
         max_date = date.today() + timedelta(days=30)
 
         if selected_date and selected_date > max_date:
-            error_message = "You can only book up to one month in advance, Please choose another date."
+            error_message = "You can only book up to one month in advance, " \
+                            "Please choose another date."
             raise ValidationError(error_message)
 
         if selected_date and selected_date < date.today():
-            error_message = "You cannot book in the past, Please choose a date in the present."
+            error_message = "You cannot book in the past, " \
+                            "Please choose a date in the present."
             raise ValidationError(error_message)
 
         return selected_date
@@ -119,7 +121,8 @@ class BookingTableForm(forms.ModelForm):
                 date=selected_date, time=selected_time
             )
             if existing_booking.exists():
-                error_message = "The timeslot on this day is alreay booked. Please choose another timeslot"
+                error_message = "The timeslot on this day is alreay booked, " \
+                                "Please choose another timeslot."
                 raise ValidationError(error_message)
 
         return selected_time
