@@ -1,6 +1,7 @@
 from django.test import TestCase
 from datetime import date, timedelta
 from .forms import BookingTableForm
+from .models import BookingForm
 
 
 class BookingTableFormTest(TestCase):
@@ -60,3 +61,37 @@ class BookingTableFormTest(TestCase):
             form.errors["date"][0],
             "You cannot book in the past, Please choose a date in the present."
         )
+
+    def test_clean_time_existing_booking(self):
+        """
+        Test if the clean_time function raises an error when an existing
+        booking already exists with the same date and time, existing_booking
+        is created from the BookingForm class to save an instance of the model
+        and form_data is then passed through with the same date and time
+        which throws the error.
+        """
+
+        # Creates a booking with specific date and time
+        existing_booking = BookingForm.objects.create(
+            date=date.today(),
+            time="12:00",
+        )
+
+        # Same data as existing_booking
+        form_data = {
+            "date:": date.today(),
+            "time": "12:00",
+        }
+
+        form = BookingTableForm(data=form_data)
+        form.is_valid()
+        print(form.errors)
+
+        self.assertFalse(form.is_valid())
+        self.assertEqual(
+            form.errors["time"][0],
+            "The timeslot on this day is alreay booked, "
+            "Please choose another timeslot."
+        )
+
+        existing_booking.delete()
