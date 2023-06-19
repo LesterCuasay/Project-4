@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.core.mail import send_mail
+from django.template.loader import render_to_string
 from django.conf import settings
 from django.views import View
 from .models import BookingForm
@@ -126,17 +127,41 @@ def delete_booking(request, booking_id):
 def send_booking_confirmation_email(booking):
     user = booking.user
     subject = "Booking Confirmation"
-    message = (
-        f"Dear {user.username}, your booking has been confirmed!\n"
-        f"Here are your booking details as follows:\n"
-        f"{booking.date.strftime('%d-%m-%Y')}\n"
-        f"{booking.time}"
-    )
+    template_name = 'booking_confirmation_email.html'
+
+    context = {
+        'username': user.username,
+        'date': booking.date.strftime('%d-%m-%Y'),
+        'time': booking.time,
+    }
+
+    email_body = render_to_string(template_name, context)
 
     send_mail(
         subject,
-        message,
+        email_body,
         settings.DEFAULT_FROM_EMAIL,
         [user.email],
         fail_silently=False,
     )
+
+# def send_booking_confirmation_email(booking):
+#     user = booking.user
+#     subject = "Booking Confirmation"
+#     message = (
+#         f"Dear {user.username}, your booking has been confirmed!\n"
+#         f"Here are your booking details as follows:\n"
+#         f"{booking.date.strftime('%d-%m-%Y')}\n"
+#         f"{booking.time}"
+#     )
+
+#     send_mail(
+#         subject,
+#         message,
+#         settings.DEFAULT_FROM_EMAIL,
+#         [user.email],
+#         fail_silently=False,
+#     )
+
+
+
