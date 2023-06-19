@@ -141,12 +141,12 @@ def send_booking_confirmation_email(booking):
 
     email = EmailMultiAlternatives(
         subject=subject,
-        body=html_content,
+        body=text_content,
         from_email=settings.DEFAULT_FROM_EMAIL,
         to=[booking.email],
     )
 
-    email.attach_alternative(text_content, 'text/plain')
+    email.attach_alternative(html_content, 'text/html')
 
     email.send()
 
