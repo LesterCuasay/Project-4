@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required, user_passes_test
-from django.core.mail import send_mail
+from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.conf import settings
 from django.views import View
@@ -127,7 +127,8 @@ def delete_booking(request, booking_id):
 def send_booking_confirmation_email(booking):
     user = booking.user
     subject = "Booking Confirmation"
-    template_name = 'booking_confirmation_email.html'
+    text_template = "bookings/booking_confirmation_email.txt"
+    html_template = "bookings/booking_confirmation_email.html"
 
     context = {
         'username': user.username,
@@ -135,15 +136,19 @@ def send_booking_confirmation_email(booking):
         'time': booking.time,
     }
 
-    email_body = render_to_string(template_name, context)
+    text_content = render_to_string(text_template, context)
+    html_content = render_to_string(html_template, context)
 
-    send_mail(
-        subject,
-        email_body,
-        settings.DEFAULT_FROM_EMAIL,
-        [user.email],
-        fail_silently=False,
+    email = EmailMultiAlternatives(
+        subject=subject,
+        body=text_content,
+        from_email=settings.DEFAULT_FROM_EMAIL,
+        to=[user.email],
     )
+
+    email.attach_alternative(html_content, 'text/html')
+
+    email.send()
 
 # def send_booking_confirmation_email(booking):
 #     user = booking.user
