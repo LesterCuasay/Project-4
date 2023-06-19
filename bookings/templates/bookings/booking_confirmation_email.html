@@ -3,10 +3,11 @@
 {% load i18n %}
 
 {% block head_title %}{% trans "Thank you!" %}{% endblock %}
-{% block hero_title %}<h1>{% trans "Dear {{ booking.name }}, your booking has been confirmed!" %}</h1>{% endblock %}
-{% block hero_description %}<p>Here are your booking details as follows:</p>{% endblock %}
-{% block hero_description1 %}<p>Date: {{ booking.date }}</p>{% endblock %}
-{% block hero_description2 %}<p>Time: {{ booking.time | time:"H:i" }}</p>{% endblock %}
+{% block hero_title %}<h1 class="text-white">{% trans "Dear {{ booking.name }}, your booking has been confirmed!" %}</h1>{% endblock %}
+{% block hero_description %}<p class="text-white">Here are your booking details as follows:</p>{% endblock %}
+{% block hero_description1 %}<p class="text-white">Date: {{ booking.date }}</p>{% endblock %}
+{% block hero_description2 %}<p class="text-white">Time: {{ booking.time | time:"H:i" }}</p>{% endblock %}
+{% block hero_description3 %}<p class="text-white">Thank you for booking with us!</p>{% endblock %}
 
 {% block content %}
 
