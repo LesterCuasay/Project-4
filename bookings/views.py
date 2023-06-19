@@ -143,7 +143,7 @@ def send_booking_confirmation_email(booking):
         subject=subject,
         body=text_content,
         from_email=settings.DEFAULT_FROM_EMAIL,
-        to=[user.email],
+        to=[booking.email],
     )
 
     email.attach_alternative(html_content, 'text/html')
