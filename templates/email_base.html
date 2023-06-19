@@ -13,12 +13,23 @@
     <title>{% block head_title %}{% trans "Coders Cave" %}{% endblock %}</title>
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Neuton:wght@200&family=Poppins&display=swap');
+
+        body {
+            height: 100% !important;
+            width: 100% !important;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        p {
+            font-family: 'Neuton', sans-serif;
+            font-size: 1.2rem;
+        }
+
         .hero-image {
             background-image: url(https://res.cloudinary.com/dloyfqzja/image/upload/v1683293899/images/hero-image_g0x3lg.jpg);
-            height: 400px;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+            height: auto;
+            line-height: 100%;
             position: relative;
         }
 
