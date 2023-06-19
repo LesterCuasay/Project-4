@@ -133,7 +133,7 @@ def send_booking_confirmation_email(booking):
     context = {
         'username': user.username,
         'date': booking.date.strftime('%d-%m-%Y'),
-        'time': booking.time,
+        'time': booking.time.strftime('%H:%M'),
     }
 
     text_content = render_to_string(text_template, context)
