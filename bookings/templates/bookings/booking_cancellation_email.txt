@@ -1,0 +1,5 @@
+Dear {{ username }}, your booking has been cancelled.
+Here are your cancelled booking details as follows:
+Date: {{ date }}
+Time: {{ time }}
+Thank you for using us, We hope to see you soon!
