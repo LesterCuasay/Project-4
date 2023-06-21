@@ -1,0 +1,5 @@
+Dear {{ username }}, your booking has been updated!
+Here are your updated booking details as follows:
+Date: {{ date }}
+Time: {{ time }}
+Thank you for booking with us!
