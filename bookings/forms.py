@@ -61,6 +61,8 @@ class BookingTableForm(forms.ModelForm):
                     "class": "form-control",
                     "style": "max-width: 300px",
                     "placeholder": "Phone Number",
+                    "pattern": "[0-9]{11}",
+                    "title": "Please enter 11 digits for the phone number"
                 }
             ),
             "number_of_people": NumberInput(
