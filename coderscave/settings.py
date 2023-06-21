@@ -96,6 +96,9 @@ ACCOUNT_FORMS = {
     'reset_password_from_key': 'home.forms.CustomResetKeyForm'
     }
 
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
