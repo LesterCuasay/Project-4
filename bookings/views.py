@@ -90,7 +90,7 @@ def update_booking(request, booking_id):
         if booking_form.is_valid():
             booking_form.save()
 
-            send_update_confirmation_email(update)
+            send_update_confirmation_email(booking)
 
             messages.success(request, "Table updated successfully!")
             return redirect("view_booking")
@@ -118,7 +118,7 @@ def delete_booking(request, booking_id):
     if request.method == "POST":
         booking.delete()
 
-        send_cancellation_confirmation_email(cancel)
+        send_cancellation_confirmation_email(booking)
 
         return redirect("view_booking")
 
@@ -163,7 +163,7 @@ def send_booking_confirmation_email(booking):
     email.send()
 
 
-def send_update_confirmation_email(update):
+def send_update_confirmation_email(booking):
     """
     When a booking is updated, the user will recieve an email
     containing the username, date and time of the completed form.
@@ -196,7 +196,7 @@ def send_update_confirmation_email(update):
     email.send()
 
 
-def send_cancellation_confirmation_email(cancel):
+def send_cancellation_confirmation_email(booking):
     """
     When a booking is cancelled, the user will recieve an email
     containing the username, date and time of the completed form.

@@ -33,7 +33,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = development
 
-ALLOWED_HOSTS = ['coders-cave-project-4.herokuapp.com', 'localhost', '8000-lestercuasay-project4-bayguw5wh0f.ws-eu100.gitpod.io']
+ALLOWED_HOSTS = [
+    'coders-cave-project-4.herokuapp.com',
+    'localhost',
+    '8000-lestercuasay-project4-syc6tht3svf.ws-eu100.gitpod.io'
+]
 
 
 # Application definition
