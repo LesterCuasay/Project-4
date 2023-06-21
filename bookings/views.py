@@ -196,18 +196,17 @@ def send_update_confirmation_email(update):
     email.send()
 
 
-
-def send_cancellation_confirmation_email(update):
+def send_cancellation_confirmation_email(cancel):
     """
-    When a booking is updated, the user will recieve an email
+    When a booking is cancelled, the user will recieve an email
     containing the username, date and time of the completed form.
     The email template sent will be the html version, but if
     it cannot be rendered it will render the txt file instead.
     """
     user = booking.user
     subject = "Booking Update Confirmation"
-    text_template = "bookings/booking_updated_email.txt"
-    html_template = "bookings/booking_updated_email.html"
+    text_template = "bookings/booking_cancellation_email.txt"
+    html_template = "bookings/booking_cancellation_email.html"
 
     context = {
         'username': user.username,
