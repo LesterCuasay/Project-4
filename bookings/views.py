@@ -90,6 +90,8 @@ def update_booking(request, booking_id):
         if booking_form.is_valid():
             booking_form.save()
 
+            send_update_confirmation_email(update)
+
             messages.success(request, "Table updated successfully!")
             return redirect("view_booking")
 
@@ -115,6 +117,9 @@ def delete_booking(request, booking_id):
 
     if request.method == "POST":
         booking.delete()
+
+        send_cancellation_confirmation_email(cancel)
+
         return redirect("view_booking")
 
     context = {
@@ -125,6 +130,13 @@ def delete_booking(request, booking_id):
 
 
 def send_booking_confirmation_email(booking):
+    """
+    When a booking is made, the user will recieve an email
+    containing the username, date and time of the completed form.
+    The email template sent will be the html version, but if
+    it cannot be rendered it will render the txt file instead.
+    """
+
     user = booking.user
     subject = "Booking Confirmation"
     text_template = "bookings/booking_confirmation_email.txt"
@@ -150,23 +162,69 @@ def send_booking_confirmation_email(booking):
 
     email.send()
 
-# def send_booking_confirmation_email(booking):
-#     user = booking.user
-#     subject = "Booking Confirmation"
-#     message = (
-#         f"Dear {user.username}, your booking has been confirmed!\n"
-#         f"Here are your booking details as follows:\n"
-#         f"{booking.date.strftime('%d-%m-%Y')}\n"
-#         f"{booking.time}"
-#     )
 
-#     send_mail(
-#         subject,
-#         message,
-#         settings.DEFAULT_FROM_EMAIL,
-#         [user.email],
-#         fail_silently=False,
-#     )
+def send_update_confirmation_email(update):
+    """
+    When a booking is updated, the user will recieve an email
+    containing the username, date and time of the completed form.
+    The email template sent will be the html version, but if
+    it cannot be rendered it will render the txt file instead.
+    """
+    user = booking.user
+    subject = "Booking Update Confirmation"
+    text_template = "bookings/booking_updated_email.txt"
+    html_template = "bookings/booking_updated_email.html"
+
+    context = {
+        'username': user.username,
+        'date': booking.date.strftime('%d-%m-%Y'),
+        'time': booking.time.strftime('%H:%M'),
+    }
+
+    text_content = render_to_string(text_template, context)
+    html_content = render_to_string(html_template, context)
+
+    email = EmailMultiAlternatives(
+        subject=subject,
+        body=text_content,
+        from_email=settings.DEFAULT_FROM_EMAIL,
+        to=[booking.email],
+    )
+
+    email.attach_alternative(html_content, 'text/html')
+
+    email.send()
 
 
 
+def send_cancellation_confirmation_email(update):
+    """
+    When a booking is updated, the user will recieve an email
+    containing the username, date and time of the completed form.
+    The email template sent will be the html version, but if
+    it cannot be rendered it will render the txt file instead.
+    """
+    user = booking.user
+    subject = "Booking Update Confirmation"
+    text_template = "bookings/booking_updated_email.txt"
+    html_template = "bookings/booking_updated_email.html"
+
+    context = {
+        'username': user.username,
+        'date': booking.date.strftime('%d-%m-%Y'),
+        'time': booking.time.strftime('%H:%M'),
+    }
+
+    text_content = render_to_string(text_template, context)
+    html_content = render_to_string(html_template, context)
+
+    email = EmailMultiAlternatives(
+        subject=subject,
+        body=text_content,
+        from_email=settings.DEFAULT_FROM_EMAIL,
+        to=[booking.email],
+    )
+
+    email.attach_alternative(html_content, 'text/html')
+
+    email.send()
