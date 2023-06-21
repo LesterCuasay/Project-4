@@ -40,6 +40,19 @@
             padding: 1.875rem;
         }
 
+        .heading {
+            background-color: #343a40;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .heading-text {
+            text-align: center;
+            font-size: 2rem;
+            color: #fff;
+            letter-spacing: 0.3rem;
+        }
+
         .hero-image {
             width: 100%;
             max-width: 600px;
@@ -62,7 +75,7 @@
         }
 
         @media (max-width: 600px) {
-            .hero-text h1 {
+            .hero-text h2 {
                 font-size: 1.5rem;
             }
 
@@ -98,7 +111,13 @@
             color: #fff;
         }
 
-        .footer-copyright a:hover {
+        .heading-text a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .footer-copyright a:hover,
+        .heading-text a:hover {
             color: #6c757d;
         }
     </style>
@@ -108,12 +127,21 @@
 <body>
 
     <center class="container">
+        <table class="heading">
+            <tr>
+                <td>
+                    <div class="heading-text">
+                        <h1><a href="https://coders-cave-project-4.herokuapp.com/" target="_blank" rel="nofollow">Coderscave</a></h1>
+                    </div>
+                </td>
+            </tr>
+        </table>
         <table class="hero-image" width:"100%">
             <tr>
                 <td>
                     <div class="hero-text">
                         {% block hero_title %}
-                        <h1>Welcome to Coders Cave!</h1>
+                        <h2>Welcome to Coders Cave!</h2>
                         {% endblock %}
                         {% block hero_description %}
                         <p>Come and join us and relax!</p>
