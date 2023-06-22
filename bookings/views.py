@@ -49,7 +49,6 @@ def is_admin(user):
 
 
 @user_passes_test(is_admin)
-@login_required
 def view_all_bookings(request):
     """
     Allows the admin to view all the bookings made.
@@ -67,7 +66,7 @@ def view_all_bookings(request):
 
 
 def error_403(request, exception):
-    return render(request, '403.html')
+    return render(request, '403.html', status=403)
 
 
 def error_404(request, exception):
