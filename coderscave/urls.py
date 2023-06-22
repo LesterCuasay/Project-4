@@ -25,3 +25,5 @@ urlpatterns = [
     path('book/', include('bookings.urls')),
     path('accounts/', include('allauth.urls')),
 ]
+
+handler403 = 'bookings.views.error_403'
