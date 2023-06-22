@@ -34,3 +34,12 @@ class BookingViewTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response='bookings/bookings.html')
 
+    def test_view_all_bookings_view(self):
+        self.client.login(
+            username="admin",
+            password="adminpassword"
+        )
+        response = self.client.get(reverse('view_all_bookings'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response='bookings/all-bookings.html')
+
