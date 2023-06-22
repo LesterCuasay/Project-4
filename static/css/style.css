@@ -150,7 +150,7 @@ p {
 
 /** Footer **/
 
-body > footer {
+footer {
     position: sticky;
     top: 100vh;
 }
