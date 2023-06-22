@@ -57,4 +57,4 @@ class BookingViewTest(TestCase):
         response = self.client.get(reverse('view_all_bookings'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response='bookings/all-bookings.html')
-
+    
