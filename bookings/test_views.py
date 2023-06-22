@@ -26,6 +26,9 @@ class BookingViewTest(TestCase):
         )
 
     def test_book_table_view(self):
+        """
+        Logs in a test user and checks if they can access the booking form
+        """
         self.client.login(
             username="testuser",
             password="testpassword"
@@ -33,6 +36,15 @@ class BookingViewTest(TestCase):
         response = self.client.get(reverse('book_table'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response='bookings/bookings.html')
+
+    def test_book_table_view_unauthorised(self):
+        """
+        If a user is not logged in, check to see if they are directed
+        back to the login page.
+        """
+        response = self.client.get(reverse('book_table'), follow=True)
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response='account/login.html')
 
     def test_view_all_bookings_view(self):
         self.client.login(
