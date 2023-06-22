@@ -26,7 +26,12 @@ class BookingTableFormTest(TestCase):
         self.assertTrue(form.is_valid())
 
     def test_phone_number_input(self):
-
+        """
+        Test if the phone number input is being valided properly,
+        valid_phone_number test for the correct max_length(11) and returns true
+        invalid_phone_number is set less than the max_length which
+        also returns true.
+        """
         valid_phone_number = "12345678901"
 
         invalid_phone_number = "123456789"
@@ -49,9 +54,7 @@ class BookingTableFormTest(TestCase):
         }
 
         invalid_form = BookingTableForm(data=invalid_form_data)
-        self.assertTrue(invalid_form.is_valid(), invalid_form.errors.as_text())
-
-        print(invalid_form.errors)
+        self.assertTrue(invalid_form.is_valid())
 
     def test_clean_date_future_date(self):
         """
