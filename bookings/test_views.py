@@ -47,6 +47,9 @@ class BookingViewTest(TestCase):
         self.assertTemplateUsed(response='account/login.html')
 
     def test_view_all_bookings_view(self):
+        """
+        Tests if the admin can access the view_all_bookings
+        """
         self.client.login(
             username="admin",
             password="adminpassword"
