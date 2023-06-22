@@ -49,7 +49,6 @@
 
         .heading-text {
             text-align: center;
-            font-size: 2rem;
             color: #fff;
             letter-spacing: 0.3rem;
         }
@@ -75,21 +74,6 @@
             font-weight: bold;
         }
 
-        @media (max-width: 600px) {
-
-            .heading-text h1 {
-                font-size: 1.7rem;
-            }
-
-            .hero-text h2 {
-                font-size: 1.3rem;
-            }
-
-            .hero-text p {
-                font-size: 1rem;
-            }
-        }
-
         .footer {
             background: #343a40;
             color: #fff;
@@ -109,7 +93,8 @@
 
         .footer-copyright {
             text-align: center;
-            margin-bottom: 0.5rem;
+            margin: 1rem;
+            font-size: 1rem;
         }
 
         .footer-copyright a {
@@ -121,11 +106,31 @@
         .heading-text a {
             text-decoration: none;
             color: #fff;
+            font-size: 3.5rem;
         }
 
         .footer-copyright a:hover,
         .heading-text a:hover {
             color: #6c757d;
+        }
+
+        @media (max-width: 600px) {
+
+            .heading-text a {
+                font-size: 2.5rem;
+            }
+
+            .hero-text h2 {
+                font-size: 1.3rem;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+            }
+
+            .footer-copyright {
+                font-size: 0.8rem;
+            }
         }
     </style>
 
@@ -134,7 +139,7 @@
 <body>
 
     <center class="container">
-        <table class="heading">
+        <table class="heading" width:"100%">
             <tr>
                 <td>
                     <div class="heading-text">
