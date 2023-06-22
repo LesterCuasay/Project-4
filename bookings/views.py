@@ -54,7 +54,7 @@ def view_all_bookings(request):
     Allows the admin to view all the bookings made.
     """
     if not request.user.is_superuser:
-        raisePermissionDenied
+        raise PermissionDenied
 
     bookings = BookingForm.objects.all().order_by("-id")
 
