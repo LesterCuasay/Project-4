@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required, user_passes_test
-from django.http import HttpResponseForbidden
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.conf import settings
@@ -61,10 +60,6 @@ def view_all_bookings(request):
     }
 
     return render(request, "bookings/all-bookings.html", context)
-
-
-def permission_not_granted(request, exception):
-    return render(request, '403.html', status=403)
 
 
 @login_required
