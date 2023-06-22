@@ -49,6 +49,7 @@ def is_admin(user):
 
 
 @user_passes_test(is_admin)
+@login_required
 def view_all_bookings(request):
     """
     Allows the admin to view all the bookings made.
