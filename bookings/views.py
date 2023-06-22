@@ -54,7 +54,7 @@ def view_all_bookings(request):
     Allows the admin to view all the bookings made.
     """
     if not request.user.is_superuser:
-        return PermissionDenied
+        raisePermissionDenied
 
     bookings = BookingForm.objects.all().order_by("-id")
 
@@ -63,6 +63,10 @@ def view_all_bookings(request):
     }
 
     return render(request, "bookings/all-bookings.html", context)
+
+
+def error_403(request, exception):
+    return render(request, '403.html')
 
 
 @login_required
