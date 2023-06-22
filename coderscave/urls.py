@@ -27,3 +27,4 @@ urlpatterns = [
 ]
 
 handler403 = 'bookings.views.error_403'
+handler404 = 'bookings.views.error_404'
