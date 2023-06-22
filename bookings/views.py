@@ -92,7 +92,7 @@ def update_booking(request, booking_id):
 
             send_update_confirmation_email(booking)
 
-            messages.success(request, "Table updated successfully!")
+            messages.success(request, "Booking updated successfully!")
             return redirect("view_booking")
 
         else:
