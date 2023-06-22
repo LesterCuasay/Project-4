@@ -29,6 +29,8 @@ class BookingTableFormTest(TestCase):
 
         valid_phone_number = "12345678901"
 
+        invalid_phone_number = "123456789"
+
         form_data = {
             "phone_number": valid_phone_number,
             "email": "john@example.com",
@@ -37,9 +39,19 @@ class BookingTableFormTest(TestCase):
         }
 
         form = BookingTableForm(data=form_data)
-        self.assertTrue(form.is_valid(), form.errors.as_text)
+        self.assertTrue(form.is_valid())
 
-        print(form.errors)
+        invalid_form_data = {
+            "phone_number": invalid_phone_number,
+            "email": "john@example.com",
+            "number_of_people": 5,
+            "time": "12:00",
+        }
+
+        invalid_form = BookingTableForm(data=invalid_form_data)
+        self.assertTrue(invalid_form.is_valid(), invalid_form.errors.as_text())
+
+        print(invalid_form.errors)
 
     def test_clean_date_future_date(self):
         """
