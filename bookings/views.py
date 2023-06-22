@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.core.exceptions import PermissionDenied
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.conf import settings
@@ -52,6 +53,8 @@ def view_all_bookings(request):
     """
     Allows the admin to view all the bookings made.
     """
+    if not request.user.is_superuser:
+        return PermissionDenied
 
     bookings = BookingForm.objects.all().order_by("-id")
 
