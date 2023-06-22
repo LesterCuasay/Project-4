@@ -4,7 +4,7 @@
 
 {% block head_title %}{% trans "Error: 403" %}{% endblock %}
 {% block hero_title %}<h1>{% trans "403" %}</h1>{% endblock %}
-{% block hero_description %}<p>Oops! You shouldn't be here click <a class="secondaryAction" href="{{ index }}">here</a> to get back to the home page!</p>{% endblock %}
+{% block hero_description %}<p>Oops! You shouldn't be here click <a class="secondaryAction" href="{% url 'index' %}">here</a> to get back to the home page!</p>{% endblock %}
 
 {% block content %}
 {% endblock %}
