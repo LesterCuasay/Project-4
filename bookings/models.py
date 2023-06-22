@@ -5,12 +5,30 @@ from datetime import datetime, date, timedelta
 
 
 class BookingForm(models.Model):
-    user = models.ForeignKey(User, null=True, default="", on_delete=models.CASCADE)
-    name = models.CharField(max_length=100, blank=True, verbose_name="Name", default="")
-    email = models.EmailField(verbose_name="Email")
-    phone_number = models.CharField(verbose_name="Phone Number", max_length=11)
+    user = models.ForeignKey(
+        User,
+        null=True,
+        default="",
+        on_delete=models.CASCADE
+    )
+    name = models.CharField(
+        max_length=100,
+        blank=True,
+        verbose_name="Name",
+        default=""
+    )
+    email = models.EmailField(
+        verbose_name="Email"
+    )
+    phone_number = models.CharField(
+        verbose_name="Phone Number",
+        max_length=11
+    )
     number_of_people = models.PositiveIntegerField(
-        validators=[MaxValueValidator(10), MinValueValidator(1)],
+        validators=[
+            MaxValueValidator(10),
+            MinValueValidator(1)
+        ],
         verbose_name="Number of People",
     )
     date = models.DateField(
@@ -23,7 +41,10 @@ class BookingForm(models.Model):
         ],
         help_text="Please select a day from today onwards",
     )
-    time = models.TimeField(null=False, verbose_name="Time")
+    time = models.TimeField(
+        null=False,
+        verbose_name="Time"
+    )
     special_requirements = models.TextField(
         blank=True, verbose_name="Special Requirements"
     )

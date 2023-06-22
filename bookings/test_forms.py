@@ -25,6 +25,22 @@ class BookingTableFormTest(TestCase):
         form = BookingTableForm(data=form_data)
         self.assertTrue(form.is_valid())
 
+    def test_phone_number_input(self):
+
+        valid_phone_number = "12345678901"
+
+        form_data = {
+            "phone_number": valid_phone_number,
+            "email": "john@example.com",
+            "number_of_people": 5,
+            "time": "12:00",
+        }
+
+        form = BookingTableForm(data=form_data)
+        self.assertTrue(form.is_valid(), form.errors.as_text)
+
+        print(form.errors)
+
     def test_clean_date_future_date(self):
         """
         Test if the clean_date function raises an error when date is
