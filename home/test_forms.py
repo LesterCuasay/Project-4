@@ -26,3 +26,14 @@ class CustomFormsTest(TestCase):
         })
 
         self.assertTrue(form.is_valid())
+
+    def test_custom_reset_key_form(self):
+        """
+        Tests if CustomResetKeyForm is working as intended
+        """
+        form = CustomResetKeyForm(data={
+            'password1': 'newpassword1!',
+            'password2': 'newpassword1!'
+        })
+
+        self.assertTrue(form.is_valid())
