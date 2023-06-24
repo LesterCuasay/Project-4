@@ -96,11 +96,15 @@ class BookingViewTest(TestCase):
         """
         Tests if a user can access the update booking page
         """
+        self.client.login(
+            username="testuser",
+            password="testpassword"
+        )
         booking_id = self.booking.id
         update_url = reverse('update_booking', args=[booking_id])
-        response = self.client.get(update_url, follow=True)
+        response = self.client.get(update_url)
 
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response='bookings/update-booking.html')
 
-        
+    
