@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
-from home.forms import CustomLogInForm, CustomSignupForm, CustomResetForm, CustomResetKeyForm
+from home.forms import CustomSignupForm, CustomResetForm, CustomResetKeyForm
 
 
 class CustomFormsTest(TestCase):
