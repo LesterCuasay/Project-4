@@ -118,3 +118,24 @@ class BookingViewTest(TestCase):
 
         self.assertEqual(response.status_code, 302)
         self.assertTemplateUsed(response='account/login')
+
+    def test_update_booking_view_post(self):
+        """
+        Test if a user can update their existing booking,
+        and are redirected back to the view bookings page
+        """
+
+        booking_id = self.booking.id
+        update_url = reverse('update_booking', args=[booking_id])
+        new_date = "2023-07-18"
+        new_time = "12:30"
+
+        response = self.client.post(
+            update_url,
+            {
+                'date': new_date,
+                'time': new_time
+            })
+
+        self.assertEqual(response.status_code, 302)
+        self.assertTemplateUsed(response='view_booking')
