@@ -139,3 +139,18 @@ class BookingViewTest(TestCase):
 
         self.assertEqual(response.status_code, 302)
         self.assertTemplateUsed(response='view_booking')
+
+    def test_delete_booking_view(self):
+        """
+        Tests if a user can access the delete booking page
+        """
+        self.client.login(
+            username="testuser",
+            password="testpassword"
+        )
+        booking_id = self.booking.id
+        delete_url = reverse('delete_booking', args=[booking_id])
+        response = self.client.get(delete_url)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response='bookings/delete-booking.html')
