@@ -41,7 +41,7 @@ class BookingViewTest(TestCase):
     def test_book_table_view_unauthorised(self):
         """
         If a user is not logged in, check to see if they are directed
-        back to the login page.
+        back to the login page
         """
         response = self.client.get(reverse('book_table'), follow=True)
         self.assertEqual(response.status_code, 200)
@@ -86,8 +86,21 @@ class BookingViewTest(TestCase):
     def test_view_booking_view_unauthorised(self):
         """
         If a user is not logged in, check to see if they are directed
-        back to the login page.
+        back to the login page
         """
         response = self.client.get(reverse('view_booking'), follow=True)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response='account/login.html')
+
+    def test_update_booking_view(self):
+        """
+        Tests if a user can access the update booking page
+        """
+        booking_id = self.booking.id
+        update_url = reverse('update_booking', args=[booking_id])
+        response = self.client.get(update_url, follow=True)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response='bookings/update-booking.html')
+
+        
