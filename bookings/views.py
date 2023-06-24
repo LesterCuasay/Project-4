@@ -218,7 +218,7 @@ def send_cancellation_confirmation_email(booking):
     it cannot be rendered it will render the txt file instead.
     """
     user = booking.user
-    subject = "Booking Update Confirmation"
+    subject = "Booking Cancellation Confirmation"
     text_template = "bookings/booking_cancellation_email.txt"
     html_template = "bookings/booking_cancellation_email.html"
 
