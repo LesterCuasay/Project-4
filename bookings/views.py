@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.auth.decorators import login_required, user_passes_test, permission_required  # noqa
 from django.core.exceptions import PermissionDenied
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
@@ -66,10 +66,14 @@ def view_all_bookings(request):
 
 
 def error_403(request, exception):
-    return render(request, '403.html', status=403)
+    return render(request, '403.html')
 
 
 def error_404(request, exception):
+    return render(request, '404.html')
+
+
+def error_500(request, exception):
     return render(request, '404.html')
 
 

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Error: 500" %}{% endblock %}
+{% block hero_title %}<h1>{% trans "500" %}</h1>{% endblock %}
+{% block hero_description %}<p>Oops! Something went wrong click <a class="secondaryAction" href="{% url 'index' %}">here</a> to get back to the home page!</p>{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+
+{% block content %}
+{% endblock %}
