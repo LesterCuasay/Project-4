@@ -4,6 +4,9 @@ from home.forms import CustomLogInForm, CustomSignupForm, CustomResetForm, Custo
 
 
 class CustomFormsTest(TestCase):
+    """
+    Tests if CustomSignupForm is working as intended
+    """
     def test_custom_signup_form(self):
         form = CustomSignupForm(data={
             'username': 'testuser',
@@ -14,3 +17,12 @@ class CustomFormsTest(TestCase):
 
         self.assertTrue(form.is_valid())
 
+    def test_custom_reset_form(self):
+        """
+        Tests if CustomResetForm is working as intended
+        """
+        form = CustomResetForm(data={
+            'email': 'test@example.com',
+        })
+
+        self.assertTrue(form.is_valid())
