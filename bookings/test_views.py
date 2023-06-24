@@ -70,3 +70,15 @@ class BookingViewTest(TestCase):
         )
         response = self.client.get(reverse('view_all_bookings'))
         self.assertRaises(PermissionDenied)
+
+    def test_view_booking_view(self):
+        """
+        Logs in a test user and checks if they can access the booking form
+        """
+        self.client.login(
+            username="testuser",
+            password="testpassword"
+        )
+        response = self.client.get(reverse('view_booking'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response='bookings/my-bookings.html')
