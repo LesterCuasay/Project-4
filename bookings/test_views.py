@@ -1,6 +1,7 @@
 from django.test import TestCase
 from django.urls import reverse
 from django.contrib.auth.models import User
+from django.core.exceptions import PermissionDenied
 from .models import BookingForm
 
 
@@ -58,3 +59,14 @@ class BookingViewTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response='bookings/all-bookings.html')
 
+    def test_view_all_bookings_view_unauthorised(self):
+        """
+        Tests if a normal user can access the view_all_bookings,
+        it should raise error 403
+        """
+        self.client.login(
+            username="testuser",
+            password="testpassword"
+        )
+        response = self.client.get(reverse('view_all_bookings'))
+        self.assertRaises(PermissionDenied)
