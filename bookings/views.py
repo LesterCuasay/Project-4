@@ -234,7 +234,7 @@ def send_cancellation_confirmation_email(booking):
     email = EmailMultiAlternatives(
         subject=subject,
         body=text_content,
-        from_email=settings.DEFAULT_FROM_EMAIL,
+        from_email="Coderscave",
         to=[booking.email],
     )
 
