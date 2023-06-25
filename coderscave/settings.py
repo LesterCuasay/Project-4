@@ -56,7 +56,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'crispy_forms',
-    'star_ratings'
+    'star_ratings',
     'home',
     'bookings',
     'reviews',
