@@ -17,10 +17,10 @@ def create_review(request):
         review_form = BookingReviewForm()
 
     context = {
-        "form": review_form,
+        "review_form": review_form,
     }
 
-    return render(request, "index.html", context)
+    return render(request, "home/index.html", context)
 
 
 def review_success(request):
