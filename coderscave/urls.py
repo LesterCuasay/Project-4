@@ -24,6 +24,7 @@ urlpatterns = [
     path('menu/', Menu.as_view(), name='menu'),
     path('book/', include('bookings.urls')),
     path('accounts/', include('allauth.urls')),
+    path('ratings/', include('star_ratings.urls', namespace='ratings')),
 ]
 
 handler403 = 'bookings.views.error_403'
