@@ -15,4 +15,4 @@ class BookingReview(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
 
     def __str__(self):
-        return {self.author.username}
+        return self.author.username
