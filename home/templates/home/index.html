@@ -44,7 +44,21 @@
         <div class="col card m-5">
             <form action="" method="POST">
                 {% csrf_token %}
-                {{ review_form | crispy }}
+                <div class="form-group">
+                    {{ review_form.email | as_crispy_field }}
+                </div>
+                <div class="form-group">
+                    {{ review_form.comment | as_crispy_field }}
+                </div>
+                <div class="form-group">
+                    {{ review_form.service_rating | as_crispy_field }}
+                </div>
+                <div class="form-group">
+                    {{ review_form.food_rating | as_crispy_field }}
+                </div>
+                <div class="form-group">
+                    {{ review_form.overall_rating | as_crispy_field }}
+                </div>
                 <button type="submit">Submit</button>
             </form>
         </div>
