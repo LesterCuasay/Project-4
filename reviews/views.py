@@ -3,6 +3,7 @@ from .models import BookingReview
 
 
 def create_review(request):
+
     if request.method == "POST":
         author = request.user
         email = request.POST['email']
@@ -13,6 +14,8 @@ def create_review(request):
         email=email,
         comment=comment,
     )
+
+    review.save()
 
     return render('review_success')
 
