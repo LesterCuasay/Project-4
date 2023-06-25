@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def review_success(request):
+    return render('reviews/review-succes.html')
