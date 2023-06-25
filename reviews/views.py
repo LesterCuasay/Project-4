@@ -14,6 +14,8 @@ def create_review(request):
         comment=comment,
     )
 
+    return render('review_success')
+
 
 def review_success(request):
     return render(request, 'reviews/review-success.html')
