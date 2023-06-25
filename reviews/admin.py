@@ -7,7 +7,8 @@ class BookingReviewAdmin(admin.ModelAdmin):
         'author',
         'email',
         'created_at',
-        'overall_rating'
+        'overall_rating',
+        'status',
     )
 
 
