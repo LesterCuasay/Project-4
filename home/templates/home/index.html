@@ -2,6 +2,7 @@
 
 {% block content %}
 
+{% load crispy_forms_tags %}
 
 <!--Card Content-->
 
@@ -35,6 +36,17 @@
             <div class="card-btn">
                 <a href="{% url 'book_table' %}" class="btn btn-secondary text-uppercase">Book Now!</a>
             </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col card m-5">
+            <form action="{% url 'create_review' %}" method="POST">
+                {{ review_form | crispy }}
+                {% csrf_token %}
+                <button type="submit">Submit</button>
+            </form>
         </div>
     </div>
 </div>
