@@ -51,12 +51,15 @@
                     {{ review_form.comment | as_crispy_field }}
                 </div>
                 <div class="form-group">
+                    {{ review_form.service_rating.label_tag }}
                     {{ review_form.service_rating | as_crispy_field }}
                 </div>
                 <div class="form-group">
+                    {{ review_form.food_rating.label_tag }}
                     {{ review_form.food_rating | as_crispy_field }}
                 </div>
                 <div class="form-group">
+                    {{ review_form.overall_rating.label_tag }}
                     {{ review_form.overall_rating | as_crispy_field }}
                 </div>
                 <button type="submit">Submit</button>
