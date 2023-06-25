@@ -1,22 +1,26 @@
 from django.shortcuts import render
 from .models import BookingReview
+from .forms import BookingReviewForm
 
 
 def create_review(request):
     if request.method == "POST":
-        author = request.user
-        email = request.POST['email']
-        comment = request.POST['comment']
+        review_form = BookingReviewForm(request.POST)
 
-    review = BookingReview(
-        author=author,
-        email=email,
-        comment=comment,
-    )
+        if review_form.is_valid():
+            review = review_form.save(commit=False)
+            review.author = request.user
+            review.save()
+            return redirect('review_success')
 
-    review.save()
-    
-    return render('review_success')
+    else:
+        review_form = BookingReviewForm()
+
+    context = {
+        "form": review_form,
+    }
+
+    return render(request, "index.html", context)
 
 
 def review_success(request):
