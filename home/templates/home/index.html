@@ -42,9 +42,9 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col card m-5">
-            <form action="{% url 'create_review' %}" method="POST">
-                {{ review_form | crispy }}
+            <form action="" method="POST">
                 {% csrf_token %}
+                {{ review_form | crispy }}
                 <button type="submit">Submit</button>
             </form>
         </div>
