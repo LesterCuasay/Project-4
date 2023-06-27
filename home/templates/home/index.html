@@ -44,25 +44,27 @@
         <div class="col card m-5">
             <form action="" method="POST">
                 {% csrf_token %}
-                <div class="form-group">
-                    {{ review_form.email | as_crispy_field }}
+                <div class="d-flex">
+                    <div class="review-rating">
+                        {{ review_form.service_rating.label_tag }}
+                        {{ review_form.service_rating | as_crispy_field }}
+                    </div>
+                    <div class="review-rating">
+                        {{ review_form.food_rating.label_tag }}
+                        {{ review_form.food_rating | as_crispy_field }}
+                    </div>
+                    <div class="review-rating">
+                        {{ review_form.overall_rating.label_tag }}
+                        {{ review_form.overall_rating | as_crispy_field }}
+                    </div>
+                    <div class="review">
+                        {{ review_form.email | as_crispy_field }}
+                    </div>
+                    <div class="review">
+                        {{ review_form.comment | as_crispy_field }}
+                    </div>
+                    <button type="submit">Submit</button>
                 </div>
-                <div class="form-group">
-                    {{ review_form.comment | as_crispy_field }}
-                </div>
-                <div class="form-group">
-                    {{ review_form.service_rating.label_tag }}
-                    {{ review_form.service_rating | as_crispy_field }}
-                </div>
-                <div class="form-group">
-                    {{ review_form.food_rating.label_tag }}
-                    {{ review_form.food_rating | as_crispy_field }}
-                </div>
-                <div class="form-group">
-                    {{ review_form.overall_rating.label_tag }}
-                    {{ review_form.overall_rating | as_crispy_field }}
-                </div>
-                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
