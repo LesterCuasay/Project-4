@@ -2,6 +2,7 @@ from django import forms
 from django.forms.widgets import *
 from .models import BookingReview
 from crispy_forms.helper import FormHelper
+from django_starfield import Stars
 
 
 class BookingReviewForm(forms.ModelForm):
@@ -29,15 +30,12 @@ class BookingReviewForm(forms.ModelForm):
         self.fields['comment'].widget = forms.Textarea(attrs={
             'placeholder': 'Add your review here'
         })
-        self.fields['service_rating'].widget = forms.Select(
-            choices=self.RATING_CHOICES,
+        self.fields['service_rating'] = forms.IntegerField(
+            widget=Stars
         )
-        self.fields['service_rating'].initial = "3"
-        self.fields['food_rating'].widget = forms.Select(
-            choices=self.RATING_CHOICES,
+        self.fields['food_rating'] = forms.IntegerField(
+            widget=Stars
         )
-        self.fields['food_rating'].initial = "3"
-        self.fields['overall_rating'].widget = forms.Select(
-            choices=self.RATING_CHOICES,
+        self.fields['overall_rating'] = forms.IntegerField(
+            widget=Stars
         )
-        self.fields['overall_rating'].initial = "3"
