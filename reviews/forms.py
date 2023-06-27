@@ -7,14 +7,6 @@ from django_starfield import Stars
 
 class BookingReviewForm(forms.ModelForm):
 
-    RATING_CHOICES = [
-        ("1", "1"),
-        ("2", "2"),
-        ("3", "3"),
-        ("4", "4"),
-        ("5", "5"),
-    ]
-
     class Meta:
         model = BookingReview
         fields = "__all__"
