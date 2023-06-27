@@ -106,10 +106,14 @@
                     {% for review in reviews %}
                     <div class="col m-5">
                         <div class="reviews-card mb-4">
-                            <div class="card-body">
+                            <div class="card-body text-center">
                                 <h2 class="card-title text-uppercase"> {{ review.author }}</h2>
-                                <p class="card-text">Overall Rating:{{ review.overall_rating }}</p>
+                                <p class="card-text">Service Rating: {{ review.service_rating }}</p>
+                                <p class="card-text">Food Rating: {{ review.food_rating }}</p>
+                                <p class="card-text">Overall Rating: {{ review.overall_rating }}</p>
+                            <div class="reviews-comment">
                                 <p class="card-text">{{ review.comment }}</p>
+                            </div>
                             </div>
                         </div>
                     </div>

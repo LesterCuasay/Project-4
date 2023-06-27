@@ -240,6 +240,16 @@ footer .btn:hover {
     height: 400px;
 }
 
+.reviews-card p {
+    display: inline-block;
+    margin: 4px;
+}
+
+.reviews-comment {
+    text-align: left;
+    margin-top: 2.5rem;
+}
+
 
 
 /** Bookings Page **/
