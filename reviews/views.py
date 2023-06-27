@@ -9,8 +9,10 @@ class Index(View):
 
     def get(self, request, *args, **kwargs):
         review_form = BookingReviewForm()
+        reviews = BookingReview.objects.all()
         context = {
             "review_form": review_form,
+            "reviews": reviews
         }
 
         return render(request, self.template_name, context)
@@ -28,16 +30,6 @@ class Index(View):
         }
 
         return render(request, self.template_name, context)
-
-
-def review_view(request):
-    reviews = BookingReview.objects.all()
-
-    context = {
-        'reviews': reviews
-    }
-
-    return render(request, 'home/index.html', context)
 
 
 def review_success(request):
