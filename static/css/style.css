@@ -226,6 +226,22 @@ footer .btn:hover {
     width: 300px;
 }
 
+.reviews-container {
+    height: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.reviews-card {
+    box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.2);
+    padding: 0;
+    background-color: var(--dark);
+    width: 400px;
+    height: 400px;
+}
+
+
+
 /** Bookings Page **/
 
 .form-group {

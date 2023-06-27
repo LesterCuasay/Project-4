@@ -97,23 +97,29 @@
         </div>
     </div>
 </div>
-<div class="container-fluid p-0">
+<div class="container-fluid d-flex justify-content-center p-0">
     <div class="row m-0">
         <div class="col mb-5">
-            {% if reviews %}
-            <div class="row">
-                {% for review in reviews %}
-                <div class="col m-5">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h2 class="card-title text-uppercase"> {{ review.author }}</h2>
-                            <p class="card-text">Overall Rating:{{ review.overall_rating }}</p>
-                            <p class="card-text">{{ review.comment }}</p>
+            <div class="reviews-container">
+                {% if reviews %}
+                <div class="row">
+                    {% for review in reviews %}
+                    <div class="col m-5">
+                        <div class="reviews-card mb-4">
+                            <div class="card-body">
+                                <h2 class="card-title text-uppercase"> {{ review.author }}</h2>
+                                <p class="card-text">Overall Rating:{{ review.overall_rating }}</p>
+                                <p class="card-text">{{ review.comment }}</p>
+                            </div>
                         </div>
                     </div>
+                    {% if forloop.counter|divisibleby:3 and not forloop.last %}
+                </div>
+                <div class="row">
+                    {% endif %}
+                    {% endfor %}
                 </div>
             </div>
-            {% endfor %}
         </div>
         {% else %}
         <div class="container card mb-5 p-5">
