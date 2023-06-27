@@ -43,7 +43,7 @@ p {
     .hero-text h1 {
         font-size: 1.5rem;
     }
-    
+
     .hero-text p {
         font-size: 1rem;
     }
@@ -52,7 +52,7 @@ p {
 /** Navbar **/
 
 .navbar {
-    position:absolute;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -71,9 +71,7 @@ p {
     text-align: center;
 }
 
-.navbar-dark
-.navbar-nav
-.nav-link {
+.navbar-dark .navbar-nav .nav-link {
     color: var(--white);
 }
 
@@ -84,7 +82,7 @@ p {
 /** Navbar | Media Queries **/
 
 @media (max-width: 991px) {
-    
+
     .dropdown-menu {
         margin: auto;
         text-align: center;
@@ -116,11 +114,11 @@ p {
 }
 
 @media (max-width: 365px) {
-    
+
     .nav-link {
         font-size: 1rem;
     }
-    
+
     .navbar-brand {
         font-size: 1.5rem;
     }
@@ -212,6 +210,10 @@ footer .btn:hover {
     font-size: 1.2rem;
 }
 
+.review {
+    display: flex;
+}
+
 .review-rating {
     margin-bottom: 0.3rem;
 }
@@ -250,6 +252,31 @@ footer .btn:hover {
     margin-top: 2.5rem;
 }
 
+/** Index Media Queries **/
+
+@media (max-width: 991px) {
+
+    .review {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 540px) {
+
+    .reviews-card {
+        width: 300px;
+    }
+}
+
+@media (max-width: 460px) {
+
+    .review input,
+    .review textarea {
+        width: 200px;
+    }
+
+}
 
 
 /** Bookings Page **/
@@ -271,4 +298,3 @@ footer .btn:hover {
     color: var(--secondary);
     text-decoration: none;
 }
-

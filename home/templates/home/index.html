@@ -47,33 +47,35 @@
             <p class="card-text mb-0">Want to leave us a review? Fill this out!</p>
             <form action="" method="POST">
                 {% csrf_token %}
-                <div class="text-center">
-                    <div class="review-rating">
-                        <div class="review-label">
-                            {{ review_form.service_rating.label_tag }}
-                            {{ review_form.service_rating | as_crispy_field }}
+                <div class="row">
+                    <div class="col-lg-4 mt-4 mb-4">
+                        <div class="review-rating">
+                            <div class="review-label">
+                                {{ review_form.service_rating.label_tag }}
+                                {{ review_form.service_rating | as_crispy_field }}
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            <div class="review-label">
+                                {{ review_form.food_rating.label_tag }}
+                                {{ review_form.food_rating | as_crispy_field }}
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            <div class="review-label">
+                                {{ review_form.overall_rating.label_tag }}
+                                {{ review_form.overall_rating | as_crispy_field }}
+                            </div>
                         </div>
                     </div>
-                    <div class="review-rating">
-                        <div class="review-label">
-                            {{ review_form.food_rating.label_tag }}
-                            {{ review_form.food_rating | as_crispy_field }}
+                    <div class="col-lg-8 mt-4 mb-4">
+                        <div class="review">
+                            {{ review_form.email | as_crispy_field }}
                         </div>
-                    </div>
-                    <div class="review-rating">
-                        <div class="review-label">
-                            {{ review_form.overall_rating.label_tag }}
-                            {{ review_form.overall_rating | as_crispy_field }}
+                        <div class="review">
+                            {{ review_form.comment | as_crispy_field }}
                         </div>
-                    </div>
-                    <div class="review">
-                        {{ review_form.email | as_crispy_field }}
-                    </div>
-                    <div class="review">
-                        {{ review_form.comment | as_crispy_field }}
-                    </div>
-                    <div class="form-group">
-                        <div class="card-btn">
+                        <div class="review text-center">
                             <button class="btn btn-secondary text-uppercase" type="submit">Submit</button>
                         </div>
                     </div>
@@ -111,9 +113,9 @@
                                 <p class="card-text">Service Rating: {{ review.service_rating }}</p>
                                 <p class="card-text">Food Rating: {{ review.food_rating }}</p>
                                 <p class="card-text">Overall Rating: {{ review.overall_rating }}</p>
-                            <div class="reviews-comment">
-                                <p class="card-text">{{ review.comment }}</p>
-                            </div>
+                                <div class="reviews-comment">
+                                    <p class="card-text">{{ review.comment }}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
