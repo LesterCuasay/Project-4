@@ -42,6 +42,8 @@
 <div class="container-fluid w-75 d-flex justify-content-center align-items-center">
     <div class="row">
         <div class="col-md-12 card m-5 text-center">
+            <h2 class="card-title text-uppercase mt-5"> Hi, {{ user.get_username }}!</h2>
+            <p class="card-text mb-0">Want to leave us a review? Fill this out!</p>
             <form action="" method="POST">
                 {% csrf_token %}
                 <div class="m-5 text-center">
