@@ -4,7 +4,6 @@
 
 {% load crispy_forms_tags %}
 
-
 <!--Card Content-->
 
 <div class="container-fluid d-flex justify-content-center flex-wrap flex-xl-nowrap">
@@ -103,8 +102,8 @@
 <div class="container-fluid d-flex justify-content-center p-0">
     <div class="row m-0">
         <div class="col mb-5">
+            {% if reviews %}
             <div class="reviews-container">
-                {% if reviews %}
                 <div class="row">
                     {% for review in reviews %}
                     <div class="col m-5">
@@ -126,18 +125,19 @@
                     {% endif %}
                     {% endfor %}
                 </div>
-            </div>
-        </div>
-        {% else %}
-        <div class="container card mb-5 p-5">
-            <div class="row">
-                <div class="col-md-8 mt-3 offset-md-2 text-center">
-                    <h2 class="text-uppercase card-title">There's no reviews yet!</h2>
+                {% else %}
+                <div class="container-fluid card mb-5 p-5">
+                    <div class="row">
+                        <div class="col-lg-12 mt-3 text-center">
+                            <h2 class="text-uppercase card-title">There's no reviews yet!</h2>
+                        </div>
+                    </div>
                 </div>
+                {% endif %}
             </div>
         </div>
-        {% endif %}
     </div>
 </div>
+
 
 {% endblock content %}
