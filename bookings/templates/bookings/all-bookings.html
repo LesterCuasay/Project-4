@@ -24,6 +24,8 @@
                             <p class="card-text text-center">Number of People: {{ booking.number_of_people }}</p>
                         </div>
                         <div class="card-btn">
+                            <a href="{% url 'update_booking' booking.id %}"
+                                class="btn btn-secondary text-uppercase mr-4">Edit</a>
                             <a href="{% url 'delete_booking' booking.id %}"
                                 class="btn btn-secondary text-uppercase">Delete</a>
                         </div>
