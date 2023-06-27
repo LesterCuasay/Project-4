@@ -9,7 +9,7 @@ class Index(View):
 
     def get(self, request, *args, **kwargs):
         review_form = BookingReviewForm()
-        reviews = BookingReview.objects.all()
+        reviews = BookingReview.objects.filter(status=1).order_by('-created_at')
         context = {
             "review_form": review_form,
             "reviews": reviews
