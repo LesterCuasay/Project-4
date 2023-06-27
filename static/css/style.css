@@ -220,7 +220,7 @@ footer .btn:hover {
 
 .review-label label {
     color: var(--white);
-    line-height: 3;
+    line-height: 2;
 }
 
 .review input,
