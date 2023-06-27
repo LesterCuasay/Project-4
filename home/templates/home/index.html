@@ -80,15 +80,15 @@
                 </div>
             </form>
             {% else %}
-            <div class="card mb-4 mt-4 p-5">
+            <div class="container card mb-4 p-5">
                 <div class="row">
                     <div class="col-md-8 mt-3 offset-md-2 text-center">
-                        <h1 class="text-uppercase card-title">You have no bookings!</h1>
-                        <p class="card-text">Book a table with the button below!</p>
+                        <h1 class="text-uppercase card-title">Leave us a review!</h1>
+                        <p class="card-text">Sign in with the button below, if you don't have an account <a class="secondaryAction signup-link" href="{% url 'account_signup' %}">sign up</a> here!</p>
                     </div>
                 </div>
                 <div class="card-btn">
-                    <a href="{% url 'book_table' %}" class="btn btn-secondary text-uppercase">Book Now!</a>
+                    <a href="{% url 'account_login' %}" class="btn btn-secondary text-uppercase">Sign in</a>
                 </div>
             </div>
             {% endif %}
