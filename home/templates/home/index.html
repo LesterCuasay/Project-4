@@ -39,23 +39,29 @@
         </div>
     </div>
 </div>
-<div class="container-fluid">
+<div class="container-fluid w-75 d-flex justify-content-center align-items-center">
     <div class="row">
-        <div class="col card m-5">
+        <div class="col-md-12 card m-5 text-center">
             <form action="" method="POST">
                 {% csrf_token %}
-                <div class="d-flex">
+                <div class="m-5 text-center">
                     <div class="review-rating">
-                        {{ review_form.service_rating.label_tag }}
-                        {{ review_form.service_rating | as_crispy_field }}
+                        <div class="review-label">
+                            {{ review_form.service_rating.label_tag }}
+                            {{ review_form.service_rating | as_crispy_field }}
+                        </div>
                     </div>
                     <div class="review-rating">
-                        {{ review_form.food_rating.label_tag }}
-                        {{ review_form.food_rating | as_crispy_field }}
+                        <div class="review-label">
+                            {{ review_form.food_rating.label_tag }}
+                            {{ review_form.food_rating | as_crispy_field }}
+                        </div>
                     </div>
                     <div class="review-rating">
-                        {{ review_form.overall_rating.label_tag }}
-                        {{ review_form.overall_rating | as_crispy_field }}
+                        <div class="review-label">
+                            {{ review_form.overall_rating.label_tag }}
+                            {{ review_form.overall_rating | as_crispy_field }}
+                        </div>
                     </div>
                     <div class="review">
                         {{ review_form.email | as_crispy_field }}
@@ -63,7 +69,11 @@
                     <div class="review">
                         {{ review_form.comment | as_crispy_field }}
                     </div>
-                    <button type="submit">Submit</button>
+                    <div class="form-group">
+                        <div class="card-btn">
+                            <button class="btn btn-secondary text-uppercase" type="submit">Submit</button>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>

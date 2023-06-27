@@ -212,6 +212,20 @@ footer .btn:hover {
     font-size: 1.2rem;
 }
 
+.review-rating {
+    margin-bottom: 0.3rem;
+}
+
+.review-label label {
+    color: var(--white);
+    line-height: 3;
+}
+
+.review input,
+.review textarea {
+    width: 300px;
+}
+
 /** Bookings Page **/
 
 .form-group {
