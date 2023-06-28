@@ -8,4 +8,9 @@ urlpatterns = [
         views.review_success,
         name="review_success",
     ),
+    path(
+        "draft-reviews",
+        views.view_all_draft_reviews,
+        name="view_all__draft_reviews"
+    )
 ]

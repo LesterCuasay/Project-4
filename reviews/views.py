@@ -47,7 +47,7 @@ class Index(View):
         return render(request, self.template_name, context)
 
 
-def view_all_reviews(request):
+def view_all_draft_reviews(request):
     """
     Allows the admin to view all the draft reviews made
     """
