@@ -64,11 +64,11 @@ def view_all_draft_reviews(request):
         "review_draft": review_draft,
     }
 
-    return render(request, "reviews/view-all-draft-reviews.html", context)
+    return render(request, "reviews/view_all_draft_reviews.html", context)
 
 
 def review_success(request):
     """
     Renders review-sucess.html
     """
-    return render(request, 'reviews/review-success.html')
+    return render(request, 'reviews/review_success.html')

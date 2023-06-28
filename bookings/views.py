@@ -57,7 +57,7 @@ def view_all_bookings(request):
         "bookings": bookings,
     }
 
-    return render(request, "bookings/all-bookings.html", context)
+    return render(request, "bookings/all_bookings.html", context)
 
 
 def error_403(request, exception):
@@ -84,7 +84,7 @@ def view_booking(request):
         "bookings": bookings,
     }
 
-    return render(request, "bookings/my-bookings.html", context)
+    return render(request, "bookings/my_bookings.html", context)
 
 
 @login_required
@@ -117,7 +117,7 @@ def update_booking(request, booking_id):
         "form": booking_form,
     }
 
-    return render(request, "bookings/update-booking.html", context)
+    return render(request, "bookings/update_booking.html", context)
 
 
 @login_required
@@ -142,7 +142,7 @@ def delete_booking(request, booking_id):
         "booking": booking,
     }
 
-    return render(request, "bookings/delete-booking.html", context)
+    return render(request, "bookings/delete_booking.html", context)
 
 
 def send_booking_confirmation_email(booking):
