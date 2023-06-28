@@ -49,7 +49,9 @@ class Index(View):
 
 def view_all_draft_reviews(request):
     """
-    Allows the admin to view all the draft reviews made
+    Allows the admin to view all the draft reviews made,
+    if they are not the superuser they will be redirected to the 
+    403 page.
     """
     if not request.user.is_superuser:
         raise PermissionDenied
