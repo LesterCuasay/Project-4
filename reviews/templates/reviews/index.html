@@ -53,11 +53,11 @@
                             <div class="review-label">
                                 {{ review_form.service_rating.label_tag }}
                                 {{ review_form.service_rating | as_crispy_field }}
-                                <span class="fa fa-star checked" id="first"></span>
-                                <span class="fa fa-star checked" id="second"></span>
-                                <span class="fa fa-star checked" id="third"></span>
-                                <span class="fa fa-star" id="fourth"></span>
-                                <span class="fa fa-star" id="fifth"></span>
+                                <span class="fa fa-star {% if review_form.service_rating >= 1 %}checked{% endif %}"></span>
+                                <span class="fa fa-star {% if review_form.service_rating >= 2 %}checked{% endif %}"></span>
+                                <span class="fa fa-star {% if review_form.service_rating >= 3 %}checked{% endif %}"></span>
+                                <span class="fa fa-star {% if review_form.service_rating >= 4 %}checked{% endif %}"></span>
+                                <span class="fa fa-star {% if review_form.service_rating >= 5 %}checked{% endif %}"></span>
                             </div>
                         </div>
                         <div class="review-rating">

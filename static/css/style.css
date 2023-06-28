@@ -252,10 +252,6 @@ footer .btn:hover {
     margin-top: 2.5rem;
 }
 
-.checked {
-    color: #FFD700;
-}
-
 /** Index Media Queries **/
 
 @media (max-width: 991px) {
