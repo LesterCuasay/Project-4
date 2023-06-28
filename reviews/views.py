@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
 from django.core.exceptions import PermissionDenied
 from .models import BookingReview
@@ -65,6 +65,23 @@ def view_all_draft_reviews(request):
     }
 
     return render(request, "reviews/view_all_draft_reviews.html", context)
+
+
+def publish_reviews(request, review_id):
+    """
+    Allows the admin to publish draft reviews from the
+    view all draft reviews html if they are not the superuser
+    they will be redirect to the 403 page.
+    """
+    if not request.user.is_superuser:
+        raise PermissionDenied
+
+    review_publish = get_object_or_404(BookingReview, id=review_id)
+
+    review_publish.status = 1
+    review_publish.save()
+
+    return redirect('view_all_draft_reviews')
 
 
 def review_success(request):
