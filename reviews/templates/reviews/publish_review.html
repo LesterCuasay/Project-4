@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Publish Review" %}{% endblock %}
+{% block hero_title %}<h1>{% trans "Publish Review" %}</h1>{% endblock %}
+{% block hero_description %}{% endblock %}
+{% block content %}
+
+<div class="container-fluid w-75 card mb-5 mt-5 p-5">
+    <div class="col-md-8 mt-3 offset-md-2 text-center">
+        <h2 class="card-title text-uppercase"> Hi, {{ user.get_username }}!</h2>
+        <p class="card-text mb-4">Are you sure you want to publish this review?</p>
+    </div>
+    <div class="col-md-8 mt-3 offset-md-2 text-center">
+        <h2 class="card-title text-uppercase">{{ review.author }}</h2>
+        <p class="card-text text-center">Service Rating: {{ review.service_rating }}</p>
+        <p class="card-text text-center">Food Rating: {{ review.food_rating }}</p>
+        <p class="card-text text-center">Overall Rating: {{ review.overall_rating }}</p>
+        <h3 class="card-title text-uppercase">Comment:</h3>
+        <p class="card-text text-center">{{ review.comment }}</p>
+    </div>
+    <br>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <div class="card-btn">
+                <button class="btn btn-secondary text-uppercase" type="submit">Publish</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock content %}

@@ -81,7 +81,11 @@ def publish_reviews(request, review_id):
     review_publish.status = 1
     review_publish.save()
 
-    return redirect('view_all_draft_reviews')
+    context = {
+        "review_publish": review_publish,
+    }
+
+    return render(request, "reviews/publish_review.html", context)
 
 
 def review_success(request):
