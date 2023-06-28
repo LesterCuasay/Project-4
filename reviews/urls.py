@@ -11,6 +11,6 @@ urlpatterns = [
     path(
         "draft-reviews",
         views.view_all_draft_reviews,
-        name="view_all__draft_reviews"
+        name="view_all_draft_reviews"
     )
 ]
