@@ -1,4 +1,4 @@
-/** Function for copyright date  */
+// Function for copyright date
 
 function currentYear() {
 
@@ -10,6 +10,7 @@ function currentYear() {
 
 currentYear();
 
+// Event listener for ratings field
 
 document.addEventListener('DOMContentLoaded', function () {
     let starRatings = document.querySelectorAll('.rating-star')
