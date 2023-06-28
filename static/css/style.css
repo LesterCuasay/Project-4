@@ -216,6 +216,11 @@ footer .btn:hover {
 
 .review-rating {
     margin-bottom: 0.3rem;
+    line-height: 3;
+}
+
+.review-rating input {
+    display: none;
 }
 
 .review-label label {
@@ -254,6 +259,11 @@ footer .btn:hover {
 
 .checked {
     color: #FFD700;
+}
+
+.rating-star {
+    font-size: 1.5rem;
+    margin-right: 5px;
 }
 
 /** Index Media Queries **/

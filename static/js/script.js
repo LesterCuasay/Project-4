@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         star.addEventListener('mouseover', function() {
-            let hoverStarValue = star.getAttribute('data-value');
+            let hoverStarValue = this.getAttribute('data-value');
             let stars = Array.from(this.parentNode.children);
 
             stars.forEach(function(star) {
