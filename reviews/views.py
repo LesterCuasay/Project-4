@@ -50,7 +50,7 @@ class Index(View):
 def view_all_draft_reviews(request):
     """
     Allows the admin to view all the draft reviews made,
-    if they are not the superuser they will be redirected to the 
+    if they are not the superuser they will be redirected to the
     403 page.
     """
     if not request.user.is_superuser:
@@ -64,7 +64,7 @@ def view_all_draft_reviews(request):
         "review_draft": review_draft,
     }
 
-    return render(request, "reviews/all-draft-reviews.html", context)
+    return render(request, "reviews/view-all-draft-reviews.html", context)
 
 
 def review_success(request):
