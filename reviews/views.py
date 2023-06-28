@@ -56,12 +56,12 @@ def view_all_draft_reviews(request):
     if not request.user.is_superuser:
         raise PermissionDenied
 
-    reviews = (
+    review_draft = (
             BookingReview.objects.filter(status=0).order_by('-created_at')
         )
 
     context = {
-        "reviews": reviews,
+        "review_draft": review_draft,
     }
 
     return render(request, "reviews/all-draft-reviews.html", context)
