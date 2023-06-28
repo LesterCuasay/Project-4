@@ -7,7 +7,7 @@
 {% block hero_description %}<p>Hi, {{ user.get_username | upper }}! Let's publish these reviews!</p>{% endblock %}
 
 {% block content %}
-<div class="container-fluid p-0">
+<div class="container-fluid p-0 ">
     <div class="row m-0">
         <div class="col mb-5">
             {% if review_draft %}
@@ -16,28 +16,36 @@
                 <div class="col m-5">
                     <div class="card mb-4" style="max-width: 800px;">
                         <div class="card-body text-center">
-                            <h2 class="card-title text-uppercase"> {{ review.author }}</h2>
-                            <p class="card-text">Service Rating: {{ review.service_rating }}</p>
-                            <p class="card-text">Food Rating: {{ review.food_rating }}</p>
-                            <p class="card-text">Overall Rating: {{ review.overall_rating }}</p>
+                            <h2 class="card-title">Review by: {{ review.author | upper }}</h2>
+                            <p class="card-text d-inline m-5">Service Rating: {{ review.service_rating }}</p>
+                            <p class="card-text d-inline m-5">Food Rating: {{ review.food_rating }}</p>
+                            <p class="card-text d-inline m-5">Overall Rating: {{ review.overall_rating }}</p>
                             <div class="reviews-comment">
-                                <p class="card-text">{{ review.comment }}</p>
+                                <h3 class="card-title text-uppercase"> Comment:</h3>
+                                <p class="card-text m-3">{{ review.comment }}</p>
+                            </div>
+                            <div class="card-btn">
+                                <a href="{% url 'publish_reviews' review.id %}"
+                                    class="btn btn-secondary text-uppercase mr-4">Publish</a>
                             </div>
                         </div>
                     </div>
+                    {% if forloop.counter|divisibleby:3 and not forloop.last %}
                 </div>
-                {% if forloop.counter|divisibleby:3 and not forloop.last %}
-            </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
+                <div class="row">
+                    {% endif %}
+                    {% endfor %}
+                </div>
             </div>
             {% else %}
-            <div class="container-fluid card mb-5 p-5">
+            <div class="container card mb-5 mt-5 p-5">
                 <div class="row">
-                    <div class="col-lg-12 mt-3 text-center">
-                        <h2 class="text-uppercase card-title">There's no reviews yet!</h2>
+                    <div class="col-md-8 mt-3 offset-md-2 text-center">
+                        <h1 class="text-uppercase card-title">There is no reviews to publish at the moment...</h1>
                     </div>
+                </div>
+                <div class="card-btn">
+                    <a href="/admin/" class="btn btn-secondary text-uppercase">Unless you don't believe me...</a>
                 </div>
             </div>
             {% endif %}

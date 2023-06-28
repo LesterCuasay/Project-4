@@ -264,6 +264,7 @@ footer .btn:hover {
 .rating-star {
     font-size: 1.5rem;
     margin-right: 5px;
+    cursor: pointer;
 }
 
 /** Index Media Queries **/

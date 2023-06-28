@@ -14,7 +14,7 @@ urlpatterns = [
         name="view_all_draft_reviews"
     ),
     path(
-        "publish-reviews",
+        "publish-reviews/<int:review_id>/",
         views.publish_reviews,
         name="publish_reviews"
     ),
