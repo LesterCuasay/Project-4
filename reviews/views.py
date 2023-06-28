@@ -10,7 +10,7 @@ class Index(View):
     Renders homepage also showing the published reviews
     to all users.
     """
-    template_name = 'home/index.html'
+    template_name = 'reviews/index.html'
 
     def get(self, request, *args, **kwargs):
         """
