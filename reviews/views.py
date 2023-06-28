@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views import View
+from django.core.exceptions import PermissionDenied
 from .models import BookingReview
 from .forms import BookingReviewForm
 
@@ -44,6 +45,24 @@ class Index(View):
         }
 
         return render(request, self.template_name, context)
+
+
+def view_all_reviews(request):
+    """
+    Allows the admin to view all the draft reviews made
+    """
+    if not request.user.is_superuser:
+        raise PermissionDenied
+
+    reviews = (
+            BookingReview.objects.filter(status=0).order_by('-created_at')
+        )
+
+    context = {
+        "reviews": reviews,
+    }
+
+    return render(request, "reviews/all-draft-reviews.html", context)
 
 
 def review_success(request):
