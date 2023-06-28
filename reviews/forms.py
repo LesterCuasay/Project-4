@@ -2,7 +2,6 @@ from django import forms
 from django.forms.widgets import *
 from .models import BookingReview
 from crispy_forms.helper import FormHelper
-from django_starfield import Stars
 
 
 class BookingReviewForm(forms.ModelForm):
@@ -23,15 +22,8 @@ class BookingReviewForm(forms.ModelForm):
             'placeholder': 'Add your review here'
         })
         self.fields['service_rating'] = forms.IntegerField(
-            widget=Stars,
-            required=True
         )
         self.fields['food_rating'] = forms.IntegerField(
-            widget=Stars,
-            required=True
-
         )
         self.fields['overall_rating'] = forms.IntegerField(
-            widget=Stars,
-
         )
