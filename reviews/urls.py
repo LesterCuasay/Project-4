@@ -12,5 +12,10 @@ urlpatterns = [
         "draft-reviews",
         views.view_all_draft_reviews,
         name="view_all_draft_reviews"
-    )
+    ),
+    path(
+        "publish-reviews",
+        views.publish_reviews,
+        name="publish_reviews"
+    ),
 ]
