@@ -35,6 +35,7 @@
                         {% if user.is_superuser %}
                         <a class="dropdown-item" href="/admin/">Admin Panel</a>
                         <a class="dropdown-item" href="{% url 'view_all_bookings' %}">All Bookings</a>
+                        <a class="dropdown-item" href="{% url 'view_all_draft_reviews' %}">All Draft Reviews</a>
                         {% endif %}
                         {% if not user.is_superuser %}
                         <a class="dropdown-item" href="{% url 'view_booking' %}">My Bookings</a>
