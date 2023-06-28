@@ -78,8 +78,14 @@ def publish_reviews(request, review_id):
 
     review_publish = get_object_or_404(BookingReview, id=review_id)
 
-    review_publish.status = 1
-    review_publish.save()
+    if request.method == "POST":
+
+        review_publish.status = 1
+        review_publish.save()
+        return redirect('view_all_draft_reviews')
+
+    else:
+        review_form = BookingReviewForm(instance=review_publish)
 
     context = {
         "review_publish": review_publish,

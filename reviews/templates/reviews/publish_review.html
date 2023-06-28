@@ -13,12 +13,14 @@
         <p class="card-text mb-4">Are you sure you want to publish this review?</p>
     </div>
     <div class="col-md-8 mt-3 offset-md-2 text-center">
-        <h2 class="card-title text-uppercase">{{ review.author }}</h2>
-        <p class="card-text text-center">Service Rating: {{ review.service_rating }}</p>
-        <p class="card-text text-center">Food Rating: {{ review.food_rating }}</p>
-        <p class="card-text text-center">Overall Rating: {{ review.overall_rating }}</p>
-        <h3 class="card-title text-uppercase">Comment:</h3>
-        <p class="card-text text-center">{{ review.comment }}</p>
+        <h2 class="card-title">Review by: {{ review_publish.author | upper }}</h2>
+        <p class="card-text d-inline m-5">Service Rating: {{ review_publish.service_rating }}</p>
+        <p class="card-text d-inline m-5">Food Rating: {{ review_publish.food_rating }}</p>
+        <p class="card-text d-inline m-5">Overall Rating: {{ review_publish.overall_rating }}</p>
+        <br>
+        <br>
+        <h3 class="card-title text-uppercase mt-4">Comment:</h3>
+        <p class="card-text text-left">{{ review_publish.comment }}</p>
     </div>
     <br>
     <form action="" method="post">
