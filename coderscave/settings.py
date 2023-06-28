@@ -36,7 +36,7 @@ DEBUG = development
 ALLOWED_HOSTS = [
     'coders-cave-project-4.herokuapp.com',
     'localhost',
-    '8000-lestercuasay-project4-syc6tht3svf.ws-eu100.gitpod.io'
+    '8000-lestercuasay-project4-syc6tht3svf.ws-eu101.gitpod.io'
 ]
 
 
