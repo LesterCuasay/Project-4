@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
 from django.views import View
 from django.core.exceptions import PermissionDenied
 from .models import BookingReview
@@ -38,6 +39,8 @@ class Index(View):
             review = review_form.save(commit=False)
             review.author = request.user
             review.save()
+
+            messages.success(request, "Review submitted!")
             return redirect('review_success')
 
         context = {
@@ -82,6 +85,8 @@ def publish_reviews(request, review_id):
 
         review_publish.status = 1
         review_publish.save()
+
+        messages.success(request, "Review published!")
         return redirect('view_all_draft_reviews')
 
     else:
@@ -107,6 +112,9 @@ def delete_reviews(request, review_id):
 
     if request.method == "POST":
         review_delete.delete()
+
+        messages.error(request, "Review deleted!")
+        return redirect('view_all_draft_reviews')
 
     context = {
         "review_delete": review_delete
