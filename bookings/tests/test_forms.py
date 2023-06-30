@@ -10,7 +10,7 @@ class BookingTableFormTest(TestCase):
         """
         Test if BookingTableForm validates the provided form data correctly,
         the test creates a dictionary called "form_data"
-        as a sample data for the form.
+        as a sample data for the form
         """
         form_data = {
             "name": "John",
