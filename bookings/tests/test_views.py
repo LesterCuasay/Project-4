@@ -2,7 +2,7 @@ from django.test import TestCase
 from django.urls import reverse
 from django.contrib.auth.models import User
 from django.core.exceptions import PermissionDenied
-from .models import BookingForm
+from bookings.models import BookingForm
 
 
 class BookingViewTest(TestCase):

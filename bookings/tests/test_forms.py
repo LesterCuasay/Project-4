@@ -1,7 +1,7 @@
 from django.test import TestCase
 from datetime import date, timedelta
-from .forms import BookingTableForm
-from .models import BookingForm
+from bookings.forms import BookingTableForm
+from bookings.models import BookingForm
 
 
 class BookingTableFormTest(TestCase):
