@@ -3,7 +3,7 @@
 {% load i18n %}
 
 {% block head_title %}{% trans "Thank you!" %}{% endblock %}
-{% block hero_title %}<h1>Dear {{ username | upper }}, your booking has been confirmed!</h1>{% endblock %}
+{% block hero_title %}<h1>Dear {{ username | capfirst }}, your booking has been confirmed!</h1>{% endblock %}
 {% block hero_description %}<p>Here are your booking details as follows:</p>{% endblock %}
 {% block hero_description1 %}<p>Date: {{ date }}</p>{% endblock %}
 {% block hero_description2 %}<p>Time: {{ time }}</p>{% endblock %}

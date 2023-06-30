@@ -1,4 +1,4 @@
-Dear {{ username | upper }}, your booking has been updated!
+Dear {{ username | capfirst }}, your booking has been updated!
 Here are your updated booking details as follows:
 Date: {{ date }}
 Time: {{ time }}
