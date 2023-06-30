@@ -32,12 +32,12 @@
                             </div>
                         </div>
                     </div>
-                    {% if forloop.counter|divisibleby:3 and not forloop.last %}
                 </div>
-                <div class="row">
-                    {% endif %}
-                    {% endfor %}
-                </div>
+                {% if forloop.counter|divisibleby:3 and not forloop.last %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
             </div>
             {% else %}
             <div class="container card mb-5 mt-5 p-5">

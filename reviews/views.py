@@ -152,7 +152,7 @@ def send_review_confirmation_email(review_publish):
         'food_rating': review_publish.food_rating,
         'overall_rating': review_publish.overall_rating,
         'comment': review_publish.comment,
-        'email': review_publish.email
+        'author': review_publish.author
     }
 
     text_content = render_to_string(text_template, context)
