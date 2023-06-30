@@ -41,3 +41,22 @@ class BookingReviewViewTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response='reviews/index.html')
 
+    def test_view_all_draft_reviews(self):
+        """
+        Logs in admin to check if they can access view all draft reviews,
+        also logs in a normal user to see if they can access the page
+        """
+        self.client.login(
+            username="admin",
+            password="adminpassword",
+        )
+        response = self.client.get(reverse('view_all_draft_reviews'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response='reviews/view_all_draft_reviews.html')
+
+        self.client.login(
+            username="testuser",
+            password="testpassword"
+        )
+        response = self.client.get(reverse('view_all_draft_reviews'))
+        self.assertRaises(PermissionDenied)
