@@ -71,7 +71,7 @@ def publish_reviews(request, review_id):
     """
     Allows the admin to publish draft reviews from the
     view all draft reviews html if they are not the superuser
-    they will be redirect to the 403 page.
+    they will be redirected to the 403 page.
     """
     if not request.user.is_superuser:
         raise PermissionDenied
@@ -92,6 +92,27 @@ def publish_reviews(request, review_id):
     }
 
     return render(request, "reviews/publish_review.html", context)
+
+
+def delete_reviews(request, review_id):
+    """
+    Allows the admin to delete published/draft reviews,
+    if they are not the superuser they will be redirected
+    to the 403 page.
+    """
+    if not request.user.is_superuser:
+        raise PermissionDenied
+
+    review_delete = get_object_or_404(BookingReview, id=review_id)
+
+    if request.method == "POST":
+        review_delete.delete()
+
+    context = {
+        "review_delete": review_delete
+    }
+
+    return render(request, "reviews/delete_review.html", context)
 
 
 def review_success(request):
