@@ -19,7 +19,7 @@ class BookingReviewViewTest(TestCase):
             username="admin",
             password="adminpassword"
         )
-        self.reviewform = BookingReview.objects.create(
+        self.review = BookingReview.objects.create(
             author=self.user,
             email="test@email.com",
             comment="The booking was good",
@@ -60,3 +60,52 @@ class BookingReviewViewTest(TestCase):
         )
         response = self.client.get(reverse('view_all_draft_reviews'))
         self.assertRaises(PermissionDenied)
+
+    def test_view_publish_reviews(self):
+        """
+        Logs in admin to check if they can access publish reviews,
+        also logs in a normal user to see if they can access the page
+        """
+        self.client.login(
+            username="admin",
+            password="adminpassword",
+        )
+        review_id = self.review.id
+        update_url = reverse('publish_reviews', args=[review_id])
+        response = self.client.get(update_url)
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response='reviews/publish_review.html')
+
+        self.client.login(
+            username="testuser",
+            password="testpassword",
+        )
+        review_id = self.review.id
+        update_url = reverse('publish_reviews', args=[review_id])
+        response = self.client.get(update_url)
+        self.assertRaises(PermissionDenied)
+
+    def test_view_delete_reviews(self):
+        """
+        Logs in admin to check if they can access delete reviews,
+        also logs in a normal user to see if they can access the page
+        """
+        self.client.login(
+            username="admin",
+            password="adminpassword",
+        )
+        review_id = self.review.id
+        update_url = reverse('delete_reviews', args=[review_id])
+        response = self.client.get(update_url)
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response='reviews/delete_review.html')
+
+        self.client.login(
+            username="testuser",
+            password="testpassword",
+        )
+        review_id = self.review.id
+        update_url = reverse('delete_reviews', args=[review_id])
+        response = self.client.get(update_url)
+        self.assertRaises(PermissionDenied)
+
