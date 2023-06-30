@@ -1,4 +1,4 @@
-Dear {{ username }}, your booking has been confirmed!
+Dear {{ username | upper }}, your booking has been confirmed!
 Here are your booking details as follows:
 Date: {{ date }}
 Time: {{ time }}

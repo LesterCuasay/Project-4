@@ -1,4 +1,4 @@
-Dear {{ username }}, your booking has been cancelled.
+Dear {{ username | upper }}, your booking has been cancelled.
 Here are your cancelled booking details as follows:
 Date: {{ date }}
 Time: {{ time }}

@@ -1,4 +1,4 @@
-Dear {{ author }}, your review has been published!
+Dear {{ author | upper }}, your review has been published!
 Here are your review details as follows:
 Service Rating: {{ service_rating }}
 Food Rating: {{ food_rating }}
