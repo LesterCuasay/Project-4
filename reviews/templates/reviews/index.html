@@ -132,6 +132,12 @@
                                     <p class="card-text">{{ review.comment }}</p>
                                 </div>
                             </div>
+                            {% if user.is_superuser %}
+                            <div class="card-btn">
+                                <a href="{% url 'delete_reviews' review.id %}"
+                                    class="btn btn-secondary text-uppercase">Delete</a>
+                            </div>
+                            {% endif %}
                         </div>
                     </div>
                     {% if forloop.counter|divisibleby:3 and not forloop.last %}
