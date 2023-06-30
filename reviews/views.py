@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.views import View
 from django.core.exceptions import PermissionDenied
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
+from django.conf import settings
 from .models import BookingReview
 from .forms import BookingReviewForm
 
@@ -159,7 +162,7 @@ def send_review_confirmation_email(review_publish):
         subject=subject,
         body=text_content,
         from_email=settings.DEFAULT_FROM_EMAIL,
-        to=[review.email],
+        to=[review_publish.email],
     )
 
     email.attach_alternative(html_content, 'text/html')

@@ -1,0 +1,16 @@
+{% extends "email_base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Thank you!" %}{% endblock %}
+{% block hero_title %}<h1>Dear {{ email }}, your review has been published!</h1>{% endblock %}
+{% block hero_description %}<p>Here are your review details as follows:</p>{% endblock %}
+{% block hero_description1 %}<p>Service Rating: {{ service_rating }} Food Rating: {{ food_rating }} Overall Rating: {{ overall_rating }}</p>{% endblock %}
+{% block hero_description2 %}<p>Comment: {{ comment }}</p>{% endblock %}
+{% block hero_description3 %}<p>Thank you for leaving us a review!</p>{% endblock %}
+
+{% block content %}
+
+
+
+{% endblock %}

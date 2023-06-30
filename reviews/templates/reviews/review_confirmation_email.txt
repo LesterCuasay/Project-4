@@ -1,0 +1,8 @@
+Dear {{ email }}, your review has been published!
+Here are your review details as follows:
+Service Rating: {{ service_rating }}
+Food Rating: {{ food_rating }}
+Overall Rating: {{ overall_rating }}
+Comment: {{ comment }}
+
+Thank you for leaving us a review!
