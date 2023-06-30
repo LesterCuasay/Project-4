@@ -45,7 +45,7 @@ class Index(View):
 
             messages.success(request, "Review submitted!")
             return redirect('review_success')
-
+    
         context = {
             "review_form": review_form,
         }
