@@ -86,6 +86,8 @@ def publish_reviews(request, review_id):
         review_publish.status = 1
         review_publish.save()
 
+        send_review_confirmation_email(review_publish)
+
         messages.success(request, "Review published!")
         return redirect('view_all_draft_reviews')
 
@@ -128,3 +130,38 @@ def review_success(request):
     Renders review-sucess.html
     """
     return render(request, 'reviews/review_success.html')
+
+
+def send_review_confirmation_email(review_publish):
+    """
+    When a review is published by the admin, the user will recieve
+    an email containing the content of the completed form.
+    The email template sent will be the html version, but if
+    it cannot be rendered it will render the txt file instead.
+    """
+
+    subject = "Review Published"
+    text_template = "reviews/review_confirmation_email.txt"
+    html_template = "reviews/review_confirmation_email.html"
+
+    context = {
+        'service_rating': review_publish.service_rating,
+        'food_rating': review_publish.food_rating,
+        'overall_rating': review_publish.overall_rating,
+        'comment': review_publish.comment,
+        'email': review_publish.email
+    }
+
+    text_content = render_to_string(text_template, context)
+    html_content = render_to_string(html_template, context)
+
+    email = EmailMultiAlternatives(
+        subject=subject,
+        body=text_content,
+        from_email=settings.DEFAULT_FROM_EMAIL,
+        to=[review.email],
+    )
+
+    email.attach_alternative(html_content, 'text/html')
+
+    email.send()
