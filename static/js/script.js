@@ -19,7 +19,11 @@ document.addEventListener('DOMContentLoaded', function () {
         star.addEventListener('click', function () {
             let starValue = this.getAttribute('data-value');
             let fieldName = this.getAttribute('data-name');
-            document.querySelector('input[name="' + fieldName + '"]').value = starValue;
+            let hiddenInput = document.querySelector('input[name="' + fieldName + '"]');
+            if (hiddenInput) {
+                hiddenInput.value = starValue;
+            }
+            console.log('Clicked star: value= ' + starValue + 'name= ' + fieldName);
         });
 
         star.addEventListener('mouseover', function() {
