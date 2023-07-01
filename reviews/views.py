@@ -37,14 +37,22 @@ class Index(View):
         the form will be saved as draft review only an superuser can publish
         the reviews. If the form is not valid it will render the index.html.
         """
-        review_form = BookingReviewForm(request.POST)
         if request.method == "POST":
-            review = review_form.save(commit=False)
-            review.author = request.user
-            review.save()
+            review_form = BookingReviewForm(request.POST)
 
-            messages.success(request, "Review submitted!")
-            return redirect('review_success')
+            if review_form.is_valid():
+                review = review_form.save(commit=False)
+                review.author = request.user
+                review.save()
+
+                messages.success(request, "Review submitted!")
+                return redirect('review_success')
+
+            else:
+                review_form.add_error('service_rating', 'Please select a rating')
+
+        else:
+            review_form = BookingReviewForm
 
         context = {
             "review_form": review_form,
