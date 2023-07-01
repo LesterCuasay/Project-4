@@ -22,11 +22,14 @@ class BookingReviewForm(forms.ModelForm):
             'placeholder': 'Add your review here'
         })
         self.fields['service_rating'] = forms.IntegerField(
+            widget=HiddenInput(),
             required=True,
         )
         self.fields['food_rating'] = forms.IntegerField(
+            widget=HiddenInput(),
             required=True,
         )
         self.fields['overall_rating'] = forms.IntegerField(
+            widget=HiddenInput(),
             required=True,
         )
