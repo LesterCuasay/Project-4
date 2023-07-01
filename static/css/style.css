@@ -240,8 +240,8 @@ footer .btn:hover {
     box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.2);
     padding: 0;
     background-color: var(--dark);
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: auto;
 }
 
 .reviews-card p {
