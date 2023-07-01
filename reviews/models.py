@@ -1,11 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
+from datetime import date
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class BookingReview(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+    date = models.DateField(default=date.today)
     email = models.EmailField()
     comment = models.TextField()
     service_rating = models.IntegerField(default=0)
