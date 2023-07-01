@@ -91,6 +91,9 @@
                     </div>
                     <div class="col-lg-8 mt-4 mb-4">
                         <div class="review">
+                            {{ review_form.date | as_crispy_field }}
+                        </div>
+                        <div class="review">
                             {{ review_form.email | as_crispy_field }}
                         </div>
                         <div class="review">

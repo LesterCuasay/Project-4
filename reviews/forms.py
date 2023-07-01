@@ -15,6 +15,9 @@ class BookingReviewForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_show_labels = False
+        self.fields['date'].widget = forms.DateInput(attrs={
+            'type': 'date'
+        })
         self.fields['email'].widget = forms.EmailInput(attrs={
             'placeholder': 'Email Address'
         })
