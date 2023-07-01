@@ -219,15 +219,6 @@ footer .btn:hover {
     line-height: 3;
 }
 
-.review-rating input {
-    position: relative;
-    z-index: -1;
-    right: 6rem;
-    bottom: 1rem;
-    padding: 0;
-    border: none;
-    width: 1%;
-}
 
 .review-label label {
     color: var(--white);
