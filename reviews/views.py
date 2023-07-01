@@ -48,9 +48,6 @@ class Index(View):
                 messages.success(request, "Review submitted!")
                 return redirect('review_success')
 
-            else:
-                review_form.add_error('service_rating', 'Please select a rating')
-
         else:
             review_form = BookingReviewForm
 

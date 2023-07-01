@@ -23,13 +23,13 @@ class BookingReviewForm(forms.ModelForm):
         })
         self.fields['service_rating'] = forms.IntegerField(
             widget=HiddenInput(),
-            required=True,
+            initial=0,
         )
         self.fields['food_rating'] = forms.IntegerField(
             widget=HiddenInput(),
-            required=True,
+            initial=0,
         )
         self.fields['overall_rating'] = forms.IntegerField(
             widget=HiddenInput(),
-            required=True,
+            initial=0,
         )
