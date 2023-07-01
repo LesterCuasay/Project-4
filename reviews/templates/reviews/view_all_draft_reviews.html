@@ -17,6 +17,9 @@
                     <div class="card mb-4" style="max-width: 800px;">
                         <div class="card-body text-center">
                             <h2 class="card-title">Review by: {{ review.author | upper }}</h2>
+                            <br>
+                            <h3 class="card-title">Date of booking: {{ review.date }}</h3>
+                            <br>
                             <p class="card-text d-inline m-5">Service Rating: {{ review.service_rating }}</p>
                             <p class="card-text d-inline m-5">Food Rating: {{ review.food_rating }}</p>
                             <p class="card-text d-inline m-5">Overall Rating: {{ review.overall_rating }}</p>
