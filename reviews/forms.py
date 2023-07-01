@@ -22,7 +22,8 @@ class BookingReviewForm(forms.ModelForm):
             'placeholder': 'Email Address'
         })
         self.fields['comment'].widget = forms.Textarea(attrs={
-            'placeholder': 'Add your review here'
+            'placeholder': 'Add your review here',
+            'maxlength': '100'
         })
         self.fields['service_rating'] = forms.IntegerField(
             widget=HiddenInput(),
