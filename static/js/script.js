@@ -25,15 +25,5 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             console.log('Clicked star: value= ' + starValue + 'name= ' + fieldName);
         });
-
-        star.addEventListener('mouseover', function() {
-            let hoverStarValue = this.getAttribute('data-value');
-            let stars = Array.from(this.parentNode.children);
-
-            stars.forEach(function(star) {
-                let starValue = star.getAttribute('data-value');
-                star.classList.toggle('checked', starValue <= hoverStarValue);
-            });
-        });
     })
 })

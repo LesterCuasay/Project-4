@@ -49,7 +49,7 @@ class Index(View):
                 return redirect('review_success')
 
         else:
-            review_form = BookingReviewForm
+            review_form = BookingReviewForm()
 
         context = {
             "review_form": review_form,
