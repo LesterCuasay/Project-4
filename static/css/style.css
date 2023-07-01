@@ -254,11 +254,15 @@ footer .btn:hover {
     margin-top: 2.5rem;
 }
 
+.checked {
+    color: #FFD700;
+}
 
 .rating-container {
     display: inline-flex;
     flex-direction: row-reverse;
 }
+
 .rating-star {
     font-size: 1.5rem;
     margin-right: 5px;

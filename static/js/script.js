@@ -23,7 +23,13 @@ document.addEventListener('DOMContentLoaded', function () {
             if (hiddenInput) {
                 hiddenInput.value = starValue;
             }
-            console.log('Clicked star: value= ' + starValue + 'name= ' + fieldName);
+
+            let hoverStarValue = this.getAttribute('data-value');
+            let stars = Array.from(this.parentNode.children);
+            stars.forEach(function(star) {
+                let starValue = star.getAttribute('data-value');
+                star.classList.toggle('checked', starValue <= hoverStarValue);
+            });
         });
     })
 })
