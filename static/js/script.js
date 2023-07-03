@@ -24,7 +24,7 @@ setTimeout(function () {
         alert.close();
     }
 
-}, 3000);
+}, 1000000);
 
 
 // Event listener for ratings field
