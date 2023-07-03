@@ -7,23 +7,25 @@
 {% block hero_description %}{% endblock %}
 {% block content %}
 
-<div class="container-fluid w-75 card mb-5 mt-5 p-5">
+<div class="container-fluid w-75 card mb-5 mt-5 p-md-5">
     <div class="col-md-8 mt-3 offset-md-2 text-center">
-        <h2 class="card-title text-uppercase"> Hi, {{ user.get_username }}!</h2>
+        <h2 class="card-title"> Hi, {{ user.get_username | capfirst }}!</h2>
         <p class="card-text mb-4">Are you sure you want to delete this review?</p>
     </div>
-    <div class="col-md-8 mt-3 offset-md-2 text-center">
-        <h2 class="card-title">Review by: {{ review_delete.author | upper }}</h2>
-        <br>
-        <h3 class="card-title">Date of booking: {{ review_delete.date }}</h3>
-        <br>
-        <p class="card-text d-inline m-5">Service Rating: {{ review_delete.service_rating }}</p>
-        <p class="card-text d-inline m-5">Food Rating: {{ review_delete.food_rating }}</p>
-        <p class="card-text d-inline m-5">Overall Rating: {{ review_delete.overall_rating }}</p>
-        <br>
-        <br>
-        <h3 class="card-title text-uppercase mt-4">Comment:</h3>
-        <p class="card-text text-left">{{ review_delete.comment }}</p>
+    <div class="col text-center">
+        <div class="card-body">
+            <h2 class="card-title">Review by: <br> {{ review_delete.author | capfirst }}</h2>
+            <br>
+            <h3 class="card-title">Booking Date: <br> {{ review_delete.date }}</h3>
+            <br>
+            <p class="card-text d-xl-inline mr-xl-3">Service Rating: {{ review_delete.service_rating }}</p>
+            <p class="card-text d-xl-inline mr-xl-3">Food Rating: {{ review_delete.food_rating }}</p>
+            <p class="card-text d-xl-inline mr-xl-3">Overall Rating: {{ review_delete.overall_rating }}</p>
+            <br>
+            <h3 class="card-title text-uppercase mt-4">Comment:</h3>
+            <br>
+            <p class="card-text">{{ review_delete.comment }}</p>
+        </div>
     </div>
     <br>
     <form action="" method="post">
