@@ -37,18 +37,6 @@ p {
     color: var(--white);
 }
 
-/** Hero Image | Media Queries **/
-
-@media (max-width: 600px) {
-    .hero-text h1 {
-        font-size: 1.5rem;
-    }
-
-    .hero-text p {
-        font-size: 1rem;
-    }
-}
-
 /** Navbar **/
 
 .navbar {
@@ -79,52 +67,6 @@ p {
     left: -20%;
 }
 
-/** Navbar | Media Queries **/
-
-@media (max-width: 991px) {
-
-    .dropdown-menu {
-        margin: auto;
-        text-align: center;
-    }
-
-    .navbar-nav {
-        flex-direction: row;
-        margin-right: 5px;
-        justify-content: center;
-    }
-
-    .navbar-nav .nav-item {
-        display: inline-block;
-        width: 100%;
-    }
-
-    .navbar-nav .nav-item .nav-link {
-        display: block;
-    }
-}
-
-@media (max-width: 425px) {
-
-    .dropdown-menu {
-        font-size: 0.8rem;
-        position: absolute !important;
-        left: -50% !important;
-    }
-}
-
-@media (max-width: 365px) {
-
-    .nav-link {
-        font-size: 1rem;
-    }
-
-    .navbar-brand {
-        font-size: 1.5rem;
-    }
-}
-
-
 /** Message Alerts **/
 
 .alert {
@@ -148,30 +90,6 @@ p {
     text-align: center;
     list-style-type: none;
 
-}
-
-/** Message Alerts Media Queries **/
-
-@media (max-width: 768px) {
-
-    .alert {
-        position: fixed;
-        top: 15%;
-        left: 35%;
-
-        @media (max-width: 600px) {
-            left: 30%;
-
-            @media (max-width: 475px) {
-                left: 20%;
-
-                @media (max-width: 375px) {
-                    left: 10%;
-                    font-size: 0.8rem;
-                }
-            }
-        }
-    }
 }
 
 /** Footer **/
@@ -298,41 +216,12 @@ footer .btn:hover {
     color: #FFD700;
 }
 
-/** Index Media Queries **/
-
-@media (max-width: 991px) {
-
-    .review {
-        justify-content: center;
-        align-items: center;
-    }
-}
-
-@media (max-width: 540px) {
-
-    .reviews-card {
-        width: 300px;
-    }
-}
-
-@media (max-width: 460px) {
-
-    .review input,
-    .review textarea {
-        width: 200px;
-    }
-
-}
-
-
-/** Bookings Page **/
+/** Bookings Page/Login Page/Signup Page/Logout Page **/
 
 .form-group {
     display: flex;
     justify-content: center;
 }
-
-/** Login Page/Signup Page/Logout Page **/
 
 .secondaryAction {
     color: var(--white);
@@ -343,4 +232,115 @@ footer .btn:hover {
 .secondaryAction:hover {
     color: var(--secondary);
     text-decoration: none;
+}
+
+/** Media Queries **/
+
+
+/** Hero Image | Media Queries **/
+
+@media only screen and (max-width: 600px) {
+    .hero-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+}
+
+/** Navbar | Media Queries **/
+
+@media only screen and (max-width: 991px) {
+
+    .dropdown-menu {
+        margin: auto;
+        text-align: center;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+        margin-right: 5px;
+        justify-content: center;
+    }
+
+    .navbar-nav .nav-item {
+        display: inline-block;
+        width: 100%;
+    }
+
+    .navbar-nav .nav-item .nav-link {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+
+    .dropdown-menu {
+        font-size: 0.8rem;
+        position: absolute !important;
+    }
+}
+
+@media only screen and (max-width: 365px) {
+
+    .nav-link {
+        font-size: 1rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+
+    .dropdown-item {
+    }
+}
+
+/** Message Alerts Media Queries **/
+
+@media only screen and (max-width: 768px) {
+
+    .alert {
+        position: fixed;
+        top: 15%;
+        left: 35%;
+
+        @media (max-width: 600px) {
+            left: 30%;
+
+            @media (max-width: 475px) {
+                left: 20%;
+
+                @media (max-width: 375px) {
+                    left: 10%;
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}
+
+/** Index Media Queries **/
+
+@media only screen and (max-width: 991px) {
+
+    .review {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+
+    .reviews-card {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+
+    .review input,
+    .review textarea {
+        width: 200px;
+    }
 }
