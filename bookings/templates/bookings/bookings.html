@@ -11,7 +11,7 @@
 <div class="container-fluid w-75 card mb-5 mt-5 p-5">
     {% if user.is_authenticated %}
     <div class="col-md-8 mt-3 offset-md-2 text-center">
-        <h2 class="card-title text-uppercase"> Hi, {{ user.get_username }}!</h2>
+        <h2 class="card-title"> Hi, {{ user.get_username | capfirst }}!</h2>
 
         <p class="card-text mb-4">Please fill out the form below to book a table!</p>
     </div>
