@@ -260,7 +260,6 @@ footer .btn:hover {
 
     .navbar-nav {
         flex-direction: row;
-        margin-right: 5px;
         justify-content: center;
     }
 
@@ -292,7 +291,8 @@ footer .btn:hover {
         font-size: 1.5rem;
     }
 
-    .dropdown-item {
+    .dropdown-menu.show {
+        left: -2.5rem;
     }
 }
 
