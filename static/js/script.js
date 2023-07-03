@@ -5,7 +5,11 @@ function currentYear() {
     let fullYear = new Date();
     let yearNow = fullYear.getFullYear();
 
-    document.getElementById("year").innerHTML = yearNow;
+    let yearElement = document.getElementById("year");
+
+    if (yearElement) {
+        yearElement.innerHTML = yearNow;
+    }
 }
 
 currentYear();
