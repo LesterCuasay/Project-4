@@ -304,20 +304,29 @@ footer .btn:hover {
         position: fixed;
         top: 15%;
         left: 35%;
+    }
+}
 
-        @media (max-width: 600px) {
-            left: 30%;
+@media only screen and (max-width: 600px) {
 
-            @media (max-width: 475px) {
-                left: 20%;
+    .alert {
+        left: 30%;
+    }
+}
 
-                @media (max-width: 375px) {
-                    top: 10%;
-                    left: 15%;
-                    font-size: 0.8rem;
-                }
-            }
-        }
+@media only screen and (max-width: 475px) {
+
+    .alert {
+        left: 20%;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    
+    .alert {
+        top: 10%;
+        left: 15%;
+        font-size: 0.8rem;
     }
 }
 

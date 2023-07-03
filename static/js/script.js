@@ -48,5 +48,5 @@ document.addEventListener('DOMContentLoaded', function () {
                 star.classList.toggle('checked', starValue <= hoverStarValue);
             });
         });
-    })
-})
+    });
+});
