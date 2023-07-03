@@ -71,8 +71,8 @@ class BookingReviewViewTest(TestCase):
             password="adminpassword",
         )
         review_id = self.review.id
-        update_url = reverse('publish_reviews', args=[review_id])
-        response = self.client.get(update_url)
+        publish_url = reverse('publish_reviews', args=[review_id])
+        response = self.client.get(publish_url)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response='reviews/publish_review.html')
 
@@ -81,8 +81,8 @@ class BookingReviewViewTest(TestCase):
             password="testpassword",
         )
         review_id = self.review.id
-        update_url = reverse('publish_reviews', args=[review_id])
-        response = self.client.get(update_url)
+        publish_url = reverse('publish_reviews', args=[review_id])
+        response = self.client.get(publish_url)
         self.assertRaises(PermissionDenied)
 
     def test_view_delete_reviews(self):
@@ -95,8 +95,8 @@ class BookingReviewViewTest(TestCase):
             password="adminpassword",
         )
         review_id = self.review.id
-        update_url = reverse('delete_reviews', args=[review_id])
-        response = self.client.get(update_url)
+        delete_url = reverse('delete_reviews', args=[review_id])
+        response = self.client.get(delete_url)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response='reviews/delete_review.html')
 
@@ -105,7 +105,6 @@ class BookingReviewViewTest(TestCase):
             password="testpassword",
         )
         review_id = self.review.id
-        update_url = reverse('delete_reviews', args=[review_id])
-        response = self.client.get(update_url)
+        delete_url = reverse('delete_reviews', args=[review_id])
+        response = self.client.get(delete_url)
         self.assertRaises(PermissionDenied)
-
