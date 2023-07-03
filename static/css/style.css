@@ -150,6 +150,30 @@ p {
 
 }
 
+/** Message Alerts Media Queries **/
+
+@media (max-width: 768px) {
+
+    .alert {
+        position: fixed;
+        top: 15%;
+        left: 35%;
+
+        @media (max-width: 600px) {
+            left: 30%;
+
+            @media (max-width: 475px) {
+                left: 20%;
+
+                @media (max-width: 375px) {
+                    left: 10%;
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}
+
 /** Footer **/
 
 footer {
@@ -270,7 +294,7 @@ footer .btn:hover {
 }
 
 .rating-star:hover,
-.rating-star:hover ~ .rating-star {
+.rating-star:hover~.rating-star {
     color: #FFD700;
 }
 
