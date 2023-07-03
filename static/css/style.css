@@ -182,7 +182,7 @@ footer .btn:hover {
     box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.2);
     padding: 0;
     background-color: var(--dark);
-    width: 500px;
+    max-width: 500px;
     height: auto;
 }
 
@@ -312,7 +312,8 @@ footer .btn:hover {
                 left: 20%;
 
                 @media (max-width: 375px) {
-                    left: 10%;
+                    top: 10%;
+                    left: 15%;
                     font-size: 0.8rem;
                 }
             }
