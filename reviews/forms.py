@@ -9,7 +9,7 @@ class BookingReviewForm(forms.ModelForm):
     class Meta:
         model = BookingReview
         fields = "__all__"
-        exclude = ["author", "status",]
+        exclude = ["author", "status"]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
