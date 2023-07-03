@@ -2,7 +2,9 @@ from django.test import TestCase
 from django.urls import reverse
 from django.contrib.auth.models import User
 from django.core.exceptions import PermissionDenied
+from django.core import mail
 from bookings.models import BookingForm
+from bookings.views import send_booking_confirmation_email, send_update_confirmation_email, send_cancellation_confirmation_email  # noqa
 
 
 class BookingViewTest(TestCase):
@@ -23,7 +25,8 @@ class BookingViewTest(TestCase):
             user=self.user,
             date="2023-06-18",
             time="12:00",
-            number_of_people=4
+            number_of_people=4,
+            email="test@test.com"
         )
 
     def test_book_table_view(self):
@@ -46,6 +49,28 @@ class BookingViewTest(TestCase):
         response = self.client.get(reverse('book_table'), follow=True)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response='account/login.html')
+
+    def test_booking_view_post(self):
+        """
+        Test if a user can make a new booking and are redirected
+        back to the view bookings page.
+        It also tests if the user will get a booking
+        confirmation email
+        """
+
+        booking_id = self.booking.id
+
+        response = self.client.get(booking_id)
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response='view_booking')
+
+        booking = BookingForm.objects.get(id=booking_id)
+
+        send_booking_confirmation_email(booking)
+
+        self.assertEqual(len(mail.outbox), 1)
+        self.assertEqual(mail.outbox[0].subject, 'Booking Confirmation')
+        self.assertEqual(mail.outbox[0].to, ['test@test.com'])
 
     def test_view_all_bookings_view(self):
         """
@@ -122,7 +147,9 @@ class BookingViewTest(TestCase):
     def test_update_booking_view_post(self):
         """
         Test if a user can update their existing booking,
-        and are redirected back to the view bookings page
+        and are redirected back to the view bookings page.
+        It also tests if the user will get a update
+        confirmation email
         """
 
         booking_id = self.booking.id
@@ -139,6 +166,14 @@ class BookingViewTest(TestCase):
 
         self.assertEqual(response.status_code, 302)
         self.assertTemplateUsed(response='view_booking')
+
+        booking = BookingForm.objects.get(id=booking_id)
+
+        send_update_confirmation_email(booking)
+
+        self.assertEqual(len(mail.outbox), 1)
+        self.assertEqual(mail.outbox[0].subject, 'Booking Update Confirmation')
+        self.assertEqual(mail.outbox[0].to, ['test@test.com'])
 
     def test_delete_booking_view(self):
         """
@@ -166,3 +201,30 @@ class BookingViewTest(TestCase):
 
         self.assertEqual(response.status_code, 302)
         self.assertTemplateUsed(response='account/login')
+
+    def test_delete_booking_view_post(self):
+        """
+        Test if a user can delete their existing booking,
+        and are redirected back to the view bookings page.
+        It also tests if the user will get a cancellation
+        confirmation email
+        """
+
+        booking_id = self.booking.id
+        delete_url = reverse('delete_booking', args=[booking_id])
+
+        response = self.client.get(delete_url)
+        self.assertEqual(response.status_code, 302)
+        self.assertTemplateUsed(response='view_booking')
+
+        booking = BookingForm.objects.get(id=booking_id)
+        booking.delete()
+
+        send_cancellation_confirmation_email(booking)
+
+        self.assertEqual(len(mail.outbox), 1)
+        self.assertEqual(
+            mail.outbox[0].subject,
+            'Booking Cancellation Confirmation'
+        )
+        self.assertEqual(mail.outbox[0].to, ['test@test.com'])
