@@ -14,6 +14,15 @@ function currentYear() {
 
 currentYear();
 
+// Function for message alerts
+
+setTimeout(function () {
+    let messages = document.getElementById("msg");
+    let alert = new bootstrap.Alert(messages);
+    alert.close();
+}, 3000);
+
+
 // Event listener for ratings field
 
 document.addEventListener('DOMContentLoaded', function () {
