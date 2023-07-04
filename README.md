@@ -20,7 +20,8 @@ The deployed project can be found here - [Coderscave](https://coders-cave-projec
     - [Wireframes](#wireframes)
     - [Colour Scheme](#colour-scheme)
     - [Typography](#typography)
-- [](#)
+- [Features](#features)
+    - [Logo and Navigation](#logo-and-navigation)
 - [](#)
 - [](#)
 - [](#)
@@ -103,3 +104,27 @@ This is used for the text colour so that the content can be easily seen in both 
 For the website, I am using [Google Font](https://fonts.google.com/) I decided to use Poppins for the heading text of the website and Neuton for the body text.
 
 At the beginning I wanted to implement Poppins as the font as it is easy to read, I found the font pairings using [Fontjoy](https://fontjoy.com/).
+
+## __Features__
+
+### __Logo and Navigation__
+![navbar](static/img/testing/navbar.png)
+- The logo and navigation bar appears on every page of the website, Each of the links will send the user to the targeted pages. After the user logs in the "login" text will be replaced with "Hi, (user)!" and a dropdown element will be accessible to see role-based functionality.
+
+Normal user:
+
+As a normal user they will be able to access "My Bookings" which when they book a table, all their bookings will be shown here. Also a log out functionality is available.
+
+![normaluser](static/img/testing/user-logged-in.png)
+
+Superuser: 
+
+As a superuser the drop down changes to be able to access the "Admin Panel" from the website instead of having to type "/admin" into the url.
+
+"All Bookings" is the path to see all the bookings made by any user.
+
+"All Draft Review" is the path to see all the draft reviews submitted by users, in this page the admin and only the admin can publish the reviews.
+
+![adminuser](static/img/testing/admin-logged-in.png)
+
+
