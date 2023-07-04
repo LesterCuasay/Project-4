@@ -2,6 +2,7 @@ from django.test import TestCase
 from reviews.forms import BookingReviewForm
 from django.contrib.auth.models import User
 
+
 class BookingReviewFormTest(TestCase):
 
     def test_form_validation(self):

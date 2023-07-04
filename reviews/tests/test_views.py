@@ -2,7 +2,9 @@ from django.test import TestCase
 from django.urls import reverse
 from django.contrib.auth.models import User
 from django.core.exceptions import PermissionDenied
+from django.core import mail
 from reviews.models import BookingReview
+from reviews.views import send_review_confirmation_email
 
 
 class BookingReviewViewTest(TestCase):
@@ -21,6 +23,7 @@ class BookingReviewViewTest(TestCase):
         )
         self.review = BookingReview.objects.create(
             author=self.user,
+            date="2023-06-18",
             email="test@email.com",
             comment="The booking was good",
             service_rating=4,
@@ -108,3 +111,31 @@ class BookingReviewViewTest(TestCase):
         delete_url = reverse('delete_reviews', args=[review_id])
         response = self.client.get(delete_url)
         self.assertRaises(PermissionDenied)
+
+    def test_post_review_post_view(self):
+        """
+        Test if a user can make a new review and checks the status of the
+        booking is 0 which is draft, then when the review is published
+        status will be 1 it also tests if the user will get
+        a review confirmation email when the review is published
+        """
+
+        review_id = self.review.id
+
+        response = self.client.get(review_id)
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response='index')
+
+        review = BookingReview.objects.get(id=review_id)
+        self.assertEqual(review.status, 0)
+
+        review.status = 1
+        review.save()
+
+        published_review = BookingReview.objects.get(id=review_id)
+        self.assertEqual(published_review.status, 1)
+
+        send_review_confirmation_email(review)
+        self.assertEqual(len(mail.outbox), 1)
+        self.assertEqual(mail.outbox[0].subject, 'Review Published')
+        self.assertEqual(mail.outbox[0].to, ['test@email.com'])
