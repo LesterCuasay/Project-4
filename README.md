@@ -17,6 +17,9 @@ The deployed project can be found here - [Coderscave](https://coders-cave-projec
         - [New User](#new-user)
         - [Existing User](#existing-user)
         - [Site Admin](#site-admin)
+    - [Wireframes](#wireframes)
+    - [Colour Scheme](#colour-scheme)
+    - [Typography](#typography)
 - [](#)
 - [](#)
 - [](#)
@@ -65,3 +68,38 @@ The deployed project can be found here - [Coderscave](https://coders-cave-projec
 - As a site admin I can update or delete use bookings so that I can do it for the customer when they request it `(SHOULD HAVE)`
 - As a site admin I can delete reviews so that I can delete reviews that are not suitable for other users `(SHOULD HAVE)`
 - As a Site Admin I can ban users from booking so that if they are not allowed back in the restaurant they cannot book `(WONT HAVE)`
+
+### __Wireframes__
+
+### __Colour Scheme__
+As my project uses [bootstrap](https://getbootstrap.com/docs/4.6/getting-started/introduction/) the colour scheme I used are the ones that are provided in their css :root
+
+```
+:root {
+    --white: #fff;
+    --secondary: #6c757d;
+    --dark: #343a40;
+}
+```
+
+```
+--dark: #343a40;
+```
+This is used for the background of the navbar and footer.
+
+```
+--secondary: #6c757d;
+```
+This is used for the colour of the body to seperate it from the navbar and footer.
+
+```
+--white: #fff;
+```
+This is used for the text colour so that the content can be easily seen in both --dark and --secondary backgrounds.
+
+
+### __Typography__
+
+For the website, I am using [Google Font](https://fonts.google.com/) I decided to use Poppins for the heading text of the website and Neuton for the body text.
+
+At the beginning I wanted to implement Poppins as the font as it is easy to read, I found the font pairings using [Fontjoy](https://fontjoy.com/).
