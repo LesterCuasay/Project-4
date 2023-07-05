@@ -52,10 +52,10 @@ The deployed project can be found here - [Coderscave](https://coders-cave-projec
 &nbsp;  
 ### __User Stories__
 
-#### __New User__
+#### __New User__:
 - As a new user I can sign up so that I can access features only registered users can `(MUST HAVE)`
 
-#### __Existing User__
+#### __Existing User__:
 - As a user I can sign in so that I can book for a table and add a review `(MUST HAVE)`
 - As a user I can reset my password so that I can change my password when I cannot remember it `(MUST HAVE)`
 - As a user I can easily navigate the homepage so that I can get to the correct part of the website with ease `(MUST HAVE)`
@@ -74,7 +74,7 @@ The deployed project can be found here - [Coderscave](https://coders-cave-projec
 - As a user I can update my review so that I can modify my comments `(WONT HAVE)`
 - As a user I can delete a review so that I can delete my review `(WONT HAVE)`
 
-#### __Site Admin__
+#### __Site Admin__:
 - As a site admin I can see all bookings so that I can see how many people are booked `(MUST HAVE)`
 - As a site admin I can see all drafted reviews so that I can publish them `(MUST HAVE)`
 - As a site admin I can publish reviews so that they can be seen by users `(MUST HAVE)`
@@ -158,9 +158,29 @@ At the beginning I wanted to implement Poppins as the font as it is easy to read
 ![footer](static/img/testing/footer.png)
 
 &nbsp;  
+### __Login Page__
+
+&nbsp;  
+### __Signup Page__
+
+&nbsp;  
+### __Logout Page__
+
+&nbsp;  
+### __Forgot Password__
+
+&nbsp;  
+### __Password Reset Email__
+
+&nbsp;  
+### __Change Password__
+
+&nbsp;  
 ### __Review Form__
 
-- The review form can be found in the home page of the website, parameters has been set that the user has to be logged in to be able to access the form this was done by using django's template language ```{% if user.is_authenticated %} ```.
+- The review form can be found in the home page of the website, parameters has been set that the user has to be logged in to be able to access the form this was done by using django's template language:
+
+```{% if user.is_authenticated %} ```
 
 #### __User not logged in__:
 
@@ -212,3 +232,8 @@ if not request.user.is_superuser:
 &nbsp;  
 ### __Booking Form__
 
+- The booking form can be found on the navbar by clicking on "book", although to be able to access the form the user has to be logged in. If they are not logged in they will be redirected to the login page. This was achieved by using this decorator ontop of the view handler:
+
+```py
+@login_required
+```
