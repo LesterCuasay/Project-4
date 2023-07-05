@@ -26,6 +26,13 @@ The deployed project can be found here - [Coderscave](https://coders-cave-projec
         - [Superuser](#superuser)
     - [Hero Image](#hero-image)
     - [Footer](#footer)
+    - [User Interface](#user-interface)
+        - [Login Page](#login-page)
+        - [Signup Page](#signup-page)
+        - [Logout Page](#logout-page)
+        - [Forgot Password](#forgot-password)
+        - [Password Reset Email](#password-reset-email)
+        - [Change Password](#change-password)
     - [Review Form](#review-form)
         - [User not logged in](#user-not-logged-in)
         - [User logged in](#user-logged-in)
@@ -158,22 +165,57 @@ At the beginning I wanted to implement Poppins as the font as it is easy to read
 ![footer](static/img/testing/footer.png)
 
 &nbsp;  
-### __Login Page__
+### __User Interface__
+
+- All the models and functionalities are from [django-allauth](https://django-allauth.readthedocs.io/en/latest/), which I then extended my base.html through the accounts/templates to be able to override the default allauth template.
 
 &nbsp;  
-### __Signup Page__
+#### __Login Page__
+
+- The login link can be found on the navbar when clicked it will take you to this page:
+
+![login](static/img/testing/login.png)
+
+- If the user does not click on the "Remember Me" checkbox when they close the browser they will be automatically logged out. Unfortunately closing the tab will not end the session cookie so it has to be the full browser.
 
 &nbsp;  
-### __Logout Page__
+#### __Signup Page__
+
+- If the user does not have an account they can make one using this page:
+
+![signup](static/img/testing/signup.png)
 
 &nbsp;  
-### __Forgot Password__
+#### __Logout Page__
+
+- When the user wants to end their session they can do this from the navbar in the drop down and click logout and it will take you to this page:
+
+![logout](static/img/testing/logout.png)
 
 &nbsp;  
-### __Password Reset Email__
+#### __Forgot Password__
+
+- If the user forgets their password they can fill this form to be able to change their password.
+
+![forgot-password](static/img/testing/forgot-password.png)
 
 &nbsp;  
-### __Change Password__
+#### __Password Reset Email__
+
+- The user will get an email with a link back to the website to reset their password.
+
+![password-reset](static/img/testing/password-reset.png)
+
+- If the link has already been used, this will be shown instead:
+
+![bad-token](static/img/testing/bad-token.png)
+
+&nbsp;  
+#### __Change Password__
+
+- If the link has not been used yet, the user can change their password from this page:
+
+![change-password](static/img/testing/change-password.png)
 
 &nbsp;  
 ### __Review Form__
