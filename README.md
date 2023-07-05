@@ -22,6 +22,7 @@ The deployed project can be found here - [Coderscave](https://coders-cave-projec
     - [Typography](#typography)
 - [Features](#features)
     - [Logo and Navigation](#logo-and-navigation)
+    - [Hero Image](#hero-image)
 - [](#)
 - [](#)
 - [](#)
@@ -108,8 +109,10 @@ At the beginning I wanted to implement Poppins as the font as it is easy to read
 ## __Features__
 
 ### __Logo and Navigation__
-![navbar](static/img/testing/navbar.png)
+
 - The logo and navigation bar appears on every page of the website, Each of the links will send the user to the targeted pages. After the user logs in the "login" text will be replaced with "Hi, (user)!" and a dropdown element will be accessible to see role-based functionality.
+
+![navbar](static/img/testing/navbar.png)
 
 Normal user:
 
@@ -127,4 +130,9 @@ As a superuser the drop down changes to be able to access the "Admin Panel" from
 
 ![adminuser](static/img/testing/admin-logged-in.png)
 
+### __Hero Image__
+
+- The hero image is implemented in every page of the website, the text will change depending on which page the user is currently on. For example if the user clicks on the "Menu" page the text title will be "Menu".
+
+![hero-image](static/img/testing/hero-image.png)
 
