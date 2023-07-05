@@ -136,3 +136,8 @@ As a superuser the drop down changes to be able to access the "Admin Panel" from
 
 ![hero-image](static/img/testing/hero-image.png)
 
+### __Footer__
+
+- The footer appears in every page across the website (except for the error pages), the footer includes an about us with a brief description and opening times. It also has links to my github and linkedin, the copyright year has a script that will update depending on what year we are currently in.
+
+![footer](static/img/testing/footer.png)
