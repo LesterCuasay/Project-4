@@ -23,6 +23,8 @@ The deployed project can be found here - [Coderscave](https://coders-cave-projec
 - [Features](#features)
     - [Logo and Navigation](#logo-and-navigation)
     - [Hero Image](#hero-image)
+    - [Footer](#footer)
+    - [Review Form](#review-form)
 - [](#)
 - [](#)
 - [](#)
@@ -141,3 +143,17 @@ As a superuser the drop down changes to be able to access the "Admin Panel" from
 - The footer appears in every page across the website (except for the error pages), the footer includes an about us with a brief description and opening times. It also has links to my github and linkedin, the copyright year has a script that will update depending on what year we are currently in.
 
 ![footer](static/img/testing/footer.png)
+
+### __Review Form__
+
+- The review form can be found in the home page of the website, parameters has been set that the user has to be logged in to be able to access the form this was done by using django's template language ```{% if user.is_authenticated %} ```.
+
+User not logged in:
+
+![review-not-logged-in](static/img/testing/review-not-logged-in.png)
+
+User logged in:
+
+![review-logged-in](static/img/testing/review-logged-in.png)
+
+
