@@ -22,9 +22,14 @@ The deployed project can be found here - [Coderscave](https://coders-cave-projec
     - [Typography](#typography)
 - [Features](#features)
     - [Logo and Navigation](#logo-and-navigation)
+        - [Normal User](#normal-user)
+        - [Superuser](#superuser)
     - [Hero Image](#hero-image)
     - [Footer](#footer)
     - [Review Form](#review-form)
+        - [User not logged in](#user-not-logged-in)
+        - [User logged in](#user-logged-in)
+        - [Review submitted](#review-submitted)
 - [](#)
 - [](#)
 - [](#)
@@ -116,19 +121,19 @@ At the beginning I wanted to implement Poppins as the font as it is easy to read
 
 ![navbar](static/img/testing/navbar.png)
 
-Normal user:
+#### __Normal user__:
 
-As a normal user they will be able to access "My Bookings" which when they book a table, all their bookings will be shown here. Also a log out functionality is available.
+- As a normal user they will be able to access "My Bookings" which when they book a table, all their bookings will be shown here. Also a log out functionality is available.
 
 ![normaluser](static/img/testing/user-logged-in.png)
 
-Superuser: 
+#### __Superuser__:
 
-As a superuser the drop down changes to be able to access the "Admin Panel" from the website instead of having to type "/admin" into the url.
+- As a superuser the drop down changes to be able to access the "Admin Panel" from the website instead of having to type "/admin" into the url.
 
-"All Bookings" is the path to see all the bookings made by any user.
+- "All Bookings" is the path to see all the bookings made by any user.
 
-"All Draft Review" is the path to see all the draft reviews submitted by users, in this page the admin and only the admin can publish the reviews.
+- "All Draft Review" is the path to see all the draft reviews submitted by users, in this page the admin and only the admin can publish the reviews.
 
 ![adminuser](static/img/testing/admin-logged-in.png)
 
@@ -148,12 +153,17 @@ As a superuser the drop down changes to be able to access the "Admin Panel" from
 
 - The review form can be found in the home page of the website, parameters has been set that the user has to be logged in to be able to access the form this was done by using django's template language ```{% if user.is_authenticated %} ```.
 
-User not logged in:
+#### __User not logged in__:
 
 ![review-not-logged-in](static/img/testing/review-not-logged-in.png)
 
-User logged in:
+#### __User logged in__:
 
 ![review-logged-in](static/img/testing/review-logged-in.png)
 
 
+#### __Review Submitted__:
+
+- When the user succesfully submit a review, they will be redirected to the success page.
+
+![review-success](static/img/testing/review-logged-in.png)
