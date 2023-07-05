@@ -51,9 +51,9 @@ The deployed project can be found here - [Coderscave](https://coders-cave-projec
 ## __UX & Design__
 &nbsp;  
 ### __User Stories__
-&nbsp;  
+
 #### __New User__
-- As a new user I can sign up so that I can access features only registered users can `(MUST HAVE)` &nbsp;  
+- As a new user I can sign up so that I can access features only registered users can `(MUST HAVE)`
 
 #### __Existing User__
 - As a user I can sign in so that I can book for a table and add a review `(MUST HAVE)`
