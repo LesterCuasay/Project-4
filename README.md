@@ -33,6 +33,7 @@ The deployed project can be found here - [Coderscave](https://coders-cave-projec
         - [Draft Review](#draft-review-superuser-only)
         - [Published Review](#published-review)
         - [Review Email](#review-email)
+    - [Booking Form](#booking-form)
 - [](#)
 - [](#)
 - [](#)
@@ -48,11 +49,11 @@ The deployed project can be found here - [Coderscave](https://coders-cave-projec
 - [](#)
 
 ## __UX & Design__
-
+&nbsp;  
 ### __User Stories__
-
+&nbsp;  
 #### __New User__
-- As a new user I can sign up so that I can access features only registered users can `(MUST HAVE)`
+- As a new user I can sign up so that I can access features only registered users can `(MUST HAVE)` &nbsp;  
 
 #### __Existing User__
 - As a user I can sign in so that I can book for a table and add a review `(MUST HAVE)`
@@ -81,8 +82,9 @@ The deployed project can be found here - [Coderscave](https://coders-cave-projec
 - As a site admin I can delete reviews so that I can delete reviews that are not suitable for other users `(SHOULD HAVE)`
 - As a Site Admin I can ban users from booking so that if they are not allowed back in the restaurant they cannot book `(WONT HAVE)`
 
+&nbsp;  
 ### __Wireframes__
-
+&nbsp;  
 ### __Colour Scheme__
 As my project uses [bootstrap](https://getbootstrap.com/docs/4.6/getting-started/introduction/) the colour scheme I used are the ones that are provided in their css :root
 
@@ -109,15 +111,16 @@ This is used for the colour of the body to seperate it from the navbar and foote
 ```
 This is used for the text colour so that the content can be easily seen in both --dark and --secondary backgrounds.
 
-
+&nbsp;  
 ### __Typography__
 
 For the website, I am using [Google Font](https://fonts.google.com/) I decided to use Poppins for the heading text of the website and Neuton for the body text.
 
 At the beginning I wanted to implement Poppins as the font as it is easy to read, I found the font pairings using [Fontjoy](https://fontjoy.com/).
 
+&nbsp;  
 ## __Features__
-
+&nbsp;  
 ### __Logo and Navigation__
 
 - The logo and navigation bar appears on every page of the website, Each of the links will send the user to the targeted pages. After the user logs in the "login" text will be replaced with "Hi, (user)!" and a dropdown element will be accessible to see role-based functionality.
@@ -140,18 +143,21 @@ At the beginning I wanted to implement Poppins as the font as it is easy to read
 
 ![adminuser](static/img/testing/admin-logged-in.png)
 
+&nbsp;  
 ### __Hero Image__
 
 - The hero image is implemented in every page of the website, the text will change depending on which page the user is currently on. For example if the user clicks on the "Menu" page the text title will be "Menu".
 
 ![hero-image](static/img/testing/hero-image.png)
 
+&nbsp;  
 ### __Footer__
 
 - The footer appears in every page across the website (except for the error pages), the footer includes an about us with a brief description and opening times. It also has links to my github and linkedin, the copyright year has a script that will update depending on what year we are currently in.
 
 ![footer](static/img/testing/footer.png)
 
+&nbsp;  
 ### __Review Form__
 
 - The review form can be found in the home page of the website, parameters has been set that the user has to be logged in to be able to access the form this was done by using django's template language ```{% if user.is_authenticated %} ```.
@@ -164,16 +170,24 @@ At the beginning I wanted to implement Poppins as the font as it is easy to read
 
 ![review-logged-in](static/img/testing/review-logged-in.png)
 
-
+&nbsp;  
 #### __Review Submitted__:
 
 - When the user succesfully submit a review, they will be redirected to the success page.
 
 ![review-success](static/img/testing/review-logged-in.png)
 
+&nbsp;  
 #### __Draft Review__ (Superuser Only):
 
 - When a review has been succesfully been submitted, the superuser can access this by viewing "All Draft Reviews" page. On this page, the user has two functionalities to publish or to delete the review.
+
+- When a non-superuser tries to access this page by typing the path to the page in the url tab they will be redirected to the 403 page. This was achieved by this code: 
+
+```py
+if not request.user.is_superuser:
+        raise PermissionDenied
+```
 
 ![draft-review](static/img/testing/draft-review.png)
 
@@ -181,16 +195,20 @@ At the beginning I wanted to implement Poppins as the font as it is easy to read
 
 ![no-reviews](static/img/testing/no-reviews.png)
 
+&nbsp;  
 #### __Published Review__:
 
 - When a superuser publishes a draft review, the review can be seen back on the homepage on the bottom of the page. The delete button option is only accessible to superusers, when a non-superuser is looking at the published reviews the delete button will not be visible. When there are multiple reviews published, the container will allow 3 reviews per row then will make new rows below it. So that the homepage will not be too large when there are multiple of reviews published I allowed the container to be scrolled vertically.
 
 ![published-reviews](static/img/testing/published-reviews.png)
 
+&nbsp;  
 #### __Review Email__:
 
 - When a review gets published the user that submitted the review will be sent an email confirmation that their review has been published and can be seen on the website.
 
 ![review-email](static/img/testing/review-email.png)
 
+&nbsp;  
+### __Booking Form__
 
