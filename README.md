@@ -49,6 +49,8 @@ The deployed project can be found here - [Coderscave](https://coders-cave-projec
         - [Delete Confirmation Email](#delete-confirmation-email)
         - [Booking Form Errors](#booking-form-errors)
         - [All Booking List](#all-booking-list-superuser-only)
+    - [Error Pages](#error-pages)
+    - [Future Features](#future-features)
 - [](#)
 - [](#)
 - [](#)
@@ -416,7 +418,32 @@ if request.user.is_superuser:
 ```
 
 &nbsp;  
+### __Error Pages__
 
+- I have implemented my own error pages for the 403, 404 and 500 html errors these are the templates below:
+
+![403](static/img/documentation/403.png)
+
+![404](static/img/documentation/404.png)
+
+![500](static/img/documentation/500.png)
+
+&nbsp;  
+### __Future Features__
+
+There are definitely more functionalities I wanted to implement in this project, the features below are logged as "WONT HAVE" in my MoSCoW prioritization.
+
+- Update Review:
+    - As a user I want them to be able to update their own draft reviews to amend their comment.
+
+- Delete Review:
+    - As a user I want them to be able to delete their own draft reviews if they no longer want it to be published.
+
+- Like/Unlike Reviews:
+    - As a user I want them to be able to interact with the published reviews by liking them.
+
+- Ban users:
+    - As a site admin I want them to be able to ban existing users if they have caused issues during their time with us.
 
 
 
