@@ -5,7 +5,7 @@ Welcome to my 4th Project for Code Institute this is a Full-Stack project which 
 
 Coderscave is a restaurant based website which caters for those looking for a better working atmosphere rather than working from home, if this is you come join us!
 
-![amiresponsive](static/img/testing/amiresponsive.png)
+![amiresponsive](static/img/documentation/amiresponsive.png)
 
 ## __Live Site__
 
@@ -132,13 +132,13 @@ At the beginning I wanted to implement Poppins as the font as it is easy to read
 
 - The logo and navigation bar appears on every page of the website, Each of the links will send the user to the targeted pages. After the user logs in the "login" text will be replaced with "Hi, (user)!" and a dropdown element will be accessible to see role-based functionality.
 
-![navbar](static/img/testing/navbar.png)
+![navbar](static/img/documentation/navbar.png)
 
 #### __Normal user__:
 
 - As a normal user they will be able to access "My Bookings" which when they book a table, all their bookings will be shown here. Also a log out functionality is available.
 
-![normaluser](static/img/testing/user-logged-in.png)
+![normaluser](static/img/documentation/user-logged-in.png)
 
 #### __Superuser__:
 
@@ -148,21 +148,21 @@ At the beginning I wanted to implement Poppins as the font as it is easy to read
 
 - "All Draft Review" is the path to see all the draft reviews submitted by users, in this page the admin and only the admin can publish the reviews.
 
-![adminuser](static/img/testing/admin-logged-in.png)
+![adminuser](static/img/documentation/admin-logged-in.png)
 
 &nbsp;  
 ### __Hero Image__
 
 - The hero image is implemented in every page of the website, the text will change depending on which page the user is currently on. For example if the user clicks on the "Menu" page the text title will be "Menu".
 
-![hero-image](static/img/testing/hero-image.png)
+![hero-image](static/img/documentation/hero-image.png)
 
 &nbsp;  
 ### __Footer__
 
 - The footer appears in every page across the website (except for the error pages), the footer includes an about us with a brief description and opening times. It also has links to my github and linkedin, the copyright year has a script that will update depending on what year we are currently in.
 
-![footer](static/img/testing/footer.png)
+![footer](static/img/documentation/footer.png)
 
 &nbsp;  
 ### __User Interface__
@@ -174,7 +174,7 @@ At the beginning I wanted to implement Poppins as the font as it is easy to read
 
 - The login link can be found on the navbar when clicked it will take you to this page:
 
-![login](static/img/testing/login.png)
+![login](static/img/documentation/login.png)
 
 - If the user does not click on the "Remember Me" checkbox when they close the browser they will be automatically logged out. Unfortunately closing the tab will not end the session cookie so it has to be the full browser.
 
@@ -183,39 +183,39 @@ At the beginning I wanted to implement Poppins as the font as it is easy to read
 
 - If the user does not have an account they can make one using this page:
 
-![signup](static/img/testing/signup.png)
+![signup](static/img/documentation/signup.png)
 
 &nbsp;  
 #### __Logout Page__
 
 - When the user wants to end their session they can do this from the navbar in the drop down and click logout and it will take you to this page:
 
-![logout](static/img/testing/logout.png)
+![logout](static/img/documentation/logout.png)
 
 &nbsp;  
 #### __Forgot Password__
 
 - If the user forgets their password they can fill this form to be able to change their password.
 
-![forgot-password](static/img/testing/forgot-password.png)
+![forgot-password](static/img/documentation/forgot-password.png)
 
 &nbsp;  
 #### __Password Reset Email__
 
 - The user will get an email with a link back to the website to reset their password.
 
-![password-reset](static/img/testing/password-reset.png)
+![password-reset](static/img/documentation/password-reset.png)
 
 - If the link has already been used, this will be shown instead:
 
-![bad-token](static/img/testing/bad-token.png)
+![bad-token](static/img/documentation/bad-token.png)
 
 &nbsp;  
 #### __Change Password__
 
 - If the link has not been used yet, the user can change their password from this page:
 
-![change-password](static/img/testing/change-password.png)
+![change-password](static/img/documentation/change-password.png)
 
 &nbsp;  
 ### __Review Form__
@@ -226,18 +226,18 @@ At the beginning I wanted to implement Poppins as the font as it is easy to read
 
 #### __User not logged in__:
 
-![review-not-logged-in](static/img/testing/review-not-logged-in.png)
+![review-not-logged-in](static/img/documentation/review-not-logged-in.png)
 
 #### __User logged in__:
 
-![review-logged-in](static/img/testing/review-logged-in.png)
+![review-logged-in](static/img/documentation/review-logged-in.png)
 
 &nbsp;  
 #### __Review Submitted__:
 
 - When the user succesfully submit a review, they will be redirected to the success page.
 
-![review-success](static/img/testing/review-logged-in.png)
+![review-success](static/img/documentation/review-logged-in.png)
 
 &nbsp;  
 #### __Draft Review__ (Superuser Only):
@@ -251,25 +251,25 @@ if not request.user.is_superuser:
         raise PermissionDenied
 ```
 
-![draft-review](static/img/testing/draft-review.png)
+![draft-review](static/img/documentation/draft-review.png)
 
 - When there are no reviews in the database, this will show instead:
 
-![no-reviews](static/img/testing/no-reviews.png)
+![no-reviews](static/img/documentation/no-reviews.png)
 
 &nbsp;  
 #### __Published Review__:
 
 - When a superuser publishes a draft review, the review can be seen back on the homepage on the bottom of the page. The delete button option is only accessible to superusers, when a non-superuser is looking at the published reviews the delete button will not be visible. When there are multiple reviews published, the container will allow 3 reviews per row then will make new rows below it. So that the homepage will not be too large when there are multiple of reviews published I allowed the container to be scrolled vertically.
 
-![published-reviews](static/img/testing/published-reviews.png)
+![published-reviews](static/img/documentation/published-reviews.png)
 
 &nbsp;  
 #### __Review Email__:
 
 - When a review gets published the user that submitted the review will be sent an email confirmation that their review has been published and can be seen on the website.
 
-![review-email](static/img/testing/review-email.png)
+![review-email](static/img/documentation/review-email.png)
 
 &nbsp;  
 ### __Booking Form__
@@ -280,4 +280,4 @@ if not request.user.is_superuser:
 @login_required
 ```
 
-![booking-form](static/img/testing/booking-form.png)
+![booking-form](static/img/documentation/booking-form.png)
