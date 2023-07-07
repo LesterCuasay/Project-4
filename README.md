@@ -48,6 +48,7 @@ The deployed project can be found here - [Coderscave](https://coders-cave-projec
         - [Delete Booking](#delete-booking)
         - [Delete Confirmation Email](#delete-confirmation-email)
         - [Booking Form Errors](#booking-form-errors)
+        - [All Booking List](#all-booking-list-superuser-only)
 - [](#)
 - [](#)
 - [](#)
@@ -293,7 +294,11 @@ if not request.user.is_superuser:
 
 #### __Booking List__:
 
-- After the form has been submitted the user will be redirected to the "My Bookings" page, in this page they can see all the bookings they have made and have an option to either edit or delete their booking.
+- After the form has been submitted the user will be redirected to the "My Bookings" page, in this page they can see all the bookings they have made and have an option to either edit or delete their booking. This was done by this code:
+
+```py
+    bookings = BookingForm.objects.filter(user=request.user).order_by("-id")
+```
 
 ![booking-list](static/img/documentation/booking-list.png)
 
@@ -309,8 +314,7 @@ if not request.user.is_superuser:
 
 #### __Update Booking Form__:
 
-- The update booking form is the same layout as the normal booking form, the only difference is the text changes to "Update your booking below"
-
+- The update booking form is the same layout as the normal booking form, the only difference is the text changes to "Update your booking below". After the user update their booking they will be redirected back to the "My Bookings" page.
 
 &nbsp;  
 
@@ -324,7 +328,7 @@ if not request.user.is_superuser:
 
 #### __Delete Booking__:
 
-- The user also has the option to delete their booking if they are no longer want their appointment.
+- The user also has the option to delete their booking if they no longer want their appointment. After the user delete their booking they will be redirected back to the "My Bookings" page.
 
 ![delete-booking](static/img/documentation/delete-booking.png)
 
@@ -387,6 +391,28 @@ def clean_date(self):
                 raise ValidationError(error_message)
 
         return selected_time
+```
+
+&nbsp;  
+
+#### __All Booking List__ (Superuser Only):
+
+- When there are bookings in the database the superuser can see all of the bookings in the "All Bookings" page, only the superuser can access this page. This was done by this code:
+
+```py
+if not request.user.is_superuser:
+        raise PermissionDenied
+
+    bookings = BookingForm.objects.all().order_by("-id")
+```
+
+![all-bookings](static/img/documentation/all-bookings.png)
+
+- The admin also has functionalities to update or delete users bookings if the user requests for them to do it. The layout of the update and delete pages are the same for superusers except the text changes to "Update the customers booking below!". When the superuser updates or deletes a users booking they will also get an email confirmation about the changes and also instead of being redirected back to the "My Bookings" page the superuser will get redirected back to the "All Bookings" page instead. This was achieved by this code:
+
+```py
+if request.user.is_superuser:
+    return redirect("view_all_bookings")
 ```
 
 &nbsp;  
