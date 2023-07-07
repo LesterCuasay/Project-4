@@ -41,6 +41,13 @@ The deployed project can be found here - [Coderscave](https://coders-cave-projec
         - [Published Review](#published-review)
         - [Review Email](#review-email)
     - [Booking Form](#booking-form)
+        - [Booking List](#booking-list)
+        - [Booking Confirmation Email](#booking-confirmation-email)
+        - [Update Booking Form](#update-booking-form)
+        - [Update Confirmation Email](#update-confirmation-email)
+        - [Delete Booking](#delete-booking)
+        - [Delete Confirmation Email](#delete-confirmation-email)
+        - [Booking Form Errors](#booking-form-errors)
 - [](#)
 - [](#)
 - [](#)
@@ -281,3 +288,112 @@ if not request.user.is_superuser:
 ```
 
 ![booking-form](static/img/documentation/booking-form.png)
+
+&nbsp;  
+
+#### __Booking List__:
+
+- After the form has been submitted the user will be redirected to the "My Bookings" page, in this page they can see all the bookings they have made and have an option to either edit or delete their booking.
+
+![booking-list](static/img/documentation/booking-list.png)
+
+&nbsp;  
+
+#### __Booking Confirmation Email__:
+
+- When the user successfully submit a form they will recieve a confirmation email:
+
+![booking-confirmation](static/img/documentation/booking-confirmation.png)
+
+&nbsp;  
+
+#### __Update Booking Form__:
+
+- The update booking form is the same layout as the normal booking form, the only difference is the text changes to "Update your booking below"
+
+
+&nbsp;  
+
+#### __Update Confirmation Email__:
+
+- When the user updates their booking, they will also receive another confirmation email about updating their booking.
+
+![update-confirmation](static/img/documentation/update-confirmation.png)
+
+&nbsp;  
+
+#### __Delete Booking__:
+
+- The user also has the option to delete their booking if they are no longer want their appointment.
+
+![delete-booking](static/img/documentation/delete-booking.png)
+
+&nbsp;  
+
+#### __Delete Confirmation Email__:
+
+- When the user deletes their booking, they will also recieve another confirmation email about the changes.
+
+![delete-confirmation](static/img/documentation/delete-confirmation.png)
+
+&nbsp;  
+
+
+#### __Booking Form Errors__:
+
+- Every field except from "Special Requirements" in the form are required for the form to be valid.
+
+- When a user books a certain date and time no other users can book the same time as them. This error will show on the bottom of the form: 
+
+![existing-booking](static/img/documentation/existing-booking.png)
+
+- The user cannot book in the past and also they can only book one month in advance.
+
+![date-past](static/img/documentation/date-past.png)
+
+![date-future](static/img/documentation/date-future.png)
+
+- The code below was used to achieve this function it can be found in bookings/forms.py:
+
+```py
+def clean_date(self):
+        selected_date = self.cleaned_data.get("date")
+        selected_time = self.cleaned_data.get("time")
+        max_date = date.today() + timedelta(days=30)
+
+        if selected_date and selected_date > max_date:
+            error_message = "You can only book up to one month in advance, " \
+                            "Please choose another date."
+            raise ValidationError(error_message)
+
+        if selected_date and selected_date < date.today():
+            error_message = "You cannot book in the past, " \
+                            "Please choose a date in the present."
+            raise ValidationError(error_message)
+
+        return selected_date
+
+    def clean_time(self):
+        selected_date = self.cleaned_data.get("date")
+        selected_time = self.cleaned_data.get("time")
+
+        if selected_date and selected_time:
+            existing_booking = BookingForm.objects.filter(
+                date=selected_date, time=selected_time
+            )
+            if existing_booking.exists():
+                error_message = "The timeslot on this day is alreay booked, " \
+                                "Please choose another timeslot."
+                raise ValidationError(error_message)
+
+        return selected_time
+```
+
+&nbsp;  
+
+
+
+
+
+
+
