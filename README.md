@@ -51,7 +51,8 @@ The deployed project can be found here - [Coderscave](https://coders-cave-projec
         - [All Booking List](#all-booking-list-superuser-only)
     - [Error Pages](#error-pages)
     - [Future Features](#future-features)
-- [](#)
+- [Technologies Used](#technologies-used)
+    - [Languages Used](#languages-used)
 - [](#)
 - [](#)
 - [](#)
@@ -445,7 +446,25 @@ There are definitely more functionalities I wanted to implement in this project,
 - Ban users:
     - As a site admin I want them to be able to ban existing users if they have caused issues during their time with us.
 
+&nbsp;  
+### __Technologies Used__
 
+&nbsp;  
+#### __Languages Used__:
+    
+- [HTML](https://en.wikipedia.org/wiki/HTML5) - used for main content for the site.
+- [CSS3](https://en.wikipedia.org/wiki/CSS) - used to style the sites layout.
+- [Javascript](https://www.javascript.com/) - used with bootstrap and also my star ratings and date functions.
+- [Bootstrap](https://getbootstrap.com/docs/4.6/getting-started/introduction/) - used as the front-end framework.
+- [Django](https://www.djangoproject.com/) - used as the Python framework.
+- [PostgreSQL](https://www.postgresql.org/) - used as the relational database management.
+- [ElephantSQL](https://www.elephantsql.com/) - used as the Postgres database.
+- [Cloudinary](https://cloudinary.com/) - used for online static file storage.
+- [Gmail](https://www.google.com/gmail/about/) - used to create an email address to send emails from.
+- [Heroku](https://heroku.com/) - used for hosting of deployed site.
+- [Font Awesome](https://fontawesome.com/) - used for the icons on the footer.
+- [Google Fonts](https://fonts.google.com/) - used for the font styles for the site.
+- [Figma](https://www.figma.com/) - used to design my wireframes.
 
 
 
