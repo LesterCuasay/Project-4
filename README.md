@@ -279,3 +279,5 @@ if not request.user.is_superuser:
 ```py
 @login_required
 ```
+
+![booking-form](static/img/testing/booking-form.png)
