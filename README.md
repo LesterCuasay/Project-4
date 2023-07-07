@@ -53,7 +53,8 @@ The deployed project can be found here - [Coderscave](https://coders-cave-projec
     - [Future Features](#future-features)
 - [Technologies Used](#technologies-used)
     - [Languages Used](#languages-used)
-- [](#)
+- [Database Design](#database-design)
+    - [Models](#models)
 - [](#)
 - [](#)
 - [](#)
@@ -466,6 +467,38 @@ There are definitely more functionalities I wanted to implement in this project,
 - [Google Fonts](https://fonts.google.com/) - used for the font styles for the site.
 - [Figma](https://www.figma.com/) - used to design my wireframes.
 
+&nbsp;  
+### __Database Design__
 
+&nbsp;  
+#### __Models__:
 
+- Booking Form:
+
+| PK | ID                   | Type          | Notes            |
+|----|----------------------|---------------|------------------|
+| FK | user                 | OneToOne      | FK to User Model |
+|    | name                 | Charfield     |                  |
+|    | email                | EmailField    |                  |
+|    | number_of_people     | IntergerField |                  |
+|    | date                 | DateField     |                  |
+|    | time                 | TimeField     |                  |
+|    | special_requirements | TextField     |                  |
+
+- Review Form:
+
+| PK | ID             | Type          | Notes            |
+|----|----------------|---------------|------------------|
+| FK | author         | OneToOne      | FK to User Model |
+|    | date           | DateField     |                  |
+|    | email          | EmailField    |                  |
+|    | service_rating | IntergerField |                  |
+|    | food_rating    | IntergerField |                  |
+|    | overall_rating | IntergerField |                  |
+|    | created_at     | DateTimeField |                  |
+|    | status         | IntergerField |                  |
+
+- Usel Model:
+
+    - The user model was built using [django-allauth](https://django-allauth.readthedocs.io/en/latest/).
 
