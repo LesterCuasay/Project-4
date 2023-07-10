@@ -143,6 +143,15 @@ To make sure that my website is running as intended, I will be using different t
 | W3C HTML Validator | ![review-success-validator](static/img/testing/review-success-validator.png)        |                                              |
 
 &nbsp;  
+### __Publish Review__
+
+|                    | Screenshot                                                                |              Notes                   |
+|--------------------|---------------------------------------------------------------------------|--------------------------------------|
+| Desktop            | ![publish-review](static/img/testing/lighthouse-publish-review-desktop.png) |                                      |
+| Mobile             | ![publish-review](static/img/testing/lighthouse-publish-review-mobile.png)  | Performance down due to image sizes. |
+| W3C HTML Validator | ![publish-review](static/img/testing/publish-review-validator.png)          |                                      |
+
+&nbsp;  
 ### __Delete Review__
 
 |                    | Screenshot                                                                |              Notes                   |
