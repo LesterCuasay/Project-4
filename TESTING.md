@@ -28,7 +28,7 @@ To make sure that my website is running as intended, I will be using different t
 &nbsp;  
 ### __Menu__
 
-[menu.html](https://coders-cave-project-4.herokuapp.com/menu)
+[menu.html](https://coders-cave-project-4.herokuapp.com/menu/)
 
 |                    | Screenshot                                                        |              Notes                   |
 |--------------------|-------------------------------------------------------------------|--------------------------------------|
@@ -39,7 +39,7 @@ To make sure that my website is running as intended, I will be using different t
 &nbsp;  
 ### __Book__
 
-[book.html](https://coders-cave-project-4.herokuapp.com/menu)
+[bookings.html](https://coders-cave-project-4.herokuapp.com/book/form/)
 
 |                    | Screenshot                                                        |              Notes                  |
 |--------------------|-------------------------------------------------------------------|-------------------------------------|
@@ -83,7 +83,7 @@ To make sure that my website is running as intended, I will be using different t
 &nbsp;  
 ### __Booking List__
 
-[booking.html](https://coders-cave-project-4.herokuapp.com/book/bookings/)
+[my_booking.html](https://coders-cave-project-4.herokuapp.com/book/bookings/)
 
 |                    | Screenshot                                                            |              Notes                   |
 |--------------------|-----------------------------------------------------------------------|--------------------------------------|
@@ -92,3 +92,14 @@ To make sure that my website is running as intended, I will be using different t
 | W3C HTML Validator | ![booking-validator](static/img/testing/booking-validator.png)        |                                      |
 
 &nbsp;  
+### __Update Booking__
+
+|                    | Screenshot                                                            |              Notes                   |
+|--------------------|-----------------------------------------------------------------------|--------------------------------------|
+| Desktop            | ![update-desktop](static/img/testing/lighthouse-update-desktop.png)   |                                      |
+| Mobile             | ![update-mobile](static/img/testing/lighthouse-update-mobile.png)     | Performance down due to image sizes. |
+| W3C HTML Validator | ![update-validator](static/img/testing/update-validator.png)          |                                      |
+
+&nbsp;  
+
+
