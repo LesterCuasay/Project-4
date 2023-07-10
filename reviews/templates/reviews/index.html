@@ -45,13 +45,13 @@
         <div class="card col-lg-8 mt-3 offset-lg-2 text-center">
             <h2 class="card-title text-uppercase mt-5"> Hi, {{ user.get_username }}!</h2>
             <p class="card-text mb-0">Want to leave us a review? Fill this out!</p>
-            <form action="" method="POST">
+            <form method="POST">
                 {% csrf_token %}
                 <div class="row">
                     <div class="col-lg-4 mt-3 mb-3">
                         <div class="review-rating">
                             <div class="review-label">
-                                {{ review_form.service_rating.label_tag }}
+                                <p>Service Rating</p>
                                 <div class="rating-container">
                                     <span class="fa fa-star rating-star" data-value="5"
                                         data-name="service_rating"></span>
@@ -69,7 +69,7 @@
                         </div>
                         <div class="review-rating">
                             <div class="review-label">
-                                {{ review_form.food_rating.label_tag }}
+                                <p>Food Rating</p>
                                 <div class="rating-container">
                                     <span class="fa fa-star rating-star" data-value="5" data-name="food_rating"></span>
                                     <span class="fa fa-star rating-star" data-value="4" data-name="food_rating"></span>
@@ -82,7 +82,7 @@
                         </div>
                         <div class="review-rating">
                             <div class="review-label">
-                                {{ review_form.overall_rating.label_tag }}
+                                <p>Overall Rating</p>
                                 <div class="rating-container">
                                     <span class="fa fa-star rating-star" data-value="5"
                                         data-name="overall_rating"></span>
