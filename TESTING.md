@@ -19,104 +19,76 @@ To make sure that my website is running as intended, I will be using different t
 
 [index.html](https://coders-cave-project-4.herokuapp.com/)
 
-#### __Desktop__
-![index-desktop](static/img/testing/lighthouse-index-desktop.png)
-
-#### __Mobile__
-![index-mobile](static/img/testing/lighthouse-index-mobile.png)
-
-- Performance down due to image sizes
-
-#### __W3C HTML Validator__
-![index-validator](static/img/testing/index-validator.png)
+|                    | Screenshot                                                        |              Notes                   |
+|--------------------|-------------------------------------------------------------------|--------------------------------------|
+| Desktop            | ![index-desktop](static/img/testing/lighthouse-index-desktop.png) |                                      |
+| Mobile             | ![index-mobile](static/img/testing/lighthouse-index-mobile.png)   | Performance down due to image sizes. |
+| W3C HTML Validator | ![index-validator](static/img/testing/index-validator.png)        |                                      |
 
 &nbsp;  
 ### __Menu__
 
 [menu.html](https://coders-cave-project-4.herokuapp.com/menu)
 
-#### __Desktop__
-![menu-desktop](static/img/testing/lighthouse-menu-desktop.png)
-
-#### __Mobile__
-![menu-mobile](static/img/testing/lighthouse-menu-mobile.png)
-
-- Performance down due to image sizes
-
-#### __W3C HTML Validator__
-![menu-validator](static/img/testing/menu-validator.png)
+|                    | Screenshot                                                        |              Notes                   |
+|--------------------|-------------------------------------------------------------------|--------------------------------------|
+| Desktop            | ![menu-desktop](static/img/testing/lighthouse-menu-desktop.png)   |                                      |
+| Mobile             | ![menu-mobile](static/img/testing/lighthouse-menu-mobile.png)     | Performance down due to image sizes. |
+| W3C HTML Validator | ![menu-validator](static/img/testing/menu-validator.png)          |                                      |
 
 &nbsp;  
 ### __Book__
 
 [book.html](https://coders-cave-project-4.herokuapp.com/menu)
 
-#### __Desktop__
-![book-desktop](static/img/testing/lighthouse-book-desktop.png)
-
-- Accessibility down due to form having placeholders instead of labels
-
-#### __Mobile__
-![book-mobile](static/img/testing/lighthouse-book-mobile.png)
-
-- Performance down due to image sizes
-- Accessibility down due to form having placeholders instead of labels
-
-#### __W3C HTML Validator__
-![book-validator](static/img/testing/book-validator.png)
+|                    | Screenshot                                                        |              Notes                  |
+|--------------------|-------------------------------------------------------------------|-------------------------------------|
+| Desktop            | ![book-desktop](static/img/testing/lighthouse-book-desktop.png)   | Accessibility down due to form having placeholders instead of labels. |
+| Mobile             | ![book-mobile](static/img/testing/lighthouse-book-mobile.png)     | Performance down due to image sizes. <br> Accessibility down due to form having placeholders instead of labels. |
+| W3C HTML Validator | ![book-validator](static/img/testing/book-validator.png)          |                                     |
 
 &nbsp;  
 ### __Login__
 
 [login.html](https://coders-cave-project-4.herokuapp.com/accounts/login/)
 
-#### __Desktop__
-![login-desktop](static/img/testing/lighthouse-login-desktop.png)
-
-- Accessibility down due to form having placeholders instead of labels
-
-#### __Mobile__
-![login-mobile](static/img/testing/lighthouse-login-mobile.png)
-
-- Performance down due to image sizes
-- Accessibility down due to form having placeholders instead of labels
-
-#### __W3C HTML Validator__
-![login-validator](static/img/testing/login-validator.png)
+|                    | Screenshot                                                        |              Notes                   |
+|--------------------|-------------------------------------------------------------------|--------------------------------------|
+| Desktop            | ![login-desktop](static/img/testing/lighthouse-login-desktop.png) | Accessibility down due to form having placeholders instead of labels. |
+| Mobile             | ![login-mobile](static/img/testing/lighthouse-login-mobile.png)   | Performance down due to image sizes. <br> Accessibility down due to form having placeholders instead of labels. |
+| W3C HTML Validator | ![login-validator](static/img/testing/login-validator.png)        |                                      |
 
 &nbsp;  
 ### __Logout__
 
 [logout.html](https://coders-cave-project-4.herokuapp.com/accounts/logout/)
 
-#### __Desktop__
-![logout-desktop](static/img/testing/lighthouse-logout-desktop.png)
-
-#### __Mobile__
-![logout-mobile](static/img/testing/lighthouse-logout-mobile.png)
-
-- Performance down due to image sizes
-
-#### __W3C HTML Validator__
-![logout-validator](static/img/testing/logout-validator.png)
+|                    | Screenshot                                                            |              Notes                   |
+|--------------------|-----------------------------------------------------------------------|--------------------------------------|
+| Desktop            | ![logout-desktop](static/img/testing/lighthouse-logout-desktop.png)   |                                      |
+| Mobile             | ![logout-mobile](static/img/testing/lighthouse-logout-mobile.png)     | Performance down due to image sizes. |
+| W3C HTML Validator | ![logout-validator](static/img/testing/logout-validator.png)          |                                      |
 
 &nbsp;  
 ### __Signup__
 
 [signup.html](https://coders-cave-project-4.herokuapp.com/accounts/signup/)
 
-#### __Desktop__
-![signup-desktop](static/img/testing/lighthouse-signup-desktop.png)
-
-#### __Mobile__
-![signup-mobile](static/img/testing/lighthouse-signup-mobile.png)
-
-- Performance down due to image sizes
-
-#### __W3C HTML Validator__
-![signup-validator](static/img/testing/signup-validator.png)
+|                    | Screenshot                                                            |              Notes                   |
+|--------------------|-----------------------------------------------------------------------|--------------------------------------|
+| Desktop            | ![signup-desktop](static/img/testing/lighthouse-signup-desktop.png)   |                                      |
+| Mobile             | ![signup-mobile](static/img/testing/lighthouse-signup-mobile.png)     | Performance down due to image sizes. |
+| W3C HTML Validator | ![signup-validator](static/img/testing/signup-validator.png)          |                                      |
 
 &nbsp;  
+### __Booking List__
 
+[booking.html](https://coders-cave-project-4.herokuapp.com/book/bookings/)
 
+|                    | Screenshot                                                            |              Notes                   |
+|--------------------|-----------------------------------------------------------------------|--------------------------------------|
+| Desktop            | ![booking-desktop](static/img/testing/lighthouse-booking-desktop.png) |                                      |
+| Mobile             | ![booking-mobile](static/img/testing/lighthouse-booking-mobile.png)   | Performance down due to image sizes. |
+| W3C HTML Validator | ![booking-validator](static/img/testing/booking-validator.png)        |                                      |
 
+&nbsp;  
