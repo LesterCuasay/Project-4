@@ -58,7 +58,7 @@ The deployed project can be found here - [Coderscave](https://coders-cave-projec
 - [Agile Tool](#agile-tool)
     - [GitHub Projects](#github-projects)
     - [GitHub Issues](#github-issues)
-- [](#)
+    - [User Story Prioritization](#user-story-prioritization)
 - [](#)
 - [](#)
 - [](#)
@@ -517,3 +517,18 @@ There are definitely more functionalities I wanted to implement in this project,
 #### __GitHub Issues__:
 
 [GitHub Issues](https://github.com/LesterCuasay/Project-4/issues) served as another Agile tool, here I used my own user story template and bug template to monitor where I am within the creation of the website.
+
+&nbsp;  
+#### __User Story Prioritization__:
+
+In my GitHub Issues, I have prioritized my user stories under the MoSCoW method:
+
+- MUST HAVE - needs to be implemented into the website (max 60% of stories)
+- SHOULD HAVE - adds better user experience but not needed (~20% of stories)
+- COULD HAVE - has little or no impact if left out (20% of stories)
+- WON'T HAVE - not a priority feature
+
+&nbsp;  
+### __Testing__
+
+The testing for this website can be found in the [TESTING.md](TESTING.md) file.
