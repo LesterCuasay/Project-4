@@ -55,7 +55,9 @@ The deployed project can be found here - [Coderscave](https://coders-cave-projec
     - [Languages Used](#languages-used)
 - [Database Design](#database-design)
     - [Models](#models)
-- [](#)
+- [Agile Tool](#agile-tool)
+    - [GitHub Projects](#github-projects)
+    - [GitHub Issues](#github-issues)
 - [](#)
 - [](#)
 - [](#)
@@ -502,3 +504,16 @@ There are definitely more functionalities I wanted to implement in this project,
 
     - The user model was built using [django-allauth](https://django-allauth.readthedocs.io/en/latest/).
 
+&nbsp;  
+### __Agile Tool__
+
+&nbsp;  
+#### __GitHub Projects__:
+
+[GitHub Projects](https://github.com/LesterCuasay/Project-4/projects?query=is%3Aopen) served as an agile tool for this project, the purpose of this was to proactively map out the project which I will admit I did not use to its full advantages as I was more focused on the coding of the website resulting to not updating my progression through the projects board.
+
+
+&nbsp;  
+#### __GitHub Issues__:
+
+[GitHub Issues](https://github.com/LesterCuasay/Project-4/issues) served as another Agile tool, here I used my own user story template and bug template to monitor where I am within the creation of the website.
