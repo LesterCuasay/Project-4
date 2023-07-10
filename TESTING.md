@@ -96,9 +96,60 @@ To make sure that my website is running as intended, I will be using different t
 
 |                    | Screenshot                                                            |              Notes                   |
 |--------------------|-----------------------------------------------------------------------|--------------------------------------|
-| Desktop            | ![update-desktop](static/img/testing/lighthouse-update-desktop.png)   |                                      |
-| Mobile             | ![update-mobile](static/img/testing/lighthouse-update-mobile.png)     | Performance down due to image sizes. |
+| Desktop            | ![update-desktop](static/img/testing/lighthouse-update-desktop.png)   | Accessibility down due to form having placeholders instead of labels. |
+| Mobile             | ![update-mobile](static/img/testing/lighthouse-update-mobile.png)     | Performance down due to image sizes. <br> Accessibility down due to form having placeholders instead of labels. |
 | W3C HTML Validator | ![update-validator](static/img/testing/update-validator.png)          |                                      |
+
+&nbsp;  
+### __Delete Booking__
+
+|                    | Screenshot                                                            |              Notes                   |
+|--------------------|-----------------------------------------------------------------------|--------------------------------------|
+| Desktop            | ![delete-desktop](static/img/testing/lighthouse-delete-desktop.png)   |                                      |
+| Mobile             | ![delete-mobile](static/img/testing/lighthouse-delete-mobile.png)     | Performance down due to image sizes. |
+| W3C HTML Validator | ![delete-validator](static/img/testing/delete-validator.png)          |                                      |
+
+&nbsp;  
+### __All Booking List__
+
+[all_bookings.html](https://coders-cave-project-4.herokuapp.com/book/bookings/all-bookings/)
+
+|                    | Screenshot                                                                    |                      Notes                   |
+|--------------------|-------------------------------------------------------------------------------|----------------------------------------------|
+| Desktop            | ![all-booking-desktop](static/img/testing/lighthouse-all-booking-desktop.png) |                                              |
+| Mobile             | ![all-booking-mobile](static/img/testing/lighthouse-all-booking-mobile.png)   | Performance down due to image sizes.         |
+| W3C HTML Validator | ![all-booking-validator](static/img/testing/all-booking-validator.png)        |                                              |
+
+&nbsp;  
+### __All Draft Reviews List__
+
+[view_all_draft_reviews.html](https://coders-cave-project-4.herokuapp.com/review/draft-reviews)
+
+|                    | Screenshot                                                                        |                      Notes                   |
+|--------------------|-----------------------------------------------------------------------------------|----------------------------------------------|
+| Desktop            | ![draft-reviews-desktop](static/img/testing/lighthouse-draft-reviews-desktop.png) |                                              |
+| Mobile             | ![draft-reviews-mobile](static/img/testing/lighthouse-draft-reviews-mobile.png)   | Performance down due to image sizes.         |
+| W3C HTML Validator | ![draft-reviews-validator](static/img/testing/draft-reviews-validator.png)        |                                              |
+
+&nbsp;  
+### __Review Success__
+
+[view_all_draft_reviews.html](https://coders-cave-project-4.herokuapp.com/review/draft-reviews)
+
+|                    | Screenshot                                                                          |                      Notes                   |
+|--------------------|-------------------------------------------------------------------------------------|----------------------------------------------|
+| Desktop            | ![review-success-desktop](static/img/testing/lighthouse-review-success-desktop.png) |                                              |
+| Mobile             | ![review-success-mobile](static/img/testing/lighthouse-review-success-mobile.png)   | Performance down due to image sizes.         |
+| W3C HTML Validator | ![review-success-validator](static/img/testing/review-success-validator.png)        |                                              |
+
+&nbsp;  
+### __Delete Review__
+
+|                    | Screenshot                                                                |              Notes                   |
+|--------------------|---------------------------------------------------------------------------|--------------------------------------|
+| Desktop            | ![delete-review](static/img/testing/lighthouse-delete-review-desktop.png) |                                      |
+| Mobile             | ![delete-review](static/img/testing/lighthouse-delete-review-mobile.png)  | Performance down due to image sizes. |
+| W3C HTML Validator | ![delete-review](static/img/testing/delete-review-validator.png)          |                                      |
 
 &nbsp;  
 
