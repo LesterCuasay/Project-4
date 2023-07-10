@@ -15,6 +15,8 @@ To make sure that my website is running as intended, I will be using different t
 - Every Python code will be checked on [Code Institute Python Linter](https://pep8ci.herokuapp.com/)
 - Every JavaScript code will be checked on [JShint](https://jshint.com/)
 
+## __HTML & Lighthouse__
+
 ### __Homepage__
 
 [index.html](https://coders-cave-project-4.herokuapp.com/)
@@ -162,4 +164,20 @@ To make sure that my website is running as intended, I will be using different t
 
 &nbsp;  
 
+## __CSS__
 
+- The CSS was testing through direct input instead of testing every single page these are the results:
+
+|                   | Screenshot                                                  |
+|-------------------|-------------------------------------------------------------|
+| W3C CSS Validator |  ![ css-validator ]( static/img/testing/css-validator.png ) |
+
+<p>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!" />
+    </a>
+</p>
+        
+        
