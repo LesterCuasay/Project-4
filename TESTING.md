@@ -147,8 +147,8 @@ To make sure that my website is running as intended, I will be using different t
 &nbsp;  
 ### __Publish Review__
 
-|                    | Screenshot                                                                |              Notes                   |
-|--------------------|---------------------------------------------------------------------------|--------------------------------------|
+|                    | Screenshot                                                                  |              Notes                   |
+|--------------------|-----------------------------------------------------------------------------|--------------------------------------|
 | Desktop            | ![publish-review](static/img/testing/lighthouse-publish-review-desktop.png) |                                      |
 | Mobile             | ![publish-review](static/img/testing/lighthouse-publish-review-mobile.png)  | Performance down due to image sizes. |
 | W3C HTML Validator | ![publish-review](static/img/testing/publish-review-validator.png)          |                                      |
@@ -166,11 +166,13 @@ To make sure that my website is running as intended, I will be using different t
 
 ## __CSS__
 
-- The CSS was testing through direct input instead of testing every single page these are the results:
+[style.css](https://github.com/LesterCuasay/Project-4/blob/main/static/css/style.css)
 
-|                   | Screenshot                                                  |
-|-------------------|-------------------------------------------------------------|
-| W3C CSS Validator |  ![ css-validator ]( static/img/testing/css-validator.png ) |
+- The CSS was tested through direct input instead of testing every single page these are the results:
+
+|                   | Screenshot                                                 |
+|-------------------|------------------------------------------------------------|
+| W3C CSS Validator | ![css-validator](static/img/testing/css-validator.png)     |
 
 <p>
     <a href="http://jigsaw.w3.org/css-validator/check/referer">
@@ -179,5 +181,58 @@ To make sure that my website is running as intended, I will be using different t
             alt="Valid CSS!" />
     </a>
 </p>
+
+&nbsp;  
+## __Python__
+
+### __Bookings App__
+
+#### __Bookings Model__
+
+[bookings/models.py](https://github.com/LesterCuasay/Project-4/blob/main/bookings/models.py)
+
+|                   | Screenshot                                                |
+|-------------------|-----------------------------------------------------------|
+| CI Python Linter  | ![bookings-models](static/img/testing/bookings-model.png) |
+
+&nbsp;  
+#### __Bookings Form__
+
+[bookings/forms.py](https://github.com/LesterCuasay/Project-4/blob/main/bookings/forms.py)
+
+|                   | Screenshot                                               |
+|-------------------|----------------------------------------------------------|
+| CI Python Linter  | ![bookings-forms](static/img/testing/bookings-forms.png) |
+
+&nbsp;  
+#### __Bookings View__
+
+[bookings/views.py](https://github.com/LesterCuasay/Project-4/blob/main/bookings/views.py)
+
+|                   | Screenshot                                               |
+|-------------------|----------------------------------------------------------|
+| CI Python Linter  | ![bookings-views](static/img/testing/bookings-views.png) |
+
+&nbsp;  
+#### __Bookings Test Form__
+
+[bookings/tests/test_forms.py](https://github.com/LesterCuasay/Project-4/blob/main/bookings/tests/test_forms.py)
+
+|                   | Screenshot                                                             |
+|-------------------|------------------------------------------------------------------------|
+| CI Python Linter  | ![bookings-test-forms](static/img/testing/bookings-test-forms.png)     |
+| Test Results      | ![bookings-forms-result](static/img/testing/bookings-forms-result.png) |
+
+&nbsp;  
+#### __Bookings Test View__
+
+[bookings/tests/test_views.py](https://github.com/LesterCuasay/Project-4/blob/main/bookings/tests/test_views.py)
+
+|                   | Screenshot                                                             |
+|-------------------|------------------------------------------------------------------------|
+| CI Python Linter  | ![bookings-test-views](static/img/testing/bookings-test-views.png)     |
+| Test Results      | ![bookings-views-result](static/img/testing/bookings-views-result.png) |
+
+&nbsp;  
         
         
