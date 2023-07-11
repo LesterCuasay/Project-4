@@ -283,5 +283,14 @@ To make sure that my website is running as intended, I will be using different t
 | Test Results      | ![reviews-views-result](static/img/testing/reviews-views-result.png) |
 
 &nbsp;  
+## __JavaScript__
+
+[script.js](https://github.com/LesterCuasay/Project-4/blob/main/static/js/script.js)
+
+|         | Screenshot                                           |
+|---------|------------------------------------------------------|
+| JShint  | ![js-validator](static/img/testing/js-validator.png) |
+
+&nbsp;  
         
         
