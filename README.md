@@ -516,7 +516,7 @@ There are definitely more functionalities I wanted to implement in this project,
     - As a site admin I want them to be able to ban existing users if they have caused issues during their time with us.
 
 &nbsp;  
-### __Languages & Technologies Used__
+## __Languages & Technologies Used__
 
 - [HTML](https://en.wikipedia.org/wiki/HTML5) - used for main content for the site.
 - [CSS3](https://en.wikipedia.org/wiki/CSS) - used to style the sites layout.
@@ -533,10 +533,10 @@ There are definitely more functionalities I wanted to implement in this project,
 - [Figma](https://www.figma.com/) - used to design my wireframes.
 
 &nbsp;  
-### __Database Design__
+## __Database Design__
 
 &nbsp;  
-#### __Models__:
+### __Models__:
 
 - Booking Form:
 
@@ -568,21 +568,21 @@ There are definitely more functionalities I wanted to implement in this project,
     - The user model was built using [django-allauth](https://django-allauth.readthedocs.io/en/latest/).
 
 &nbsp;  
-### __Agile Tool__
+## __Agile Tool__
 
 &nbsp;  
-#### __GitHub Projects__:
+### __GitHub Projects__:
 
 [GitHub Projects](https://github.com/LesterCuasay/Project-4/projects?query=is%3Aopen) served as an agile tool for this project, the purpose of this was to proactively map out the project which I will admit I did not use to its full advantages as I was more focused on the coding of the website resulting to not updating my progression through the projects board.
 
 
 &nbsp;  
-#### __GitHub Issues__:
+### __GitHub Issues__:
 
 [GitHub Issues](https://github.com/LesterCuasay/Project-4/issues) served as another Agile tool, here I used my own user story template and bug template to monitor where I am within the creation of the website.
 
 &nbsp;  
-#### __User Story Prioritization__:
+### __User Story Prioritization__:
 
 In my GitHub Issues, I have prioritized my user stories under the MoSCoW method:
 
@@ -592,6 +592,78 @@ In my GitHub Issues, I have prioritized my user stories under the MoSCoW method:
 - WON'T HAVE - not a priority feature
 
 &nbsp;  
-### __Testing__
+## __Testing__
 
 The testing for this website can be found in the [TESTING.md](TESTING.md) file.
+
+## __Deployment__
+
+### __ElephantSQL__
+
+This project uses [ElephantSQL](https://www.elephantsql.com/) as the PostgresQL Database, to set this up go to their website and sign up using your Github account and follow their instructions.
+
+- Create a new instance, this can be found on the top right of the page.
+- Provide a name for the new instance, select "Tiny Turtle (Free) for the plan, Tags can be left blank.
+- Choose the closest Data Center to you.
+- Confirm the creation of your new instance.
+- Back on the menu you will find the new instance, click on it and you can view the database URL and Password.
+
+&nbsp;  
+### __Cloudinary__
+
+This project uses [Cloudinary](https://cloudinary.com/) to store media files online, to use this for your own project follow the steps below:
+
+- Sign up with GitHub or create an account.
+- From the Dashboard you will see the "API Enviroment variable", this will go in our project.
+
+&nbsp;  
+### __Heroku__
+
+This project is deployed on [Heroku](https://heroku.com/), deployment steps are listed below:
+
+- On the right click on _New_
+- From the drop down click on _Create New App_
+- Input the name for your app (app name has to be unique so choose wisely!)
+- Choose a region and then click on _Create App_
+- From the app settings, click on _Reveal Config Vars_ and set your enviroment variables.
+
+i.e 
+
+| Key            | Value                                         |  
+|----------------|-----------------------------------------------|
+| CLOUDINARY_URL | insert your own Cloudinary API key here       |
+| DATABASE_URL   | insert your own ElephantSQL database URL here |
+| SECRET_KEY     | this can be any random secret key             |
+
+To be able to deploy to heroku properly, there are two files that is needed.
+
+- requirements.txt
+
+Everytime you add a package that your project will depend on you need to update your requirements.txt with this code:
+
+> pip3 freeze --local > requirements.txt
+
+Though if you are using your project on a different workspace you can use this code to install the projects requirements:
+
+> pip3 install -r requirements.txt
+
+- Procfile
+
+Inside the procfile file insert this code, replace "app_name" with your projects name:
+
+> web: gunicorn app_name.wsgi
+
+- To deploy in heroku, click on your app and navigate to the "Deploy" tab.
+- Connect your project through "Deployment Method".
+- Scroll down and either choose "Automatic deploys" or "Manual Deploy"
+- Wait for deployment and open your deployed app!
+
+&nbsp;  
+## __Credits__
+
+- [Heroku](https://heroku.com/) - For deployment of the app 
+- [Code Institute Python Linter](https://pep8ci.herokuapp.com/) - For validating my Python Code
+- [Testi@](https://testi.at/) - For helping me create the email html templates
+- [MailChimp](https://templates.mailchimp.com/resources/email-client-css-support/) - For giving me guidance on what elements I can use in the email templates
+- [Django all-auth docs](https://django-allauth.readthedocs.io/en/latest/forms.html#account-forms) - For showing me how to override their Login/Signup/Logout pages
+- [Pexels](https://www.pexels.com/) - For the images used throughout the website
