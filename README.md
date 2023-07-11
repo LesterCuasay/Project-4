@@ -18,6 +18,11 @@ The deployed project can be found here - [Coderscave](https://coders-cave-projec
         - [Existing User](#existing-user)
         - [Site Admin](#site-admin)
     - [Wireframes](#wireframes)
+        - [Homepage](#homepage)
+        - [Menu](#menu)
+        - [Book](#book)
+        - [Bookings List](#bookings-list)
+        - [Reviews List](#reviews-list)
     - [Colour Scheme](#colour-scheme)
     - [Typography](#typography)
 - [Features](#features)
@@ -51,8 +56,7 @@ The deployed project can be found here - [Coderscave](https://coders-cave-projec
         - [All Booking List](#all-booking-list-superuser-only)
     - [Error Pages](#error-pages)
     - [Future Features](#future-features)
-- [Technologies Used](#technologies-used)
-    - [Languages Used](#languages-used)
+- [Languages & Technologies Used](#languages--technologies-used)
 - [Database Design](#database-design)
     - [Models](#models)
 - [Agile Tool](#agile-tool)
@@ -105,6 +109,68 @@ The deployed project can be found here - [Coderscave](https://coders-cave-projec
 
 &nbsp;  
 ### __Wireframes__
+
+As part of my planning stage I created a base design using [Figma](https://www.figma.com/). At this stage I already chose my colour scheme through looking at the bootstrap documentation, so instead of doing a blank wireframe I decided to implement what colours I wanted to use for which part of the website.
+
+Though throughout the creation of the website the design of my website slighty changes particulary the mobile view.
+
+#### __Homepage__
+
+__Desktop__
+
+![home-figma](static/img/testing/home-figma.png)
+
+__Mobile__
+
+![home-figma](static/img/testing/home-mobile-figma.png)
+
+&nbsp;  
+#### __Menu__
+
+__Desktop__
+
+![menu-figma](static/img/testing/menu-figma.png)
+
+__Mobile__
+
+![menu-figma](static/img/testing/menu-mobile-figma.png)
+
+&nbsp;  
+#### __Book__
+
+__Desktop__
+
+![book-figma](static/img/testing/book-figma.png)
+
+__Mobile__
+
+![book-figma](static/img/testing/book-mobile-figma.png)
+
+&nbsp;  
+#### __Bookings List__
+
+__Desktop__
+
+![bookings-figma](static/img/testing/bookings-figma.png)
+
+__Mobile__
+
+![bookings-figma](static/img/testing/bookings-mobile-figma.png)
+
+&nbsp;  
+#### __Reviews List__
+
+__Desktop__
+
+![reviews-figma](static/img/testing/reviews-figma.png)
+
+__Mobile__
+
+![reviews-figma](static/img/testing/reviews-mobile-figma.png)
+
+
+As for the User Interface such as the login/logout/signout/delete pages I did not make a design for this, but as the project progressed I made sure that these pages matches the layout of the website.
+
 &nbsp;  
 ### __Colour Scheme__
 As my project uses [bootstrap](https://getbootstrap.com/docs/4.6/getting-started/introduction/) the colour scheme I used are the ones that are provided in their css :root
@@ -450,11 +516,8 @@ There are definitely more functionalities I wanted to implement in this project,
     - As a site admin I want them to be able to ban existing users if they have caused issues during their time with us.
 
 &nbsp;  
-### __Technologies Used__
+### __Languages & Technologies Used__
 
-&nbsp;  
-#### __Languages Used__:
-    
 - [HTML](https://en.wikipedia.org/wiki/HTML5) - used for main content for the site.
 - [CSS3](https://en.wikipedia.org/wiki/CSS) - used to style the sites layout.
 - [Javascript](https://www.javascript.com/) - used with bootstrap and also my star ratings and date functions.
