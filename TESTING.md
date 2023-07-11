@@ -234,5 +234,54 @@ To make sure that my website is running as intended, I will be using different t
 | Test Results      | ![bookings-views-result](static/img/testing/bookings-views-result.png) |
 
 &nbsp;  
+### __Reviews App__
+
+#### __Reviews Model__
+
+[reviews/models.py](https://github.com/LesterCuasay/Project-4/blob/main/reviews/models.py)
+
+|                   | Screenshot                                              |
+|-------------------|---------------------------------------------------------|
+| CI Python Linter  | ![reviews-models](static/img/testing/reviews-model.png) |
+
+&nbsp;  
+#### __Reviews Form__
+
+[reviews/forms.py](https://github.com/LesterCuasay/Project-4/blob/main/reviews/forms.py)
+
+|                   | Screenshot                                             |
+|-------------------|--------------------------------------------------------|
+| CI Python Linter  | ![reviews-forms](static/img/testing/reviews-forms.png) |
+
+&nbsp;  
+#### __Reviews View__
+
+[reviews/views.py](https://github.com/LesterCuasay/Project-4/blob/main/reviews/views.py)
+
+|                   | Screenshot                                             |
+|-------------------|--------------------------------------------------------|
+| CI Python Linter  | ![reviews-views](static/img/testing/reviews-views.png) |
+
+&nbsp;  
+#### __Reviews Test Form__
+
+[reviews/tests/test_forms.py](https://github.com/LesterCuasay/Project-4/blob/main/reviews/tests/test_forms.py)
+
+|                   | Screenshot                                                           |
+|-------------------|----------------------------------------------------------------------|
+| CI Python Linter  | ![reviews-test-forms](static/img/testing/reviews-test-forms.png)     |
+| Test Results      | ![reviews-forms-result](static/img/testing/reviews-forms-result.png) |
+
+&nbsp;  
+#### __Reviews Test View__
+
+[reviews/tests/test_views.py](https://github.com/LesterCuasay/Project-4/blob/main/reviews/tests/test_views.py)
+
+|                   | Screenshot                                                           |
+|-------------------|----------------------------------------------------------------------|
+| CI Python Linter  | ![reviews-test-views](static/img/testing/reviews-test-views.png)     |
+| Test Results      | ![reviews-views-result](static/img/testing/reviews-views-result.png) |
+
+&nbsp;  
         
         
