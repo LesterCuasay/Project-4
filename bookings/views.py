@@ -141,7 +141,7 @@ def delete_booking(request, booking_id):
 
             send_cancellation_confirmation_email(booking)
 
-            messages.error(request, "Booking deleted successfully!")
+            messages.error(request, "Booking cancelled successfully!")
             if request.user.is_superuser:
                 return redirect("view_all_bookings")
             else:

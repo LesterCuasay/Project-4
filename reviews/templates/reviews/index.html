@@ -100,18 +100,15 @@
                         </div>
                     </div>
                     <div class="col-lg-8 mt-4 mb-4">
-                        
                         <div class="review">
                             {{ review_form.date.label_tag }}
                             {{ review_form.date | as_crispy_field }}
                         </div>
-                        
-                        <div class="review">
+                        <div class="review mt-1">
                             {{ review_form.email.label_tag }}
                             {{ review_form.email | as_crispy_field }}
                         </div>
-                        
-                        <div class="review">
+                        <div class="review mt-1">
                             {{ review_form.comment.label_tag }}
                             {{ review_form.comment | as_crispy_field }}
                         </div>
