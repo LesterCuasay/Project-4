@@ -15,6 +15,17 @@ To make sure that my website is running as intended, I will be using different t
 - Every Python code will be checked on [Code Institute Python Linter](https://pep8ci.herokuapp.com/)
 - Every JavaScript code will be checked on [JShint](https://jshint.com/)
 
+## __Automated Test__
+
+To check if my views and forms are correctly working I implemented automation testing, the results for all tests is shown below:
+
+|              | Screenshot                                   |
+|--------------|----------------------------------------------|
+| Test Results | ![all-test](static/img/testing/all-test.png) |
+
+Individual test results will be found in the [Python](#python) testing section.
+
+&nbsp;  
 ## __HTML & Lighthouse__
 
 ### __Homepage__
