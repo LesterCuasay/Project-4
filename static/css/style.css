@@ -152,10 +152,6 @@ footer .btn:hover {
     font-size: 1.2rem;
 }
 
-.review {
-    display: flex;
-}
-
 .review-rating {
     margin-bottom: 0.3rem;
     line-height: 3;
