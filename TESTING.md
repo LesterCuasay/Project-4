@@ -147,7 +147,7 @@ Individual test results will be found in the [Python](#python) testing section.
 &nbsp;  
 ### __Review Success__
 
-[view_all_draft_reviews.html](https://coders-cave-project-4.herokuapp.com/review/draft-reviews)
+[review_success.html](https://coders-cave-project-4.herokuapp.com/review/success)
 
 |                    | Screenshot                                                                          |                      Notes                   |
 |--------------------|-------------------------------------------------------------------------------------|----------------------------------------------|
@@ -174,6 +174,25 @@ Individual test results will be found in the [Python](#python) testing section.
 | W3C HTML Validator | ![delete-review](static/img/testing/delete-review-validator.png)          |                                      |
 
 &nbsp;  
+### __Error 403__
+
+|                    | Screenshot                                                        |              Notes                   |
+|--------------------|-------------------------------------------------------------------|--------------------------------------|
+| Desktop            | ![error-403](static/img/testing/lighthouse-error-403-desktop.png) |                                      |
+| Mobile             | ![error-403](static/img/testing/lighthouse-error-403-mobile.png)  | Minor Issues                         |
+| W3C HTML Validator | ![error-403](static/img/testing/error-403-validator.png)          |                                      |
+
+&nbsp;  
+### __Error 404__
+
+|                    | Screenshot                                                        |              Notes                   |
+|--------------------|-------------------------------------------------------------------|--------------------------------------|
+| Desktop            | ![error-404](static/img/testing/lighthouse-error-404-desktop.png) |                                      |
+| Mobile             | ![error-404](static/img/testing/lighthouse-error-404-mobile.png)  | Minor Issues                         |
+| W3C HTML Validator | ![error-404](static/img/testing/error-404-validator.png)          |                                      |
+
+&nbsp;  
+
 
 
 All the issues on performance for mobile view was due to the loading times of the bootstrap css, unfortunately I do not know how to fix this.
