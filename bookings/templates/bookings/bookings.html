@@ -8,57 +8,66 @@
 
 {% block content %}
 
-<div class="container-fluid w-75 card mb-5 mt-5 p-5">
+<div class="container-fluid mb-5 mt-5 p-md-5">
     {% if user.is_authenticated %}
-    <div class="col-md-8 mt-3 offset-md-2 text-center">
-        <h2 class="card-title"> Hi, {{ user.get_username | capfirst }}!</h2>
-
-        <p class="card-text mb-4">Please fill out the form below to book a table!</p>
-    </div>
-    <form action="{% url 'book_table' %}" method="post">
+    <form action="{% url 'book_table' %}" method="post" class="card p-3">
+        <div class="col-md-8 mt-3 offset-md-2 text-center">
+            <h2 class="card-title"> Hi, {{ user.get_username | capfirst }}!</h2>
+    
+            <p class="card-text mb-4">Please fill out the form below to book a table!</p>
+        </div>
         {% csrf_token %}
-        <div class="form-group">
-            {{ form.name }}
-        </div>
-        <div class="form-group">
-            {{ form.email }}
-        </div>
-        <div class="form-group">
-            {{ form.phone_number }}
-        </div>
-        <div class="form-group">
-            {{ form.number_of_people }}
-        </div>
-        <div class="form-group">
-            {{ form.date }}
-        </div>
-        <div class="form-group">
-            {{ form.time }}
-        </div>
-        <div class="form-group">
-            {{ form.special_requirements }}
-        </div>
-        <div class="form-group-errors">
-            {% if form.date.errors %}
-            {% for error in form.date.errors %}
-            <div class="form-errors alert-danger">
-                {{ error }}
+        <div class="text-center">
+            <div class="form-group">
+                {{ form.name.label_tag }}
+                {{ form.name }}
             </div>
-            {% endfor %}
-            {% endif %}
-        </div>
-        <div class="form-group-errors">
-            {% if form.time.errors %}
-            {% for error in form.time.errors %}
-            <div class="form-errors alert-danger">
-                {{ error }}
+            <div class="form-group">
+                {{ form.email.label_tag }}
+                {{ form.email }}
             </div>
-            {% endfor %}
-            {% endif %}
-        </div>
-        <div class="form-group">
-            <div class="card-btn">
-                <button class="btn btn-secondary text-uppercase" type="submit">Submit</button>
+            <div class="form-group">
+                {{ form.phone_number.label_tag }}
+                {{ form.phone_number }}
+            </div>
+            <div class="form-group">
+                {{ form.number_of_people.label_tag }}
+                {{ form.number_of_people }}
+            </div>
+            <div class="form-group">
+                {{ form.date.label_tag }}
+                {{ form.date }}
+            </div>
+            <div class="form-group">
+                {{ form.time.label_tag }}
+                {{ form.time }}
+            </div>
+            <div class="form-group">
+                {{ form.special_requirements.label_tag }}
+                {{ form.special_requirements }}
+            </div>
+            <div class="form-group-errors">
+                {% if form.date.errors %}
+                {% for error in form.date.errors %}
+                <div class="form-errors alert-danger">
+                    {{ error }}
+                </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+            <div class="form-group-errors">
+                {% if form.time.errors %}
+                {% for error in form.time.errors %}
+                <div class="form-errors alert-danger">
+                    {{ error }}
+                </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <div class="card-btn">
+                    <button class="btn btn-secondary text-uppercase" type="submit">Submit</button>
+                </div>
             </div>
         </div>
     </form>

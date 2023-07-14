@@ -220,9 +220,13 @@ footer .btn:hover {
 
 /** Bookings Page/Login Page/Signup Page/Logout Page **/
 
-.form-group {
-    display: flex;
-    justify-content: center;
+.form-control {
+    margin: 0 auto;
+}
+
+.form-group label {
+    color: #fff;
+    margin: 0;
 }
 
 .secondaryAction {
