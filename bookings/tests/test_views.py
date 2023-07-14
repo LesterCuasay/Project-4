@@ -3,13 +3,13 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 from django.core.exceptions import PermissionDenied
 from django.core import mail
-from bookings.models import BookingForm
+from bookings.models import Booking
 from bookings.views import send_booking_confirmation_email, send_update_confirmation_email, send_cancellation_confirmation_email  # noqa
 
 
 class BookingViewTest(TestCase):
     """
-    Sets up a test user, test admin and a bookingform
+    Sets up a test user, test admin and a booking
     so I can test the views using these parameters
     """
     def setUp(self):
@@ -21,7 +21,7 @@ class BookingViewTest(TestCase):
             username="admin",
             password="adminpassword"
         )
-        self.booking = BookingForm.objects.create(
+        self.booking = Booking.objects.create(
             user=self.user,
             date="2023-06-18",
             time="12:00",
@@ -64,7 +64,7 @@ class BookingViewTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response='view_booking')
 
-        booking = BookingForm.objects.get(id=booking_id)
+        booking = Booking.objects.get(id=booking_id)
 
         send_booking_confirmation_email(booking)
 
@@ -167,7 +167,7 @@ class BookingViewTest(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertTemplateUsed(response='view_booking')
 
-        booking = BookingForm.objects.get(id=booking_id)
+        booking = Booking.objects.get(id=booking_id)
 
         send_update_confirmation_email(booking)
 
@@ -217,7 +217,7 @@ class BookingViewTest(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertTemplateUsed(response='view_booking')
 
-        booking = BookingForm.objects.get(id=booking_id)
+        booking = Booking.objects.get(id=booking_id)
         booking.delete()
 
         send_cancellation_confirmation_email(booking)

@@ -1,7 +1,7 @@
 from django.test import TestCase
 from datetime import date, timedelta
 from bookings.forms import BookingTableForm
-from bookings.models import BookingForm
+from bookings.models import Booking
 
 
 class BookingTableFormTest(TestCase):
@@ -97,13 +97,13 @@ class BookingTableFormTest(TestCase):
         """
         Test if the clean_time function raises an error when an existing
         booking already exists with the same date and time, existing_booking
-        is created from the BookingForm class to save an instance of the model
+        is created from the Booking class to save an instance of the model
         and form_data is then passed through with the same date and time
         which throws the error.
         """
 
         # Creates a booking with specific date and time
-        existing_booking = BookingForm.objects.create(
+        existing_booking = Booking.objects.create(
             date=date.today(),
             time="12:00",
             number_of_people=4
