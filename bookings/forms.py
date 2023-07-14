@@ -78,6 +78,7 @@ class BookingTableForm(forms.ModelForm):
                     "class": "form-control",
                     "style": "max-width: 300px",
                     "type": "date",
+                    "required": True
                 }
             ),
             "time": Select(
