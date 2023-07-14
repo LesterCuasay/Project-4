@@ -299,6 +299,16 @@ __Mobile__
 
 ![forgot-password-mobile](static/img/documentation/forgot-password-mobile.png)
 
+- On success, the user will be redirected the page informing them of the next steps:
+
+__Desktop__
+
+![forgot-done](static/img/documentation/forgot-done.png)
+
+__Mobile__
+
+![forgot-done-mobile](static/img/documentation/forgot-done-mobile.png)
+
 &nbsp;  
 #### __Password Reset Email__
 
@@ -328,6 +338,16 @@ __Desktop__
 __Mobile__
 
 ![change-password-mobile](static/img/documentation/change-password-mobile.png)
+
+- On success the user will be redirected to a page informing them the status of their actions:
+
+__Desktop__
+
+![change-password-success](static/img/documentation/change-password-success.png)
+
+__Mobile__
+
+![change-password-success-mobile](static/img/documentation/change-password-success-mobile.png)
 
 &nbsp;  
 ### __Review Form__
@@ -361,7 +381,13 @@ __Mobile__
 
 - When the user succesfully submit a review, they will be redirected to the success page.
 
+__Desktop__
+
 ![review-success](static/img/documentation/review-success.png)
+
+__Mobile__
+
+![review-success-mobile](static/img/documentation/review-success-mobile.png)
 
 &nbsp;  
 #### __Draft Review__ (Superuser Only):
@@ -527,11 +553,21 @@ if request.user.is_superuser:
 
 - I have implemented my own error pages for the 403, 404 and 500 html errors these are the templates below:
 
+__Desktop__
+
 ![403](static/img/documentation/403.png)
 
 ![404](static/img/documentation/404.png)
 
 ![500](static/img/documentation/500.png)
+
+__Mobile__
+
+![403](static/img/documentation/403-mobile.png)
+
+![404](static/img/documentation/404-mobile.png)
+
+![500](static/img/documentation/500-mobile.png)
 
 &nbsp;  
 ### __Future Features__
