@@ -9,7 +9,6 @@
 {% block content %}
 
 <div class="container-fluid mb-5 mt-5 p-4 card-container">
-    {% if user.is_authenticated %}
     <form action="{% url 'book_table' %}" method="post" class="card p-3">
         <div class="col-md-8 mt-3 offset-md-2 text-center">
             <h2 class="card-title"> Hi, {{ user.get_username | capfirst }}!</h2>
@@ -71,16 +70,6 @@
             </div>
         </div>
     </form>
-    {% else %}
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2 text-center">
-            <h2 class="text-uppercase card-title d-block">Please
-                <a class="secondaryAction" href="{% url 'account_login' %}?next={{ request.path }}">sign in</a> to book
-                a table</h2>
-            <p class="card-text">If you have not created an account yet, then please
-                <a class="secondaryAction" href="{% url 'account_signup' %}">sign up</a> first.</p>
-        </div>
-    </div>
-    {% endif %}
+    
 </div>
 {% endblock content %}
