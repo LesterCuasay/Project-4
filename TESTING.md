@@ -174,6 +174,42 @@ Individual test results will be found in the [Python](#python) testing section.
 | W3C HTML Validator | ![delete-review](static/img/testing/delete-review-validator.png)          |                                      |
 
 &nbsp;  
+### __Forgot Password__
+
+|                    | Screenshot                                                                    |              Notes                   |
+|--------------------|-------------------------------------------------------------------------------|--------------------------------------|
+| Desktop            | ![forgot-password](static/img/testing/lighthouse-forgot-password-desktop.png) |                                      |
+| Mobile             | ![forgot-password](static/img/testing/lighthouse-forgot-password-mobile.png)  | Minor Issues                         |
+| W3C HTML Validator | ![forgot-password](static/img/testing/forgot-password-validator.png)          |                                      |
+
+&nbsp;  
+### __Forgot Password Success__
+
+|                    | Screenshot                                                                              |              Notes                   |
+|--------------------|-----------------------------------------------------------------------------------------|--------------------------------------|
+| Desktop            | ![forgot-password-done](static/img/testing/lighthouse-forgot-password-done-desktop.png) |                                      |
+| Mobile             | ![forgot-password-done](static/img/testing/lighthouse-forgot-password-done-mobile.png)  | Minor Issues                         |
+| W3C HTML Validator | ![forgot-password-done](static/img/testing/forgot-password-done-validator.png)          |                                      |
+
+&nbsp;  
+### __Change Password__
+
+|                    | Screenshot                                                                    |              Notes                   |
+|--------------------|-------------------------------------------------------------------------------|--------------------------------------|
+| Desktop            | ![change-password](static/img/testing/lighthouse-change-password-desktop.png) |                                      |
+| Mobile             | ![change-password](static/img/testing/lighthouse-change-password-mobile.png)  | Minor Issues                         |
+| W3C HTML Validator | ![change-password](static/img/testing/change-password-validator.png)          |                                      |
+
+&nbsp;  
+### __Change Password Success__
+
+|                    | Screenshot                                                                              |              Notes                   |
+|--------------------|-----------------------------------------------------------------------------------------|--------------------------------------|
+| Desktop            | ![change-password-done](static/img/testing/lighthouse-change-password-done-desktop.png) |                                      |
+| Mobile             | ![change-password-done](static/img/testing/lighthouse-change-password-done-mobile.png)  | Minor Issues                         |
+| W3C HTML Validator | ![change-password-done](static/img/testing/change-password-done-validator.png)          |                                      |
+
+&nbsp;  
 ### __Error 403__
 
 |                    | Screenshot                                                        |              Notes                   |
