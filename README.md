@@ -248,7 +248,13 @@ At the beginning I wanted to implement Poppins as the font as it is easy to read
 
 - The login link can be found on the navbar when clicked it will take you to this page:
 
+__Desktop__
+
 ![login](static/img/documentation/login.png)
+
+__Mobile__
+
+![login-mobile](static/img/documentation/login-mobile.png)
 
 - If the user does not click on the "Remember Me" checkbox when they close the browser they will be automatically logged out. Unfortunately closing the tab will not end the session cookie so it has to be the full browser.
 
@@ -257,21 +263,41 @@ At the beginning I wanted to implement Poppins as the font as it is easy to read
 
 - If the user does not have an account they can make one using this page:
 
+__Desktop__
+
 ![signup](static/img/documentation/signup.png)
+
+__Mobile__
+
+![signup-mobile](static/img/documentation/signup-mobile.png)
+
 
 &nbsp;  
 #### __Logout Page__
 
 - When the user wants to end their session they can do this from the navbar in the drop down and click logout and it will take you to this page:
 
+__Desktop__
+
 ![logout](static/img/documentation/logout.png)
+
+__Mobile__
+
+![logout-mobile](static/img/documentation/logout-mobile.png)
+
 
 &nbsp;  
 #### __Forgot Password__
 
 - If the user forgets their password they can fill this form to be able to change their password.
 
+__Desktop__
+
 ![forgot-password](static/img/documentation/forgot-password.png)
+
+__Mobile__
+
+![forgot-password-mobile](static/img/documentation/forgot-password-mobile.png)
 
 &nbsp;  
 #### __Password Reset Email__
@@ -282,14 +308,26 @@ At the beginning I wanted to implement Poppins as the font as it is easy to read
 
 - If the link has already been used, this will be shown instead:
 
+__Desktop__
+
 ![bad-token](static/img/documentation/bad-token.png)
+
+__Mobile__
+
+![bad-token-mobile](static/img/documentation/bad-token-mobile.png)
 
 &nbsp;  
 #### __Change Password__
 
 - If the link has not been used yet, the user can change their password from this page:
 
+__Desktop__
+
 ![change-password](static/img/documentation/change-password.png)
+
+__Mobile__
+
+![change-password-mobile](static/img/documentation/change-password-mobile.png)
 
 &nbsp;  
 ### __Review Form__
@@ -300,18 +338,30 @@ At the beginning I wanted to implement Poppins as the font as it is easy to read
 
 #### __User not logged in__:
 
+__Desktop__
+
 ![review-not-logged-in](static/img/documentation/review-not-logged-in.png)
+
+__Mobile__
+
+![review-not-logged-in-mobile](static/img/documentation/review-not-logged-in-mobile.png)
 
 #### __User logged in__:
 
+__Desktop__
+
 ![review-logged-in](static/img/documentation/review-logged-in.png)
+
+__Mobile__
+
+![review-logged-in-mobile](static/img/documentation/review-logged-in-mobile.png)
 
 &nbsp;  
 #### __Review Submitted__:
 
 - When the user succesfully submit a review, they will be redirected to the success page.
 
-![review-success](static/img/documentation/review-logged-in.png)
+![review-success](static/img/documentation/review-success.png)
 
 &nbsp;  
 #### __Draft Review__ (Superuser Only):
@@ -354,7 +404,13 @@ if not request.user.is_superuser:
 @login_required
 ```
 
+__Desktop__
+
 ![booking-form](static/img/documentation/booking-form.png)
+
+__Mobile__
+
+![booking-form-mobile](static/img/documentation/booking-form-mobile.png)
 
 &nbsp;  
 
@@ -366,7 +422,13 @@ if not request.user.is_superuser:
     bookings = BookingForm.objects.filter(user=request.user).order_by("-id")
 ```
 
+__Desktop__
+
 ![booking-list](static/img/documentation/booking-list.png)
+
+__Mobile__
+
+![booking-list-mobile](static/img/documentation/booking-list-mobile.png)
 
 &nbsp;  
 
@@ -396,7 +458,13 @@ if not request.user.is_superuser:
 
 - The user also has the option to delete their booking if they no longer want their appointment. After the user delete their booking they will be redirected back to the "My Bookings" page.
 
+__Desktop__
+
 ![delete-booking](static/img/documentation/delete-booking.png)
+
+__Mobile__
+
+![delete-booking-mobile](static/img/documentation/delete-booking-mobile.png)
 
 &nbsp;  
 
@@ -423,41 +491,7 @@ if not request.user.is_superuser:
 
 ![date-future](static/img/documentation/date-future.png)
 
-- The code below was used to achieve this function it can be found in bookings/forms.py:
-
-```py
-def clean_date(self):
-        selected_date = self.cleaned_data.get("date")
-        selected_time = self.cleaned_data.get("time")
-        max_date = date.today() + timedelta(days=30)
-
-        if selected_date and selected_date > max_date:
-            error_message = "You can only book up to one month in advance, " \
-                            "Please choose another date."
-            raise ValidationError(error_message)
-
-        if selected_date and selected_date < date.today():
-            error_message = "You cannot book in the past, " \
-                            "Please choose a date in the present."
-            raise ValidationError(error_message)
-
-        return selected_date
-
-    def clean_time(self):
-        selected_date = self.cleaned_data.get("date")
-        selected_time = self.cleaned_data.get("time")
-
-        if selected_date and selected_time:
-            existing_booking = BookingForm.objects.filter(
-                date=selected_date, time=selected_time
-            )
-            if existing_booking.exists():
-                error_message = "The timeslot on this day is alreay booked, " \
-                                "Please choose another timeslot."
-                raise ValidationError(error_message)
-
-        return selected_time
-```
+- The code used to achieve this function can be found in [bookings/forms.py](https://github.com/LesterCuasay/Project-4/blob/main/bookings/forms.py) on line 100.
 
 &nbsp;  
 
@@ -472,7 +506,14 @@ if not request.user.is_superuser:
     bookings = BookingForm.objects.all().order_by("-id")
 ```
 
+__Desktop__
+
 ![all-bookings](static/img/documentation/all-bookings.png)
+
+__Mobile__
+
+![all-bookings-mobile](static/img/documentation/all-bookings-mobile.png)
+
 
 - The admin also has functionalities to update or delete users bookings if the user requests for them to do it. The layout of the update and delete pages are the same for superusers except the text changes to "Update the customers booking below!". When the superuser updates or deletes a users booking they will also get an email confirmation about the changes and also instead of being redirected back to the "My Bookings" page the superuser will get redirected back to the "All Bookings" page instead. This was achieved by this code:
 
