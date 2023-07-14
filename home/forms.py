@@ -52,6 +52,7 @@ class CustomResetForm(ResetPasswordForm):
             'style': "max-width:300px",
             'placeholder': 'Email Address'
             })
+        self.fields['email'].label = 'Email Address'
 
 
 class CustomResetKeyForm(ResetPasswordKeyForm):
