@@ -6,7 +6,7 @@ from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.conf import settings
 from django.views import View
-from .models import BookingForm
+from .models import Booking
 from .forms import BookingTableForm
 from datetime import datetime
 
@@ -51,7 +51,7 @@ def view_all_bookings(request):
     if not request.user.is_superuser:
         raise PermissionDenied
 
-    bookings = BookingForm.objects.all().order_by("-id")
+    bookings = Booking.objects.all().order_by("-id")
 
     context = {
         "bookings": bookings,
@@ -78,7 +78,7 @@ def view_booking(request):
     Only if the user is logged in they will be able
     to see the bookings they have made, In the order of the booking ID.
     """
-    bookings = BookingForm.objects.filter(user=request.user).order_by("-id")
+    bookings = Booking.objects.filter(user=request.user).order_by("-id")
 
     context = {
         "bookings": bookings,
@@ -92,7 +92,7 @@ def update_booking(request, booking_id):
     """
     This enables the user to update their booking if needed.
     """
-    booking = get_object_or_404(BookingForm, id=booking_id)
+    booking = get_object_or_404(Booking, id=booking_id)
     booking_form = None
 
     if request.user == booking.user:
@@ -131,7 +131,7 @@ def delete_booking(request, booking_id):
     """
     This enables the user to delete their booking if it is no longer required.
     """
-    booking = get_object_or_404(BookingForm, id=booking_id)
+    booking = get_object_or_404(Booking, id=booking_id)
     booking_form = None
 
     if request.user == booking.user:

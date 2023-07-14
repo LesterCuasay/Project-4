@@ -4,7 +4,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from datetime import datetime, date, timedelta
 
 
-class BookingForm(models.Model):
+class Booking(models.Model):
     user = models.ForeignKey(
         User,
         null=True,

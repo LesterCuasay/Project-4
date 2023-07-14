@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import BookingForm
+from .models import Booking
 
 
-class BookingFormAdmin(admin.ModelAdmin):
+class BookingAdmin(admin.ModelAdmin):
     list_display = (
         'name',
         'email',
@@ -13,4 +13,4 @@ class BookingFormAdmin(admin.ModelAdmin):
     )
 
 
-admin.site.register(BookingForm, BookingFormAdmin)
+admin.site.register(Booking, BookingAdmin)

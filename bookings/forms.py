@@ -1,7 +1,7 @@
 from django import forms
 from django.forms import fields
 from django.forms.widgets import *
-from .models import BookingForm
+from .models import Booking
 from django.core.exceptions import ValidationError
 from datetime import date, timedelta, datetime
 
@@ -37,7 +37,7 @@ class BookingTableForm(forms.ModelForm):
     )
 
     class Meta:
-        model = BookingForm
+        model = Booking
         fields = "__all__"
         exclude = ["user"]
         widgets = {
@@ -119,7 +119,7 @@ class BookingTableForm(forms.ModelForm):
         selected_time = self.cleaned_data.get("time")
 
         if selected_date and selected_time:
-            existing_booking = BookingForm.objects.filter(
+            existing_booking = Booking.objects.filter(
                 date=selected_date, time=selected_time
             )
             if existing_booking.exists():
