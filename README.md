@@ -112,55 +112,55 @@ Though throughout the creation of the website the design of my website slighty c
 
 __Desktop__
 
-![home-figma](static/img/testing/home-figma.png)
+![home-figma](static/img/documentation/home-figma.png)
 
 __Mobile__
 
-![home-figma](static/img/testing/home-mobile-figma.png)
+![home-figma](static/img/documentation/home-mobile-figma.png)
 
 &nbsp;  
 #### __Menu__
 
 __Desktop__
 
-![menu-figma](static/img/testing/menu-figma.png)
+![menu-figma](static/img/documentation/menu-figma.png)
 
 __Mobile__
 
-![menu-figma](static/img/testing/menu-mobile-figma.png)
+![menu-figma](static/img/documentation/menu-mobile-figma.png)
 
 &nbsp;  
 #### __Book__
 
 __Desktop__
 
-![book-figma](static/img/testing/book-figma.png)
+![book-figma](static/img/documentation/book-figma.png)
 
 __Mobile__
 
-![book-figma](static/img/testing/book-mobile-figma.png)
+![book-figma](static/img/documentation/book-mobile-figma.png)
 
 &nbsp;  
 #### __Bookings List__
 
 __Desktop__
 
-![bookings-figma](static/img/testing/bookings-figma.png)
+![bookings-figma](static/img/documentation/bookings-figma.png)
 
 __Mobile__
 
-![bookings-figma](static/img/testing/bookings-mobile-figma.png)
+![bookings-figma](static/img/documentation/bookings-mobile-figma.png)
 
 &nbsp;  
 #### __Reviews List__
 
 __Desktop__
 
-![reviews-figma](static/img/testing/reviews-figma.png)
+![reviews-figma](static/img/documentation/reviews-figma.png)
 
 __Mobile__
 
-![reviews-figma](static/img/testing/reviews-mobile-figma.png)
+![reviews-figma](static/img/documentation/reviews-mobile-figma.png)
 
 
 As for the User Interface such as the login/logout/signout/delete pages I did not make a design for this, but as the project progressed I made sure that these pages matches the layout of the website.
