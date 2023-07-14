@@ -93,25 +93,31 @@ def update_booking(request, booking_id):
     This enables the user to update their booking if needed.
     """
     booking = get_object_or_404(BookingForm, id=booking_id)
+    booking_form = None
 
-    if request.method == "POST":
-        booking_form = BookingTableForm(request.POST, instance=booking)
+    if request.user == booking.user:
 
-        if booking_form.is_valid():
-            booking_form.save()
+        if request.method == "POST":
+            booking_form = BookingTableForm(request.POST, instance=booking)
 
-            send_update_confirmation_email(booking)
+            if booking_form.is_valid():
+                booking_form.save()
 
-            messages.success(request, "Booking updated successfully!")
-            if request.user.is_superuser:
-                return redirect("view_all_bookings")
-            return redirect("view_booking")
+                send_update_confirmation_email(booking)
+
+                messages.success(request, "Booking updated successfully!")
+                if request.user.is_superuser:
+                    return redirect("view_all_bookings")
+                return redirect("view_booking")
+
+            else:
+                messages.error(request, "Error in the form, Please try again.")
 
         else:
-            messages.error(request, "Error in the form, Please try again.")
+            booking_form = BookingTableForm(instance=booking)
 
     else:
-        booking_form = BookingTableForm(instance=booking)
+        raise PermissionDenied
 
     context = {
         "form": booking_form,
@@ -126,17 +132,23 @@ def delete_booking(request, booking_id):
     This enables the user to delete their booking if it is no longer required.
     """
     booking = get_object_or_404(BookingForm, id=booking_id)
+    booking_form = None
 
-    if request.method == "POST":
-        booking.delete()
+    if request.user == booking.user:
 
-        send_cancellation_confirmation_email(booking)
+        if request.method == "POST":
+            booking.delete()
 
-        messages.error(request, "Booking deleted successfully!")
-        if request.user.is_superuser:
-            return redirect("view_all_bookings")
-        else:
-            return redirect("view_booking")
+            send_cancellation_confirmation_email(booking)
+
+            messages.error(request, "Booking deleted successfully!")
+            if request.user.is_superuser:
+                return redirect("view_all_bookings")
+            else:
+                return redirect("view_booking")
+
+    else:
+        raise PermissionDenied
 
     context = {
         "booking": booking,
