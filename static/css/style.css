@@ -168,6 +168,7 @@ footer .btn:hover {
 .review input,
 .review textarea {
     width: 300px;
+    resize: none;
 }
 
 .reviews-container {
