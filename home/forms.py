@@ -31,6 +31,7 @@ class CustomSignupForm(SignupForm):
             'style': "max-width:300px",
             'placeholder': 'Email Address'
             })
+        self.fields['email'].label = 'Email Address'
         self.fields['password1'].widget = forms.PasswordInput(attrs={
             'class': 'form-control',
             'style': "max-width:300px",
