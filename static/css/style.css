@@ -162,7 +162,8 @@ footer .btn:hover {
 }
 
 
-.review-label p {
+.review-label p,
+.review label {
     color: var(--white);
     line-height: 2;
     font-weight: bold;

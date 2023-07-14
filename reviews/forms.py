@@ -18,9 +18,11 @@ class BookingReviewForm(forms.ModelForm):
         self.fields['date'].widget = forms.DateInput(attrs={
             'type': 'date'
         })
+        self.fields['date'].label = 'Date of booking'
         self.fields['email'].widget = forms.EmailInput(attrs={
             'placeholder': 'Email Address'
         })
+        self.fields['email'].label = 'Email Address'
         self.fields['comment'].widget = forms.Textarea(attrs={
             'placeholder': 'Add your review here',
             'maxlength': '350'
