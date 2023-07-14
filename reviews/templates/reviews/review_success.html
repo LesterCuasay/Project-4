@@ -3,12 +3,19 @@
 {% load i18n %}
 
 {% block head_title %}{% trans "Thank you!" %}{% endblock %}
-{% block hero_title %}<h1>{% trans "Your review has been submitted." %}</h1>{% endblock %}
-{% block hero_description %}<p>You will be notified by email when your review has been published.</p>{% endblock %}
-
-{% block footer %}
-{% endblock %}
-
+{% block hero_title %}<h1>{% trans "Thank you!" %}</h1>{% endblock %}
+{% block hero_description %}{% endblock %}
 
 {% block content %}
+<div class="container-fluid w-75 card mb-5 mt-5 p-4">
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2 text-center">
+            <h2 class="text-uppercase card-title">Your review has been submitted.</h2>
+            <p class="card-text">You will be notified by email when your review has been published.</p>
+        </div>
+    </div>
+    <div class="card-btn">
+        <a href="/" class="btn btn-secondary text-uppercase">Get back home!</a>
+    </div>
+</div>
 {% endblock %}
