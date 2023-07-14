@@ -95,7 +95,7 @@ def update_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
     booking_form = None
 
-    if request.user == booking.user:
+    if request.user == booking.user or request.user.is_superuser:
 
         if request.method == "POST":
             booking_form = BookingTableForm(request.POST, instance=booking)
@@ -134,7 +134,7 @@ def delete_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
     booking_form = None
 
-    if request.user == booking.user:
+    if request.user == booking.user or request.user.is_superuser:
 
         if request.method == "POST":
             booking.delete()
