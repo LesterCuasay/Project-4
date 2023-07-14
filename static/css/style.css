@@ -83,7 +83,7 @@ p {
 }
 
 .form-errors {
-    margin-top: 4px;
+    margin-top: 10px;
     border: 1px solid transparent;
     border-radius: 0.25rem;
     padding: 0.50rem 1.25rem;
