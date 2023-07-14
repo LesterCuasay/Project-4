@@ -234,7 +234,7 @@ At the beginning I wanted to implement Poppins as the font as it is easy to read
 &nbsp;  
 ### __Footer__
 
-- The footer appears in every page across the website (except for the error pages), the footer includes an about us with a brief description and opening times. It also has links to my github and linkedin, the copyright year has a script that will update depending on what year we are currently in.
+- The footer appears in every page across the website, the footer includes an about us with a brief description and opening times. It also has links to my github and linkedin, the copyright year has a script that will update depending on what year we are currently in.
 
 ![footer](static/img/documentation/footer.png)
 
