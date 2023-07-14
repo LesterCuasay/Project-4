@@ -10,6 +10,7 @@ class CustomLogInForm(LoginForm):
             'style': "max-width:300px",
             'placeholder': 'Username'
             })
+        self.fields['login'].label = 'Username'
         self.fields['password'].widget = forms.PasswordInput(attrs={
             'class': 'form-control',
             'style': "max-width:300px",

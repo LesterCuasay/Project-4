@@ -16,7 +16,7 @@
             <p class="card-text mb-4">Please fill out the form below to book a table!</p>
         </div>
         {% csrf_token %}
-        <div class="text-center">
+        <div class="text-left">
             <div class="form-group">
                 {{ form.name.label_tag }}
                 {{ form.name }}
