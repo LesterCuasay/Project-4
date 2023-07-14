@@ -35,7 +35,7 @@ Individual test results will be found in the [Python](#python) testing section.
 |                    | Screenshot                                                        |              Notes                   |
 |--------------------|-------------------------------------------------------------------|--------------------------------------|
 | Desktop            | ![index-desktop](static/img/testing/lighthouse-index-desktop.png) |                                      |
-| Mobile             | ![index-mobile](static/img/testing/lighthouse-index-mobile.png)   | Performance down due to image sizes. |
+| Mobile             | ![index-mobile](static/img/testing/lighthouse-index-mobile.png)   | Minor Issues                         |
 | W3C HTML Validator | ![index-validator](static/img/testing/index-validator.png)        |                                      |
 
 &nbsp;  
@@ -46,7 +46,7 @@ Individual test results will be found in the [Python](#python) testing section.
 |                    | Screenshot                                                        |              Notes                   |
 |--------------------|-------------------------------------------------------------------|--------------------------------------|
 | Desktop            | ![menu-desktop](static/img/testing/lighthouse-menu-desktop.png)   |                                      |
-| Mobile             | ![menu-mobile](static/img/testing/lighthouse-menu-mobile.png)     | Performance down due to image sizes. |
+| Mobile             | ![menu-mobile](static/img/testing/lighthouse-menu-mobile.png)     | Minor Issues                         |
 | W3C HTML Validator | ![menu-validator](static/img/testing/menu-validator.png)          |                                      |
 
 &nbsp;  
@@ -56,8 +56,8 @@ Individual test results will be found in the [Python](#python) testing section.
 
 |                    | Screenshot                                                        |              Notes                  |
 |--------------------|-------------------------------------------------------------------|-------------------------------------|
-| Desktop            | ![book-desktop](static/img/testing/lighthouse-book-desktop.png)   | Accessibility down due to form having placeholders instead of labels. |
-| Mobile             | ![book-mobile](static/img/testing/lighthouse-book-mobile.png)     | Performance down due to image sizes. <br> Accessibility down due to form having placeholders instead of labels. |
+| Desktop            | ![book-desktop](static/img/testing/lighthouse-book-desktop.png)   |                                     |
+| Mobile             | ![book-mobile](static/img/testing/lighthouse-book-mobile.png)     | Minor Issues                        |
 | W3C HTML Validator | ![book-validator](static/img/testing/book-validator.png)          |                                     |
 
 &nbsp;  
@@ -67,8 +67,8 @@ Individual test results will be found in the [Python](#python) testing section.
 
 |                    | Screenshot                                                        |              Notes                   |
 |--------------------|-------------------------------------------------------------------|--------------------------------------|
-| Desktop            | ![login-desktop](static/img/testing/lighthouse-login-desktop.png) | Accessibility down due to form having placeholders instead of labels. |
-| Mobile             | ![login-mobile](static/img/testing/lighthouse-login-mobile.png)   | Performance down due to image sizes. <br> Accessibility down due to form having placeholders instead of labels. |
+| Desktop            | ![login-desktop](static/img/testing/lighthouse-login-desktop.png) |                                      |
+| Mobile             | ![login-mobile](static/img/testing/lighthouse-login-mobile.png)   | Minor Issues                         |
 | W3C HTML Validator | ![login-validator](static/img/testing/login-validator.png)        |                                      |
 
 &nbsp;  
@@ -79,7 +79,7 @@ Individual test results will be found in the [Python](#python) testing section.
 |                    | Screenshot                                                            |              Notes                   |
 |--------------------|-----------------------------------------------------------------------|--------------------------------------|
 | Desktop            | ![logout-desktop](static/img/testing/lighthouse-logout-desktop.png)   |                                      |
-| Mobile             | ![logout-mobile](static/img/testing/lighthouse-logout-mobile.png)     | Performance down due to image sizes. |
+| Mobile             | ![logout-mobile](static/img/testing/lighthouse-logout-mobile.png)     | Minor Issues                         |
 | W3C HTML Validator | ![logout-validator](static/img/testing/logout-validator.png)          |                                      |
 
 &nbsp;  
@@ -90,7 +90,7 @@ Individual test results will be found in the [Python](#python) testing section.
 |                    | Screenshot                                                            |              Notes                   |
 |--------------------|-----------------------------------------------------------------------|--------------------------------------|
 | Desktop            | ![signup-desktop](static/img/testing/lighthouse-signup-desktop.png)   |                                      |
-| Mobile             | ![signup-mobile](static/img/testing/lighthouse-signup-mobile.png)     | Performance down due to image sizes. |
+| Mobile             | ![signup-mobile](static/img/testing/lighthouse-signup-mobile.png)     | Minor Issues                         |
 | W3C HTML Validator | ![signup-validator](static/img/testing/signup-validator.png)          |                                      |
 
 &nbsp;  
@@ -101,7 +101,7 @@ Individual test results will be found in the [Python](#python) testing section.
 |                    | Screenshot                                                            |              Notes                   |
 |--------------------|-----------------------------------------------------------------------|--------------------------------------|
 | Desktop            | ![booking-desktop](static/img/testing/lighthouse-booking-desktop.png) |                                      |
-| Mobile             | ![booking-mobile](static/img/testing/lighthouse-booking-mobile.png)   | Performance down due to image sizes. |
+| Mobile             | ![booking-mobile](static/img/testing/lighthouse-booking-mobile.png)   | Minor Issues                         |
 | W3C HTML Validator | ![booking-validator](static/img/testing/booking-validator.png)        |                                      |
 
 &nbsp;  
@@ -109,8 +109,8 @@ Individual test results will be found in the [Python](#python) testing section.
 
 |                    | Screenshot                                                            |              Notes                   |
 |--------------------|-----------------------------------------------------------------------|--------------------------------------|
-| Desktop            | ![update-desktop](static/img/testing/lighthouse-update-desktop.png)   | Accessibility down due to form having placeholders instead of labels. |
-| Mobile             | ![update-mobile](static/img/testing/lighthouse-update-mobile.png)     | Performance down due to image sizes. <br> Accessibility down due to form having placeholders instead of labels. |
+| Desktop            | ![update-desktop](static/img/testing/lighthouse-update-desktop.png)   |                                      |
+| Mobile             | ![update-mobile](static/img/testing/lighthouse-update-mobile.png)     | Minor Issues                         |
 | W3C HTML Validator | ![update-validator](static/img/testing/update-validator.png)          |                                      |
 
 &nbsp;  
@@ -119,7 +119,7 @@ Individual test results will be found in the [Python](#python) testing section.
 |                    | Screenshot                                                            |              Notes                   |
 |--------------------|-----------------------------------------------------------------------|--------------------------------------|
 | Desktop            | ![delete-desktop](static/img/testing/lighthouse-delete-desktop.png)   |                                      |
-| Mobile             | ![delete-mobile](static/img/testing/lighthouse-delete-mobile.png)     | Performance down due to image sizes. |
+| Mobile             | ![delete-mobile](static/img/testing/lighthouse-delete-mobile.png)     | Minor Issues                         |
 | W3C HTML Validator | ![delete-validator](static/img/testing/delete-validator.png)          |                                      |
 
 &nbsp;  
@@ -130,7 +130,7 @@ Individual test results will be found in the [Python](#python) testing section.
 |                    | Screenshot                                                                    |                      Notes                   |
 |--------------------|-------------------------------------------------------------------------------|----------------------------------------------|
 | Desktop            | ![all-booking-desktop](static/img/testing/lighthouse-all-booking-desktop.png) |                                              |
-| Mobile             | ![all-booking-mobile](static/img/testing/lighthouse-all-booking-mobile.png)   | Performance down due to image sizes.         |
+| Mobile             | ![all-booking-mobile](static/img/testing/lighthouse-all-booking-mobile.png)   | Minor Issues                                 |
 | W3C HTML Validator | ![all-booking-validator](static/img/testing/all-booking-validator.png)        |                                              |
 
 &nbsp;  
@@ -141,7 +141,7 @@ Individual test results will be found in the [Python](#python) testing section.
 |                    | Screenshot                                                                        |                      Notes                   |
 |--------------------|-----------------------------------------------------------------------------------|----------------------------------------------|
 | Desktop            | ![draft-reviews-desktop](static/img/testing/lighthouse-draft-reviews-desktop.png) |                                              |
-| Mobile             | ![draft-reviews-mobile](static/img/testing/lighthouse-draft-reviews-mobile.png)   | Performance down due to image sizes.         |
+| Mobile             | ![draft-reviews-mobile](static/img/testing/lighthouse-draft-reviews-mobile.png)   | Minor Issues                                 |
 | W3C HTML Validator | ![draft-reviews-validator](static/img/testing/draft-reviews-validator.png)        |                                              |
 
 &nbsp;  
@@ -152,7 +152,7 @@ Individual test results will be found in the [Python](#python) testing section.
 |                    | Screenshot                                                                          |                      Notes                   |
 |--------------------|-------------------------------------------------------------------------------------|----------------------------------------------|
 | Desktop            | ![review-success-desktop](static/img/testing/lighthouse-review-success-desktop.png) |                                              |
-| Mobile             | ![review-success-mobile](static/img/testing/lighthouse-review-success-mobile.png)   | Performance down due to image sizes.         |
+| Mobile             | ![review-success-mobile](static/img/testing/lighthouse-review-success-mobile.png)   | Minor Issues                                 |
 | W3C HTML Validator | ![review-success-validator](static/img/testing/review-success-validator.png)        |                                              |
 
 &nbsp;  
@@ -161,7 +161,7 @@ Individual test results will be found in the [Python](#python) testing section.
 |                    | Screenshot                                                                  |              Notes                   |
 |--------------------|-----------------------------------------------------------------------------|--------------------------------------|
 | Desktop            | ![publish-review](static/img/testing/lighthouse-publish-review-desktop.png) |                                      |
-| Mobile             | ![publish-review](static/img/testing/lighthouse-publish-review-mobile.png)  | Performance down due to image sizes. |
+| Mobile             | ![publish-review](static/img/testing/lighthouse-publish-review-mobile.png)  | Minor Issues                         |
 | W3C HTML Validator | ![publish-review](static/img/testing/publish-review-validator.png)          |                                      |
 
 &nbsp;  
@@ -170,10 +170,13 @@ Individual test results will be found in the [Python](#python) testing section.
 |                    | Screenshot                                                                |              Notes                   |
 |--------------------|---------------------------------------------------------------------------|--------------------------------------|
 | Desktop            | ![delete-review](static/img/testing/lighthouse-delete-review-desktop.png) |                                      |
-| Mobile             | ![delete-review](static/img/testing/lighthouse-delete-review-mobile.png)  | Performance down due to image sizes. |
+| Mobile             | ![delete-review](static/img/testing/lighthouse-delete-review-mobile.png)  | Minor Issues                         |
 | W3C HTML Validator | ![delete-review](static/img/testing/delete-review-validator.png)          |                                      |
 
 &nbsp;  
+
+
+All the issues on performance for mobile view was due to the loading times of the bootstrap css, unfortunately I do not know how to fix this.
 
 ## __CSS__
 
