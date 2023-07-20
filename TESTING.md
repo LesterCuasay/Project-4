@@ -125,7 +125,7 @@ Individual test results will be found in the [Python](#python) testing section.
 &nbsp;  
 ### __All Booking List__
 
-[all_bookings.html](https://coders-cave-project-4.herokuapp.com/book/bookings/all-bookings/)
+[all_bookings.html](https://coders-cave-project-4.herokuapp.com/book/bookings/all-bookings)
 
 |                    | Screenshot                                                                    |                      Notes                   |
 |--------------------|-------------------------------------------------------------------------------|----------------------------------------------|
